@@ -25,7 +25,7 @@ jobs:
       - name: Run Latex2HTML
         run: |
           sudo apt-get install latex2html
-          latex2html -t "Theory Group Seminar Notes" main.tex
+          latex2html -t "Theory Group Seminar Notes" -split 0 main.tex
         env:
           NO_NAVIGATION: 1
           SHOW_SECTION_NUMBERS: 1
