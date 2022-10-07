@@ -25,7 +25,7 @@ jobs:
       - name: Run Latex2HTML
         run: |
           sudo apt-get install latex2html
-          export TITLE = Theory Group Seminar Notes
+          TITLE = "Theory Group Seminar Notes"
           latex2html main.tex
           
       - name: Commit files
