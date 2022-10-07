@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.7)  7 OCT 2022 22:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.7)  7 OCT 2022 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -222,7 +222,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip56
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 14.
+Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks21
@@ -267,24 +267,24 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 ) (./images.aux)
 \openout1 = `images.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
-LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
+LaTeX Font Info:    ... okay on input line 127.
 \AtBeginShipoutBox=\box52
-Package hyperref Info: Link coloring ON on input line 126.
+Package hyperref Info: Link coloring ON on input line 127.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -294,9 +294,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count285
 )
-LaTeX Info: Redefining \ref on input line 126.
-LaTeX Info: Redefining \pageref on input line 126.
-LaTeX Info: Redefining \nameref on input line 126.
+LaTeX Info: Redefining \ref on input line 127.
+LaTeX Info: Redefining \pageref on input line 127.
+LaTeX Info: Redefining \nameref on input line 127.
 \@outlinefile=\write4
 \openout4 = `images.out'.
 
@@ -340,71 +340,71 @@ latex2htmlLength oddsidemargin=62.0pt
 latex2htmlLength evensidemargin=62.0pt
 
 
-:tex2html_wrap_inline132:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline162:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline132:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline162:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 Preview: Tightpage -32891 -32891 32891 32891
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-:tex2html_wrap_inline134:lthtmlCropMarkHeight:=12.94444pt
+:tex2html_wrap_inline164:lthtmlCropMarkHeight:=12.94444pt
 
-:tex2html_wrap_inline134:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+:tex2html_wrap_inline164:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
 [2]
 
-:tex2html_wrap_inline136:lthtmlCropMarkHeight:=12.94444pt
+:tex2html_wrap_inline166:lthtmlCropMarkHeight:=12.94444pt
 
-:tex2html_wrap_inline136:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline166:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [3]
 
-:tex2html_wrap_inline138:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline168:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline138:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline168:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [4]
 
-:tex2html_wrap_inline140:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline170:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline140:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline170:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [5]
 
-:tex2html_wrap_inline142:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline172:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline142:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline172:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [6]
 
-:tex2html_wrap_inline144:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline174:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline144:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline174:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [7]
 
-:tex2html_wrap_inline146:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline176:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline146:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline176:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [8]
 
-:tex2html_wrap_inline148:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline178:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline148:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline178:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [9]
 
-:tex2html_wrap_inline150:lthtmlCropMarkHeight:=14.14003pt
+:tex2html_wrap_inline180:lthtmlCropMarkHeight:=14.14003pt
 
-:tex2html_wrap_inline150:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline180:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [10]
 
-:tex2html_wrap_inline152:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline182:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline152:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline182:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [11]
 
-:tex2html_wrap_inline154:lthtmlCropMarkHeight:=15.20636pt
+:tex2html_wrap_inline184:lthtmlCropMarkHeight:=15.20636pt
 
-:tex2html_wrap_inline154:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline184:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
 (./images.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 
 Package rerunfilecheck Warning: File `images.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -413,12 +413,12 @@ Package rerunfilecheck Warning: File `images.out' has changed.
 Package rerunfilecheck Info: Checksums for `images.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
  ) 
 Here is how much of TeX's memory you used:
  6892 strings out of 483183
  100224 string characters out of 5966292
- 363310 words of memory out of 5000000
+ 363307 words of memory out of 5000000
  21821 multiletter control sequences out of 15000+600000
  532792 words of font info for 26 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
