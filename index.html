@@ -15,59 +15,128 @@
 
 <LINK REL="STYLESHEET" HREF="main.css">
 
-<LINK REL="next" HREF="node1.html">
 </HEAD>
 
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A
- HREF="node1.html">
-<IMG WIDTH="37" HEIGHT="24" ALT="next" SRC="next.png"></A> 
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
 <IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png"> 
-<A ID="tex2html2"
-  HREF="node1.html">
-<IMG WIDTH="65" HEIGHT="24" ALT="contents" SRC="contents.png"></A>  
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
 <BR>
-<B> Next:</B> <A
- HREF="node1.html">Contents</A>
- &nbsp; <B>  <A ID="tex2html3"
-  HREF="node1.html">Contents</A></B> 
-<BR>
-<BR></DIV>
+<BR><BR></DIV>
 <!--End of Navigation Panel-->
 
 <P>
 <H1 class="CENTER">Theory Group Seminar Notes</H1>
 <P class="CENTER"><STRONG>Rishit Dagli</STRONG>
-</P>
-<BR><P class="CENTER"><B>Date:</B> October 2022</P>
+</P><BR><P class="CENTER"><B>Date:</B> October 2022</P>
 
 <HR>
 
 <P>
-<BR><HR>
-<!--Table of Child-Links-->
-<A ID="CHILD_LINKS"></A>
-
-<UL CLASS="ChildLinks">
-<LI><A ID="tex2html4"
-  HREF="node1.html">Contents</A>
-<LI><A ID="tex2html5"
-  HREF="node2.html">Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
-<UL>
-<LI><A ID="tex2html6"
-  HREF="node3.html">Abstract</A>
-</UL>
 <BR>
+
+<H2><A ID="SECTION00010000000000000000">
+Contents</A>
+</H2>
+<!--Table of Contents-->
+
+<UL CLASS="TofC">
 <LI><A ID="tex2html7"
-  HREF="node4.html">Bibliography</A>
+  HREF="main.html#SECTION00020000000000000000">Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
+<UL>
 <LI><A ID="tex2html8"
-  HREF="node5.html">About this document ...</A>
+  HREF="main.html#SECTION00021000000000000000">Abstract</A>
+</UL><BR>
+<LI><A ID="tex2html9"
+  HREF="main.html#SECTION00030000000000000000">Bibliography</A>
 </UL>
-<!--End of Table of Child-Links-->
-<BR><HR>
+<!--End of Table of Contents-->
+<P>
+
+<H1><A ID="SECTION00020000000000000000">
+Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
+</H1>
+
+<P>
+Combinatorial lower bounds for 3-query LDCs by <A
+ HREF="main.html#https://doi.org/10.48550/arxiv.1911.10698">Bhattacharyya et&nbsp;al. (1)</A>.
+
+<P>
+
+<H2><A ID="SECTION00021000000000000000">
+Abstract</A>
+</H2>
+
+<P>
+A code <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img1.svg"
+ ALT="$C$"></SPAN> is a q-locally decodable code (q-LDC) if one can recover any chosen bit <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img2.svg"
+ ALT="$b_i$"></SPAN> of the <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img3.svg"
+ ALT="$k$"></SPAN>-bit message b with good confidence by randomly querying the <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img4.svg"
+ ALT="$n$"></SPAN>-bit encoding x on at most <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img5.svg"
+ ALT="$q$"></SPAN> coordinates. Existing constructions of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img6.svg"
+ ALT="$2$"></SPAN>-LDCs achieve blocklength <!-- MATH
+ $n = exp(O(k))$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img7.svg"
+ ALT="$n = exp(O(k))$"></SPAN>, and lower bounds show that this is in fact tight. However, when <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
+ ALT="$q = 3$"></SPAN>, far less is known: the best constructions have <!-- MATH
+ $n = subexp(k)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img9.svg"
+ ALT="$n = subexp(k)$"></SPAN>, while the best known lower bounds, that have stood for nearly two decades, only show a quadratic lower bound of <!-- MATH
+ $n \geq \Omega(k^2)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img10.svg"
+ ALT="$n \geq \Omega(k^2)$"></SPAN> on the blocklength.
+
+<P>
+In this talk, we will survey a new approach to prove lower bounds for LDCs using recent advances in refuting semirandom instances of constraint satisfaction problems. These new tools yield, in the <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img11.svg"
+ ALT="$3$"></SPAN>-query case, a near-cubic lower bound of <!-- MATH
+ $n \geq \tilde{\Omega}(k^3)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.94ex; vertical-align: -0.70ex; " SRC="img12.svg"
+ ALT="$n \geq \tilde{\Omega}(k^3)$"></SPAN>, improving on prior work by a polynomial factor in <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img3.svg"
+ ALT="$k$"></SPAN>.
+
+<P>
+<P>
+<H2><A ID="SECTIONREF">Bibliography</A>
+</H2>
+
+<DL class="COMPACT">
+<DT><A ID="https://doi.org/10.48550/arxiv.1911.10698">1</A>
+<DD>
+Arnab Bhattacharyya, L.&nbsp;Sunil Chandran, and Suprovat Ghoshal.
+<BR> Combinatorial lower bounds for 3-query ldcs, 2019.
+<BR> URL <kbd><A ID="tex2html1"
+  HREF="https://arxiv.org/abs/1911.10698">https://arxiv.org/abs/1911.10698</A></kbd>.
+
+<BR>
+<P>
+</DL>
+
+<P>
+
+<H1><A ID="SECTION00040000000000000000">
+About this document ...</A>
+</H1>
+ <STRONG>Theory Group Seminar Notes</STRONG><P>
+This document was generated using the
+<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
+<P>
+The command line arguments were: <BR>
+ <kbd>latex2html -t 'Theory Group Seminar Notes' -split 0 main.tex</kbd>
+<P>
+The translation was initiated on 2022-10-07
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
+<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
+<BR></DIV>
+<!--End of Navigation Panel-->
 
 </BODY>
 </HTML>

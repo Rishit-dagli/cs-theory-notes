@@ -3,7 +3,7 @@
 
 
 $key = q/cite_https:\/\/doi.org\/10.48550\/arxiv.1911.10698/;
-$external_labels{$key} = "$URL/" . q|node4.html|; 
+$external_labels{$key} = "$URL/" . q|main.html|; 
 $noresave{$key} = "$nosave";
 
 1;
