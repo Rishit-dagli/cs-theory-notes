@@ -27,13 +27,7 @@ jobs:
           sudo apt-get install latex2html
           latex2html -t "Theory Group Seminar Notes" main.tex
           
-      - name: Commit files
-        run: |
-          cd main
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          folder: main # The folder the action should deploy.
