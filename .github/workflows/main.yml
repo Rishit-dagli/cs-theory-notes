@@ -25,7 +25,10 @@ jobs:
       - name: Run Latex2HTML
         run: |
           sudo apt-get install latex2html
-          latex2html -t "Theory Group Seminar Notes" -no_navigation 1 main.tex
+          latex2html -t "Theory Group Seminar Notes" main.tex
+        env:
+          NO_NAVIGATION: 1
+          SHOW_SECTION_NUMBERS: 1
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
