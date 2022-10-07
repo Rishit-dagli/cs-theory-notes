@@ -24,7 +24,7 @@ jobs:
       
       - name: Run Latex2HTML
         run: |
-          sudo apt-get latex2html
+          apt-get install latex2html
           export TITLE = Theory Group Seminar Notes
           latex2html main.tex
           
