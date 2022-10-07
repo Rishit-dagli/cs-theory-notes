@@ -21,3 +21,21 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+      
+      - name: Run Latex2HTML
+        run: |
+          apt-get latex2html
+          TITLE = Theory Group Seminar Notes
+          latex2html main.tex
+          
+      - name: Commit files
+        run: |
+          cd main
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          ssh: true
+          branch: gh-pages
