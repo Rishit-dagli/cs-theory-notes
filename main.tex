@@ -3,9 +3,11 @@
 \usepackage{blindtext}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{hyperref}
 \newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -40,7 +42,7 @@ The members of the theory group are all interested, in one way or another, in th
 
 7th October 2022\\
 
-The related paper: Combinatorial lower bounds for 3-query LDCs by \citet{https://doi.org/10.48550/arxiv.1911.10698}. Seminar by \href{https://www.cs.cmu.edu/~pmanohar/}{Peter Manohar}.
+\noindent The related paper: Combinatorial lower bounds for 3-query LDCs by \citet{Alrabiah2022-ds}. Seminar by \href{https://www.cs.cmu.edu/~pmanohar/}{Peter Manohar}. \cite{https://doi.org/10.48550/arxiv.1911.10698}
 
 \subsection{Abstract}
 
@@ -57,6 +59,152 @@ Take codes $b \in {0,1}^k \rightarrow x \in {0,1}^n$
 \begin{definition}
 $C$ is a $(q, \delta, \epsilon)$-locally decodable if for any $x$ with $\bigtriangleup(x, Enc(b)) \leq \delta n$, $Dec^x(i) = b_i$ w.p. $\geq \frac{1}{2} + \epsilon$ for any $i$.
 \end{definition}
+
+\noindent Ask the question, what is the best possible rate for a $q$-LDC given a $q$?
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ $q$ & Lower Bound & Upper Bound \\
+ \hline
+ 2 & $2^{\Omega(k)} \leq n$ & $n \leq 2^k$ \\ 
+ 3 & $k^2 \leq n$ & $n \leq exp(k^{o(1)})$ \\
+ $O(1)$, even & $k^{\frac{q}{q+1}} \leq n$ & $n \leq exp(k^{o(1)})$ \\ 
+ $O(1)$, odd & $k^{\frac{q+1}{q-1}} \leq n$ & $n \leq exp(k^{o(1)})$ \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\noindent Focus on the case $q=3$, we have gotten better bounds:
+
+\begin{equation}
+\begin{split}
+k \leq & n \leq 2^k \\
+k^2 \leq & n \leq exp(exp(\sqrt{\log k \log \log k}))
+\end{split}
+\end{equation}
+
+\noindent In \cite{Alrabiah2022-ds}, they show that a better minimum bound can be found than these existing ones for $q=3$:
+
+\begin{equation}
+k^3 \leq n
+\end{equation}
+
+\noindent The main result is that:
+
+\begin{theorem}
+Let $C$ be a $(3, \delta, \epsilon)$-locally decodable codes. Then $n \geq \tilde{\Omega}_{\delta, \epsilon}(k^3)$.
+\end{theorem}
+
+\noindent Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that $q$-LDC lower bound is same as refuting "LDC" $q$-XOR.
+
+\subsection{How to prove the Theorem}
+
+The idea:
+
+\begin{itemize}
+    \item $q$-LDC lower bound is same as refuting "LDC" $q$-XOR \phantomsection\label{proofp1}
+        \begin{itemize}
+            \item CSP Refutation
+        \end{itemize}
+    \item Proof of existing $q$-LDC lower bound for $q$ even
+    \item Proof sketch of $k^3$ lower bound
+\end{itemize}
+
+\subsection{Normally Decodable Codes}
+
+We can see that the decoder we have can arbitrary but WLOG we can assume there are $q$-unif hypergraphs ${H_1, H_2, \cdots H_k}$ where every $H_i$ is such that:
+
+\begin{equation*}
+H_i \subseteq {[n] \choose q}
+\end{equation*}
+
+\noindent We can also see that:
+
+\noindent Each $H_i$ is a matching such that $|H_i| \geq \delta n$
+
+\noindent and, $Dec(i)$ picks $C \leftarrow H_i$ and outputs $\sum_{j \in C} x_j$\\
+
+\noindent One such example is the Hadmard code:
+
+\begin{equation}
+\begin{split}
+b &\in {0,1}^k \mapsto f = (\langle b, v \rangle)_{v \in {0,1}}^k\\
+b_i &= f(e_i) = f(v) + f(v+e_i)
+\end{split}
+\end{equation}
+
+\noindent Can think of this as $v$ and $v+e_i$ are connected.\\
+
+\noindent Matching vector codes are $\approx \mathbb{Z} _{m}^{h}$
+
+\subsection{Proof: Going from LDC to XOR}
+
+We suppose that our code is linear and that there exists $q$-unif hypergraphs ${H_1, H_2, \cdots H_k}$.\\
+
+\noindent We also know that:
+
+Each $H_i$ is a matching such that $|H_i| \geq \delta n$
+
+and, $Dec(i)$ picks $C \leftarrow H_i$ and outputs $\sum_{j \in C} x_j$\\
+
+\noindent So, we start by considering a $q$-XOR instance $\psi_b$:
+
+\begin{equation*}
+\begin{split}
+    \textit{Vars: } & \{x_j\}_{j \in [n]}\\
+    \textit{Over Equations: } & \sum_{j \in C} x_j = b_i, \forall i \in [k], C \in H_i
+\end{split}
+\end{equation*}
+
+\noindent We can write down the maximum fraction of satisfiable constraints: $val(\psi_b) = 1$ for any $b \in {0,1}^k$.\\
+
+\noindent It is sufficient now if we can argue that $\psi_b$ is unsat w.h.p. for some random $b$ when $n \ll k^{\frac{q}{q-2}}$.\\
+
+\noindent Now we need to refute XOR, there are many ways to argue unsatisfiability of an XOR instance. One reason why we can not use probablistic approaches here is that $\psi_b$ only has $k$ bits of randomness.\\
+
+\noindent One way we can have some success here is to use a refutation algorithm
+
+\begin{equation*}
+\psi \rightarrow A \rightarrow algval(\psi)
+\end{equation*}
+
+\noindent With this the guarantee then would be $val(\psi) \leq algval(\psi)$ which is similar to saying that if $algval(\psi) < 1$ then $A$ refutes $\psi$. The ideal goal would be to refute random $\psi$ with $m$ constraints w.h.p.\\
+
+\noindent However, we take a look at semi-random XOR. Our refutation algorithm and the guarantee will still be the same:
+
+\begin{equation*}
+\psi \rightarrow A \rightarrow algval(\psi)
+\end{equation*}
+
+\noindent with the guarantee that $val(\psi) \leq algval(\psi)$.\\
+
+\noindent So, now we generate semi-random $\psi w/ m$ constraints:
+
+\begin{itemize}
+    \item The worst case would be random $q$-unif hypergraph
+    \item Random RHS $b_c$ for each $C \in H$
+\end{itemize}
+
+\noindent The equation we have is:
+
+\begin{equation}
+    \sum_{j \in C} x_j = b_c
+\end{equation}
+
+\noindent And we also already know that 
+
+\begin{equation*}
+    \psi_b \textit{ is } \sum_{j \in C}
+\end{equation*}
+
+\noindent And, $xj = b_i, i \in [k], C \in H_i$.
+
+\noindent $\psi_b$ is almost semi-random.\\
+
+\noindent Thus, we have shown \ref{proofp1}{ Part 1 of Proof}.
+
+\subsection{Proof: Existing $q$-LDC lower bound for $q$ even}
 
 \newpage
 \bibliography{references}
