@@ -2,7 +2,15 @@
 # Associate internals original text with physical files.
 
 
+$key = q/cite_Alrabiah2022-ds/;
+$ref_files{$key} = "$dir".q|main.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_https:\/\/doi.org\/10.48550\/arxiv.1911.10698/;
+$ref_files{$key} = "$dir".q|main.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/proofp1/;
 $ref_files{$key} = "$dir".q|main.html|; 
 $noresave{$key} = "$nosave";
 

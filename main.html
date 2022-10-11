@@ -43,15 +43,23 @@ Contents</A>
 <!--Table of Contents-->
 
 <UL CLASS="TofC">
-<LI><A ID="tex2html10"
+<LI><A ID="tex2html14"
   HREF="main.html#SECTION00030000000000000000">Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
 <UL>
-<LI><A ID="tex2html11"
+<LI><A ID="tex2html15"
   HREF="main.html#SECTION00031000000000000000">Abstract</A>
-<LI><A ID="tex2html12"
+<LI><A ID="tex2html16"
   HREF="main.html#SECTION00032000000000000000">Locally Decodable Codes</A>
+<LI><A ID="tex2html17"
+  HREF="main.html#SECTION00033000000000000000">How to prove the Theorem</A>
+<LI><A ID="tex2html18"
+  HREF="main.html#SECTION00034000000000000000">Normally Decodable Codes</A>
+<LI><A ID="tex2html19"
+  HREF="main.html#SECTION00035000000000000000">Proof: Going from LDC to XOR</A>
+<LI><A ID="tex2html20"
+  HREF="main.html#SECTION00036000000000000000">Proof: Existing -LDC lower bound for even</A>
 </UL><BR>
-<LI><A ID="tex2html13"
+<LI><A ID="tex2html21"
   HREF="main.html#SECTION00040000000000000000">Bibliography</A>
 </UL>
 <!--End of Table of Contents-->
@@ -85,7 +93,8 @@ Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
 <BR>
 <P>
 The related paper: Combinatorial lower bounds for 3-query LDCs by <A
- HREF="main.html#https://doi.org/10.48550/arxiv.1911.10698">Bhattacharyya et&nbsp;al. (1)</A>. Seminar by <a href="https://www.cs.cmu.edu/~pmanohar/">Peter Manohar</a>.
+ HREF="main.html#Alrabiah2022-ds">Alrabiah et&nbsp;al. (1)</A>. Seminar by <a href="https://www.cs.cmu.edu/~pmanohar/">Peter Manohar</a>. (<A
+ HREF="main.html#https://doi.org/10.48550/arxiv.1911.10698">2</A>)
 
 <P>
 
@@ -94,11 +103,11 @@ Abstract</A>
 </H2>
 
 <P>
-A code <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img1.svg"
- ALT="$C$"></SPAN> is a q-locally decodable code (q-LDC) if one can recover any chosen bit <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img2.svg"
- ALT="$b_i$"></SPAN> of the <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img3.svg"
- ALT="$k$"></SPAN>-bit message b with good confidence by randomly querying the <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img4.svg"
- ALT="$n$"></SPAN>-bit encoding x on at most <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img5.svg"
+A code <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
+ ALT="$C$"></SPAN> is a q-locally decodable code (q-LDC) if one can recover any chosen bit <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img3.svg"
+ ALT="$b_i$"></SPAN> of the <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
+ ALT="$k$"></SPAN>-bit message b with good confidence by randomly querying the <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img5.svg"
+ ALT="$n$"></SPAN>-bit encoding x on at most <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
  ALT="$q$"></SPAN> coordinates. Existing constructions of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img6.svg"
  ALT="$2$"></SPAN>-LDCs achieve blocklength <!-- MATH
  $n = exp(O(k))$
@@ -121,7 +130,7 @@ In this talk, we will survey a new approach to prove lower bounds for LDCs using
  $n \geq \tilde{\Omega}(k^3)$
  -->
 <SPAN CLASS="MATH"><IMG STYLE="height: 2.94ex; vertical-align: -0.70ex; " SRC="img12.svg"
- ALT="$n \geq \tilde{\Omega}(k^3)$"></SPAN>, improving on prior work by a polynomial factor in <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img3.svg"
+ ALT="$n \geq \tilde{\Omega}(k^3)$"></SPAN>, improving on prior work by a polynomial factor in <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
  ALT="$k$"></SPAN>.
 
 <P>
@@ -148,7 +157,7 @@ Codes <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " 
 
 <P>
 <P><DIV><B>Definition  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
-<I><SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img1.svg"
+<I><SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
  ALT="$C$"></SPAN> is a <!-- MATH
  $(q, \delta, \epsilon)$
  -->
@@ -170,13 +179,517 @@ Codes <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " 
  ALT="$i$"></SPAN>.</I></DIV><P></P>
 
 <P>
+Ask the question, what is the best possible rate for a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-LDC given a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>?
+
+<P>
+<DIV class="CENTER">
+<TABLE class="PAD  BORDER" style="">
+<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN></TD>
+<TD CLASS="CENTER">Lower Bound</TD>
+<TD CLASS="CENTER">Upper Bound</TD>
+<TD CLASS="CENTER">&nbsp;</TD>
+<TD CLASS="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD CLASS="LEFT">2</TD>
+<TD CLASS="CENTER"><!-- MATH
+ $2^{\Omega(k)} \leq n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.60ex; vertical-align: -0.43ex; " SRC="img22.svg"
+ ALT="$2^{\Omega(k)} \leq n$"></SPAN></TD>
+<TD CLASS="CENTER"><!-- MATH
+ $n \leq 2^k$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.51ex; vertical-align: -0.43ex; " SRC="img23.svg"
+ ALT="$n \leq 2^k$"></SPAN></TD>
+<TD CLASS="CENTER">&nbsp;</TD>
+<TD CLASS="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD CLASS="LEFT">3</TD>
+<TD CLASS="CENTER"><!-- MATH
+ $k^2 \leq n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.43ex; vertical-align: -0.43ex; " SRC="img24.svg"
+ ALT="$k^2 \leq n$"></SPAN></TD>
+<TD CLASS="CENTER"><!-- MATH
+ $n \leq exp(k^{o(1)})$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
+ ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
+<TD CLASS="CENTER">&nbsp;</TD>
+<TD CLASS="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img26.svg"
+ ALT="$O(1)$"></SPAN>, even</TD>
+<TD CLASS="CENTER"><!-- MATH
+ $k^{\frac{q}{q+1}} \leq n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.82ex; vertical-align: -0.43ex; " SRC="img27.svg"
+ ALT="$k^{\frac{q}{q+1}} \leq n$"></SPAN></TD>
+<TD CLASS="CENTER"><!-- MATH
+ $n \leq exp(k^{o(1)})$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
+ ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
+<TD CLASS="CENTER">&nbsp;</TD>
+<TD CLASS="LEFT">&nbsp;</TD>
+</TR>
+<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img26.svg"
+ ALT="$O(1)$"></SPAN>, odd</TD>
+<TD CLASS="CENTER"><!-- MATH
+ $k^{\frac{q+1}{q-1}} \leq n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.10ex; vertical-align: -0.43ex; " SRC="img28.svg"
+ ALT="$k^{\frac{q+1}{q-1}} \leq n$"></SPAN></TD>
+<TD CLASS="CENTER"><!-- MATH
+ $n \leq exp(k^{o(1)})$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
+ ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
+<TD CLASS="CENTER">&nbsp;</TD>
+<TD CLASS="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+Focus on the case <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
+ ALT="$q = 3$"></SPAN>, we have gotten better bounds:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+k \leq & n \leq 2^k \\
+k^2 \leq & n \leq exp(exp(\sqrt{\log k \log \log k}))
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
+ SRC="img29.svg"
+ ALT="\begin{displaymath}\begin{split}
+k \leq &amp; n \leq 2^k \\
+k^2 \leq &amp; n \leq exp(exp(\sqrt{\log k \log \log k}))
+\end{split}\end{displaymath}"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+In (<A
+ HREF="main.html#Alrabiah2022-ds">1</A>), they show that a better minimum bound can be found than these existing ones for <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
+ ALT="$q = 3$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+k^3 \leq n
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.43ex; " SRC="img30.svg"
+ ALT="$\displaystyle k^3 \leq n$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+The main result is that:
+
+<P>
+<P><DIV><B>Theorem  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
+<I>Let <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
+ ALT="$C$"></SPAN> be a <!-- MATH
+ $(3, \delta, \epsilon)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img31.svg"
+ ALT="$(3, \delta, \epsilon)$"></SPAN>-locally decodable codes. Then <!-- MATH
+ $n \geq \tilde{\Omega}_{\delta, \epsilon}(k^3)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 3.02ex; vertical-align: -0.78ex; " SRC="img32.svg"
+ ALT="$n \geq \tilde{\Omega}_{\delta, \epsilon}(k^3)$"></SPAN>.</I></DIV><P></P>
+
+<P>
+Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-LDC lower bound is same as refuting "LDC" <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-XOR.
+
+<P>
+
+<H2><A ID="SECTION00033000000000000000">
+How to prove the Theorem</A>
+</H2>
+
+<P>
+The idea:
+
+<P>
+
+<UL>
+<LI><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-LDC lower bound is same as refuting "LDC" <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-XOR <A ID="proofp1"></A>        
+<UL>
+<LI>CSP Refutation
+        
+</LI>
+</UL>
+</LI>
+<LI>Proof of existing <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-LDC lower bound for <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN> even
+</LI>
+<LI>Proof sketch of <SPAN CLASS="MATH"><IMG STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img33.svg"
+ ALT="$k^3$"></SPAN> lower bound
+</LI>
+</UL>
+
+<P>
+
+<H2><A ID="SECTION00034000000000000000">
+Normally Decodable Codes</A>
+</H2>
+
+<P>
+We can see that the decoder we have can arbitrary but WLOG we can assume there are <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-unif hypergraphs <!-- MATH
+ ${H_1, H_2, \cdots H_k}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.26ex; vertical-align: -0.57ex; " SRC="img34.svg"
+ ALT="${H_1, H_2, \cdots H_k}$"></SPAN> where every <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
+ ALT="$H_i$"></SPAN> is such that:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation*}
+H_i \subseteq {[n] \choose q}
+\end{equation*}
+ -->
+<TABLE CLASS="equation*" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.79ex; vertical-align: -2.32ex; " SRC="img36.svg"
+ ALT="$\displaystyle H_i \subseteq {[n] \choose q}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+We can also see that:
+
+<P>
+Each <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
+ ALT="$H_i$"></SPAN> is a matching such that <!-- MATH
+ $|H_i| \geq \delta n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ ALT="$\vert H_i\vert \geq \delta n$"></SPAN>
+
+<P>
+and, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$Dec(i)$"></SPAN> picks <!-- MATH
+ $C \leftarrow H_i$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img39.svg"
+ ALT="$C \leftarrow H_i$"></SPAN> and outputs <!-- MATH
+ $\sum_{j \in C} x_j$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -1.13ex; " SRC="img40.svg"
+ ALT="$\sum_{j \in C} x_j$"></SPAN>
+<BR>
+<P>
+One such example is the Hadmard code:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\begin{split}
+b &\in {0,1}^k \mapsto f = (\langle b, v \rangle)_{v \in {0,1}}^k\\
+b_i &= f(e_i) = f(v) + f(v+e_i)
+\end{split}
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
+ SRC="img41.svg"
+ ALT="\begin{displaymath}\begin{split}
+b &amp;\in {0,1}^k \mapsto f = (\langle b, v \rangle)_{v \in {0,1}}^k\\
+b_i &amp;= f(e_i) = f(v) + f(v+e_i)
+\end{split}\end{displaymath}"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+Can think of this as <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img42.svg"
+ ALT="$v$"></SPAN> and <SPAN CLASS="MATH"><IMG STYLE="height: 1.93ex; vertical-align: -0.46ex; " SRC="img43.svg"
+ ALT="$v+e_i$"></SPAN> are connected.
+<BR>
+<P>
+Matching vector codes are <!-- MATH
+ $\approx \mathbb{Z} _{m}^{h}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.77ex; vertical-align: -0.69ex; " SRC="img44.svg"
+ ALT="$\approx \mathbb{Z} _{m}^{h}$"></SPAN>
+
+<P>
+
+<H2><A ID="SECTION00035000000000000000">
+Proof: Going from LDC to XOR</A>
+</H2>
+
+<P>
+We suppose that our code is linear and that there exists <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-unif hypergraphs <!-- MATH
+ ${H_1, H_2, \cdots H_k}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.26ex; vertical-align: -0.57ex; " SRC="img34.svg"
+ ALT="${H_1, H_2, \cdots H_k}$"></SPAN>.
+<BR>
+<P>
+We also know that:
+
+<P>
+Each <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
+ ALT="$H_i$"></SPAN> is a matching such that <!-- MATH
+ $|H_i| \geq \delta n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
+ ALT="$\vert H_i\vert \geq \delta n$"></SPAN>
+
+<P>
+and, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
+ ALT="$Dec(i)$"></SPAN> picks <!-- MATH
+ $C \leftarrow H_i$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img39.svg"
+ ALT="$C \leftarrow H_i$"></SPAN> and outputs <!-- MATH
+ $\sum_{j \in C} x_j$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -1.13ex; " SRC="img40.svg"
+ ALT="$\sum_{j \in C} x_j$"></SPAN>
+<BR>
+<P>
+So, we start by considering a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-XOR instance <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
+ ALT="$\psi_b$"></SPAN>:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation*}
+\begin{split}
+    \textit{Vars: } & \{x_j\}_{j \in [n]}\\
+    \textit{Over Equations: } & \sum_{j \in C} x_j = b_i, \forall i \in [k], C \in H_i
+\end{split}
+\end{equation*}
+ -->
+<TABLE CLASS="equation*" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
+ SRC="img46.svg"
+ ALT="\begin{displaymath}\begin{split}
+\textit{Vars: } &amp; \{x_j\}_{j \in [n]}\\
+\texti...
+...m_{j \in C} x_j = b_i, \forall i \in [k], C \in H_i
+\end{split}\end{displaymath}"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+We can write down the maximum fraction of satisfiable constraints: <!-- MATH
+ $val(\psi_b) = 1$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img47.svg"
+ ALT="$val(\psi_b) = 1$"></SPAN> for any <!-- MATH
+ $b \in {0,1}^k$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.73ex; vertical-align: -0.57ex; " SRC="img48.svg"
+ ALT="$b \in {0,1}^k$"></SPAN>.
+<BR>
+<P>
+It is sufficient now if we can argue that <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
+ ALT="$\psi_b$"></SPAN> is unsat w.h.p. for some random <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img49.svg"
+ ALT="$b$"></SPAN> when <!-- MATH
+ $n \ll k^{\frac{q}{q-2}}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.60ex; vertical-align: -0.21ex; " SRC="img50.svg"
+ ALT="$n \ll k^{\frac{q}{q-2}}$"></SPAN>.
+<BR>
+<P>
+Now we need to refute XOR, there are many ways to argue unsatisfiability of an XOR instance. One reason why we can not use probablistic approaches here is that <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
+ ALT="$\psi_b$"></SPAN> only has <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
+ ALT="$k$"></SPAN> bits of randomness.
+<BR>
+<P>
+One way we can have some success here is to use a refutation algorithm
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation*}
+\psi \rightarrow A \rightarrow algval(\psi)
+\end{equation*}
+ -->
+<TABLE CLASS="equation*" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img51.svg"
+ ALT="$\displaystyle \psi \rightarrow A \rightarrow algval(\psi)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+With this the guarantee then would be <!-- MATH
+ $val(\psi) \leq algval(\psi)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img52.svg"
+ ALT="$val(\psi) \leq algval(\psi)$"></SPAN> which is similar to saying that if <!-- MATH
+ $algval(\psi) < 1$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img53.svg"
+ ALT="$algval(\psi) &lt; 1$"></SPAN> then <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img54.svg"
+ ALT="$A$"></SPAN> refutes <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img55.svg"
+ ALT="$\psi$"></SPAN>. The ideal goal would be to refute random <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img55.svg"
+ ALT="$\psi$"></SPAN> with <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img56.svg"
+ ALT="$m$"></SPAN> constraints w.h.p.
+<BR>
+<P>
+However, we take a look at semi-random XOR. Our refutation algorithm and the guarantee will still be the same:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation*}
+\psi \rightarrow A \rightarrow algval(\psi)
+\end{equation*}
+ -->
+<TABLE CLASS="equation*" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img51.svg"
+ ALT="$\displaystyle \psi \rightarrow A \rightarrow algval(\psi)$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+with the guarantee that <!-- MATH
+ $val(\psi) \leq algval(\psi)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img52.svg"
+ ALT="$val(\psi) \leq algval(\psi)$"></SPAN>.
+<BR>
+<P>
+So, now we generate semi-random <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img57.svg"
+ ALT="$\psi w/ m$"></SPAN> constraints:
+
+<P>
+
+<UL>
+<LI>The worst case would be random <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-unif hypergraph
+</LI>
+<LI>Random RHS <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img58.svg"
+ ALT="$b_c$"></SPAN> for each <SPAN CLASS="MATH"><IMG STYLE="height: 1.90ex; vertical-align: -0.21ex; " SRC="img59.svg"
+ ALT="$C \in H$"></SPAN>
+</LI>
+</UL>
+
+<P>
+The equation we have is:
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation}
+\sum_{j \in C} x_j = b_c
+\end{equation}
+ -->
+<TABLE CLASS="equation" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.97ex; vertical-align: -3.44ex; " SRC="img60.svg"
+ ALT="$\displaystyle \sum_{j \in C} x_j = b_c$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+(<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+And we also already know that 
+
+<P>
+<P></P>
+<DIV CLASS="mathdisplay"><!-- MATH
+ \begin{equation*}
+\psi_b \textit{ is } \sum_{j \in C}
+\end{equation*}
+ -->
+<TABLE CLASS="equation*" >
+<TR>
+<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.97ex; vertical-align: -3.44ex; " SRC="img61.svg"
+ ALT="$\displaystyle \psi_b \textit{ is } \sum_{j \in C}$"></SPAN></TD>
+<TD  CLASS="eqno" style="text-align:right">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<P></P>
+
+<P>
+And, <!-- MATH
+ $xj = b_i, i \in [k], C \in H_i$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img62.svg"
+ ALT="$xj = b_i, i \in [k], C \in H_i$"></SPAN>.
+
+<P>
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
+ ALT="$\psi_b$"></SPAN> is almost semi-random.
+<BR>
+<P>
+Thus, we have shown <A HREF="#proofp1">1.3</A> Part 1 of Proof.
+
+<P>
+
+<H2><A ID="SECTION00036000000000000000">
+Proof: Existing <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN>-LDC lower bound for <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
+ ALT="$q$"></SPAN> even</A>
+</H2>
+
+<P>
 
 <P>
 <H2><A ID="SECTIONREF">Bibliography</A>
 </H2>
 
 <DL class="COMPACT">
-<DT><A ID="https://doi.org/10.48550/arxiv.1911.10698">1</A>
+<DT><A ID="Alrabiah2022-ds">1</A>
+<DD>
+Omar Alrabiah, Venkatesan Guruswami, Pravesh Kothari, and Peter Manohar.
+<BR> A near-cubic lower bound for 3-query locally decodable codes from
+  semirandom CSP refutation.
+<BR> Technical Report TR22-101, Electronic Colloquium on Computational
+  Complexity (ECCC), July 2022.
+
+<BR>
+<P>
+<DT><A ID="https://doi.org/10.48550/arxiv.1911.10698">2</A>
 <DD>
 Arnab Bhattacharyya, L.&nbsp;Sunil Chandran, and Suprovat Ghoshal.
 <BR> Combinatorial lower bounds for 3-query ldcs, 2019.

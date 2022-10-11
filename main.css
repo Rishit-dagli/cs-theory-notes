@@ -54,6 +54,9 @@ TABLE		{ border-collapse: collapse; }
 
 /* document-specific styles come next */
 SPAN.bfseries		{   }
+DIV.center		{   }
+TABLE.equation		{  }
+TABLE.equation*		{  }
 SPAN.itshape		{   }
 DIV.navigation		{   }
 SPAN.arabic		{   }

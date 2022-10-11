@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.11)  11 OCT 2022 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.10.11)  11 OCT 2022 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -117,7 +117,16 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -234,7 +243,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip59
 )
 \c@definition=\count283
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+\c@theorem=\count284
+Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks27
@@ -265,7 +275,7 @@ Package: preview 2017/04/24 11.91 (AUCTeX/preview-latex)
 (/usr/share/texmf/tex/latex/preview/prtightpage.def
 \PreviewBorder=\dimen153
 )
-\pr@snippet=\count284
+\pr@snippet=\count285
 \pr@box=\box49
 \pr@output=\toks29
 )
@@ -274,29 +284,29 @@ Package: preview 2017/04/24 11.91 (AUCTeX/preview-latex)
 \lthtmlCropMarkDepth=\dimen155
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count285
+\l__kernel_color_stack_int=\count286
 \l__pdf_internal_box=\box51
 ) (./images.aux)
 \openout1 = `images.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
+LaTeX Font Info:    ... okay on input line 131.
 \AtBeginShipoutBox=\box52
-Package hyperref Info: Link coloring ON on input line 129.
+Package hyperref Info: Link coloring ON on input line 131.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -304,26 +314,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count286
+\c@section@level=\count287
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 131.
+LaTeX Info: Redefining \pageref on input line 131.
+LaTeX Info: Redefining \nameref on input line 131.
 \@outlinefile=\write4
 \openout4 = `images.out'.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count287
+\scratchcounter=\count288
 \scratchdimen=\dimen156
 \scratchbox=\box53
-\nofMPsegments=\count288
-\nofMParguments=\count289
+\nofMPsegments=\count289
+\nofMParguments=\count290
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count290
+\MPscratchCnt=\count291
 \MPscratchDim=\dimen157
-\MPnumerator=\count291
-\makeMPintoPDFobject=\count292
+\MPnumerator=\count292
+\makeMPintoPDFobject=\count293
 \everyMPtoPDFconversion=\toks31
 )
 Preview: Fontsize 10pt
@@ -351,117 +361,412 @@ latex2htmlLength oddsidemargin=62.0pt
 
 latex2htmlLength evensidemargin=62.0pt
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 156
+.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 156
+.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
-:tex2html_wrap_inline220:lthtmlCropMarkHeight:=12.83331pt
+:tex2html_wrap_inline598:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline220:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline598:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 Preview: Tightpage -32891 -32891 32891 32891
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
-:tex2html_wrap_inline222:lthtmlCropMarkHeight:=12.94444pt
+:tex2html_wrap_inline606:lthtmlCropMarkHeight:=12.83331pt
 
-:tex2html_wrap_inline222:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+:tex2html_wrap_inline606:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [2]
 
-:tex2html_wrap_inline224:lthtmlCropMarkHeight:=12.94444pt
+:tex2html_wrap_inline608:lthtmlCropMarkHeight:=12.94444pt
 
-:tex2html_wrap_inline224:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline608:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
 [3]
 
-:tex2html_wrap_inline226:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline610:lthtmlCropMarkHeight:=12.94444pt
 
-:tex2html_wrap_inline226:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline610:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [4]
 
-:tex2html_wrap_inline228:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline612:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline228:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline612:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [5]
 
-:tex2html_wrap_inline230:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline616:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline230:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline616:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [6]
 
-:tex2html_wrap_inline232:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline618:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline232:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline618:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [7]
 
-:tex2html_wrap_inline234:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline620:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline234:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline620:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [8]
 
-:tex2html_wrap_inline236:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline622:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline236:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline622:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [9]
 
-:tex2html_wrap_inline238:lthtmlCropMarkHeight:=14.14003pt
+:tex2html_wrap_inline624:lthtmlCropMarkHeight:=14.14003pt
 
-:tex2html_wrap_inline238:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline624:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [10]
 
-:tex2html_wrap_inline240:lthtmlCropMarkHeight:=12.44444pt
+:tex2html_wrap_inline626:lthtmlCropMarkHeight:=12.44444pt
 
-:tex2html_wrap_inline240:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline626:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [11]
 
-:tex2html_wrap_inline242:lthtmlCropMarkHeight:=15.20636pt
+:tex2html_wrap_inline628:lthtmlCropMarkHeight:=15.20636pt
 
-:tex2html_wrap_inline242:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline628:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [12]
 
-:tex2html_wrap_inline247:lthtmlCropMarkHeight:=14.83334pt
+:tex2html_wrap_inline633:lthtmlCropMarkHeight:=14.83334pt
 
-:tex2html_wrap_inline247:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline633:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [13]
 
-:tex2html_wrap_inline249:lthtmlCropMarkHeight:=10.30554pt
+:tex2html_wrap_inline635:lthtmlCropMarkHeight:=10.30554pt
 
-:tex2html_wrap_inline249:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline635:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [14]
 
-:tex2html_wrap_inline251:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline637:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline251:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline637:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [15]
 
-:tex2html_wrap_inline253:lthtmlCropMarkHeight:=15.58334pt
+:tex2html_wrap_inline639:lthtmlCropMarkHeight:=15.58334pt
 
-:tex2html_wrap_inline253:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+:tex2html_wrap_inline639:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
 [16]
 
-:tex2html_wrap_inline262:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline648:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline262:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline648:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [17]
 
-:tex2html_wrap_inline266:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline652:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline266:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline652:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [18]
 
-:tex2html_wrap_inline268:lthtmlCropMarkHeight:=13.5pt
+:tex2html_wrap_inline654:lthtmlCropMarkHeight:=13.5pt
 
-:tex2html_wrap_inline268:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+:tex2html_wrap_inline654:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
 [19]
 
-:tex2html_wrap_inline270:lthtmlCropMarkHeight:=14.44843pt
+:tex2html_wrap_inline656:lthtmlCropMarkHeight:=14.44843pt
 
-:tex2html_wrap_inline270:lthtmlCropMarkDepth:=3.44841pt:1ex:=4.30554pt
+:tex2html_wrap_inline656:lthtmlCropMarkDepth:=3.44841pt:1ex:=4.30554pt
 [20]
 
-:tex2html_wrap_inline272:lthtmlCropMarkHeight:=12.59525pt
+:tex2html_wrap_inline658:lthtmlCropMarkHeight:=12.59525pt
 
-:tex2html_wrap_inline272:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+:tex2html_wrap_inline658:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
 [21]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 281.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 281.
+
+:tex2html_wrap_inline666:lthtmlCropMarkHeight:=14.87892pt
+
+:tex2html_wrap_inline666:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[22]
+
+:tex2html_wrap_inline668:lthtmlCropMarkHeight:=14.49002pt
+
+:tex2html_wrap_inline668:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[23]
+
+:tex2html_wrap_inline670:lthtmlCropMarkHeight:=14.14003pt
+
+:tex2html_wrap_inline670:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[24]
+
+:tex2html_wrap_inline672:lthtmlCropMarkHeight:=14.87892pt
+
+:tex2html_wrap_inline672:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[25]
+
+:tex2html_wrap_inline674:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline674:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[26]
+
+:tex2html_wrap_inline676:lthtmlCropMarkHeight:=15.84306pt
+
+:tex2html_wrap_inline676:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[27]
+
+:tex2html_wrap_inline682:lthtmlCropMarkHeight:=17.02365pt
+
+:tex2html_wrap_inline682:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[28]
+
+! Package amsmath Error: \begin{split} won't work here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.330 \lthtmldisplayZ
+                     
+\Did you forget a preceding \begin{equation}?
+If not, perhaps the `aligned' environment is what you want. 
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.330 \lthtmldisplayZ
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+:displaymath713:lthtmlCropMarkHeight:=6.0pt
+
+:displaymath713:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[29]
+
+:tex2html_wrap_indisplay717:lthtmlCropMarkHeight:=14.64003pt
+
+:tex2html_wrap_indisplay717:lthtmlCropMarkDepth:=1.35971pt:1ex:=4.30554pt
+[30]
+
+:tex2html_wrap_inline726:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline726:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[31]
+
+:tex2html_wrap_inline728:lthtmlCropMarkHeight:=15.20636pt
+
+:tex2html_wrap_inline728:lthtmlCropMarkDepth:=2.86108pt:1ex:=4.30554pt
+[32]
+
+:tex2html_wrap_inline743:lthtmlCropMarkHeight:=14.14003pt
+
+:tex2html_wrap_inline743:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[33]
+
+:tex2html_wrap_inline748:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline748:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+[34]
+
+:tex2html_wrap_inline750:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline750:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+[35]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 374.
+
+
+:tex2html_wrap_indisplay752:lthtmlCropMarkHeight:=20.5001pt
+
+:tex2html_wrap_indisplay752:lthtmlCropMarkDepth:=9.50012pt:1ex:=4.30554pt
+[36]
+
+:tex2html_wrap_inline756:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline756:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[37]
+
+:tex2html_wrap_inline758:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline758:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[38]
+
+:tex2html_wrap_inline760:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline760:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+[39]
+
+:tex2html_wrap_inline762:lthtmlCropMarkHeight:=13.50006pt
+
+:tex2html_wrap_inline762:lthtmlCropMarkDepth:=4.36115pt:1ex:=4.30554pt
+[40]
+
+! Package amsmath Error: \begin{split} won't work here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 \lthtmldisplayZ
+                     
+\Did you forget a preceding \begin{equation}?
+If not, perhaps the `aligned' environment is what you want. 
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.407 \lthtmldisplayZ
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+:displaymath764:lthtmlCropMarkHeight:=6.0pt
+
+:displaymath764:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[41]
+
+:tex2html_wrap_inline766:lthtmlCropMarkHeight:=10.30554pt
+
+:tex2html_wrap_inline766:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[42]
+
+:tex2html_wrap_inline768:lthtmlCropMarkHeight:=11.83333pt
+
+:tex2html_wrap_inline768:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+[43]
+
+:tex2html_wrap_inline770:lthtmlCropMarkHeight:=14.49002pt
+
+:tex2html_wrap_inline770:lthtmlCropMarkDepth:=2.47217pt:1ex:=4.30554pt
+[44]
+
+:tex2html_wrap_inline789:lthtmlCropMarkHeight:=12.94444pt
+
+:tex2html_wrap_inline789:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+[45]
+
+! Package amsmath Error: \begin{split} won't work here.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.441 \lthtmldisplayZ
+                     
+\Did you forget a preceding \begin{equation}?
+If not, perhaps the `aligned' environment is what you want. 
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.441 \lthtmldisplayZ
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+:displaymath791:lthtmlCropMarkHeight:=6.0pt
+
+:displaymath791:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[46]
+
+:tex2html_wrap_inline793:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline793:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[47]
+
+:tex2html_wrap_inline795:lthtmlCropMarkHeight:=14.83334pt
+
+:tex2html_wrap_inline795:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+[48]
+
+:tex2html_wrap_inline799:lthtmlCropMarkHeight:=12.94444pt
+
+:tex2html_wrap_inline799:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[49]
+
+:tex2html_wrap_inline801:lthtmlCropMarkHeight:=15.84306pt
+
+:tex2html_wrap_inline801:lthtmlCropMarkDepth:=0.39098pt:1ex:=4.30554pt
+[50]
+
+:tex2html_wrap_indisplay807:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_indisplay807:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[51]
+
+:tex2html_wrap_inline809:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline809:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[52]
+
+:tex2html_wrap_inline811:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline811:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[53]
+
+:tex2html_wrap_inline813:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline813:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[54]
+
+:tex2html_wrap_inline815:lthtmlCropMarkHeight:=12.94444pt
+
+:tex2html_wrap_inline815:lthtmlCropMarkDepth:=1.94444pt:1ex:=4.30554pt
+[55]
+
+:tex2html_wrap_inline819:lthtmlCropMarkHeight:=10.30554pt
+
+:tex2html_wrap_inline819:lthtmlCropMarkDepth:=0.0pt:1ex:=4.30554pt
+[56]
+
+:tex2html_wrap_inline825:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline825:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[57]
+
+:tex2html_wrap_inline829:lthtmlCropMarkHeight:=12.94444pt
+
+:tex2html_wrap_inline829:lthtmlCropMarkDepth:=1.49998pt:1ex:=4.30554pt
+[58]
+
+:tex2html_wrap_inline831:lthtmlCropMarkHeight:=12.83331pt
+
+:tex2html_wrap_inline831:lthtmlCropMarkDepth:=0.39098pt:1ex:=4.30554pt
+[59]
+
+:tex2html_wrap_indisplay833:lthtmlCropMarkHeight:=16.50006pt
+
+:tex2html_wrap_indisplay833:lthtmlCropMarkDepth:=14.31116pt:1ex:=4.30554pt
+[60]
+
+:tex2html_wrap_indisplay835:lthtmlCropMarkHeight:=16.50006pt
+
+:tex2html_wrap_indisplay835:lthtmlCropMarkDepth:=14.31116pt:1ex:=4.30554pt
+[61]
+
+:tex2html_wrap_inline837:lthtmlCropMarkHeight:=13.5pt
+
+:tex2html_wrap_inline837:lthtmlCropMarkDepth:=2.5pt:1ex:=4.30554pt
+[62]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 542.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 542.
 (./images.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 281.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 281.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 542.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 542.
 
 Package rerunfilecheck Warning: File `images.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -470,25 +775,32 @@ Package rerunfilecheck Warning: File `images.out' has changed.
 Package rerunfilecheck Info: Checksums for `images.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 281.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 542.
  ) 
 Here is how much of TeX's memory you used:
- 6957 strings out of 483183
- 101022 string characters out of 5966291
- 364673 words of memory out of 5000000
- 21882 multiletter control sequences out of 15000+600000
- 532792 words of font info for 26 fonts, out of 8000000 for 9000
+ 7471 strings out of 483183
+ 106488 string characters out of 5966291
+ 365379 words of memory out of 5000000
+ 22375 multiletter control sequences out of 15000+600000
+ 535081 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,5n,37p,223b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on images.pdf (21 pages, 50555 bytes).
+ 34i,5n,37p,224b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on images.pdf (62 pages, 113454 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 254 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
