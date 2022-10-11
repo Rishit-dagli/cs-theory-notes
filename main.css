@@ -53,5 +53,7 @@ TABLE.equation TD	{ white-space:nowrap; }
 TABLE		{ border-collapse: collapse; }
 
 /* document-specific styles come next */
+SPAN.bfseries		{   }
+SPAN.itshape		{   }
 DIV.navigation		{   }
 SPAN.arabic		{   }

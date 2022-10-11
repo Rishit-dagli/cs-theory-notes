@@ -43,13 +43,15 @@ Contents</A>
 <!--Table of Contents-->
 
 <UL CLASS="TofC">
-<LI><A ID="tex2html9"
+<LI><A ID="tex2html10"
   HREF="main.html#SECTION00030000000000000000">Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
 <UL>
-<LI><A ID="tex2html10"
-  HREF="main.html#SECTION00031000000000000000">Abstract</A>
-</UL><BR>
 <LI><A ID="tex2html11"
+  HREF="main.html#SECTION00031000000000000000">Abstract</A>
+<LI><A ID="tex2html12"
+  HREF="main.html#SECTION00032000000000000000">Locally Decodable Codes</A>
+</UL><BR>
+<LI><A ID="tex2html13"
   HREF="main.html#SECTION00040000000000000000">Bibliography</A>
 </UL>
 <!--End of Table of Contents-->
@@ -78,6 +80,9 @@ The members of the theory group are all interested, in one way or another, in th
 Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
 </H1>
 
+<P>
+7th October 2022
+<BR>
 <P>
 The related paper: Combinatorial lower bounds for 3-query LDCs by <A
  HREF="main.html#https://doi.org/10.48550/arxiv.1911.10698">Bhattacharyya et&nbsp;al. (1)</A>. Seminar by <a href="https://www.cs.cmu.edu/~pmanohar/">Peter Manohar</a>.
@@ -121,6 +126,51 @@ In this talk, we will survey a new approach to prove lower bounds for LDCs using
 
 <P>
 
+<H2><A ID="SECTION00032000000000000000">
+Locally Decodable Codes</A>
+</H2>
+
+<P>
+Take codes <!-- MATH
+ $b \in {0,1}^k \rightarrow x \in {0,1}^n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.73ex; vertical-align: -0.57ex; " SRC="img13.svg"
+ ALT="$b \in {0,1}^k \rightarrow x \in {0,1}^n$"></SPAN>
+
+<P>
+Codes <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img14.svg"
+ ALT="$x$"></SPAN> are read by the decoder, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
+ ALT="$i \in [k]$"></SPAN>, <!-- MATH
+ $\hat{b_i} \in {0,1}$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.90ex; vertical-align: -0.57ex; " SRC="img16.svg"
+ ALT="$\hat{b_i} \in {0,1}$"></SPAN>
+
+<P>
+<P><DIV><B>Definition  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
+<I><SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img1.svg"
+ ALT="$C$"></SPAN> is a <!-- MATH
+ $(q, \delta, \epsilon)$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
+ ALT="$(q, \delta, \epsilon)$"></SPAN>-locally decodable if for any <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img14.svg"
+ ALT="$x$"></SPAN> with <!-- MATH
+ $\bigtriangleup(x, Enc(b)) \leq \delta n$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
+ ALT="$\bigtriangleup(x, Enc(b)) \leq \delta n$"></SPAN>, <!-- MATH
+ $Dec^x(i) = b_i$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
+ ALT="$Dec^x(i) = b_i$"></SPAN> w.p. <!-- MATH
+ $\geq \frac{1}{2} + \epsilon$
+ -->
+<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -0.92ex; " SRC="img20.svg"
+ ALT="$\geq \frac{1}{2} + \epsilon$"></SPAN> for any <SPAN CLASS="MATH"><IMG STYLE="height: 1.76ex; vertical-align: -0.12ex; " SRC="img21.svg"
+ ALT="$i$"></SPAN>.</I></DIV><P></P>
+
+<P>
+
 <P>
 <H2><A ID="SECTIONREF">Bibliography</A>
 </H2>
@@ -149,7 +199,7 @@ This document was generated using the
 The command line arguments were: <BR>
  <kbd>latex2html -t 'Theory Group Seminar Notes' -split 0 main.tex</kbd>
 <P>
-The translation was initiated on 2022-10-07
+The translation was initiated on 2022-10-11
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
 <IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
