@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        
+      
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
@@ -21,14 +21,11 @@ jobs:
         with:
           name: PDF
           path: main.pdf
-      
-      - name: Run Latex2HTML
-        run: |
-          sudo apt-get install latex2html
-          latex2html -t "Theory Group Seminar Notes" -split 0 main.tex
-        env:
-          NO_NAVIGATION: 1
-          SHOW_SECTION_NUMBERS: 1
+          
+      - name: Run make4ht 
+        uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+        env: 
+          command: make4ht -u main.tex "mathml,mathjax"
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
