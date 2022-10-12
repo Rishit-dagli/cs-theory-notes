@@ -1,0 +1,8 @@
+\contentsline {section}{Introduction}{2}{Doc-Start}%
+\contentsline {section}{\numberline {1}Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Abstract}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Locally Decodable Codes}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}How to prove the Theorem}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Normally Decodable Codes}{4}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Proof: Going from LDC to XOR}{5}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Proof: Existing $q$-LDC lower bound for $q$ even}{6}{subsection.1.6}%

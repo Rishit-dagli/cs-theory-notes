@@ -1,725 +1,359 @@
-<!DOCTYPE HTML>
-
-<!--Converted with LaTeX2HTML 2019.2 (Released June 5, 2019) -->
-<HTML lang="EN">
-<HEAD>
-<TITLE>Theory Group Seminar Notes</TITLE>
-<META NAME="description" CONTENT="Theory Group Seminar Notes">
-<META NAME="keywords" CONTENT="main">
-<META NAME="resource-type" CONTENT="document">
-<META NAME="distribution" CONTENT="global">
-
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-<META NAME="viewport" CONTENT="width=device-width, initial-scale=1.0">
-<META NAME="Generator" CONTENT="LaTeX2HTML v2019.2">
-
-<LINK REL="STYLESHEET" HREF="main.css">
-
-</HEAD>
-
-<BODY >
-
-<DIV CLASS="navigation"><!--Navigation Panel-->
-<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
-<BR>
-<BR><BR></DIV>
-<!--End of Navigation Panel-->
-
-<P>
-<H1 class="CENTER">Theory Group Seminar Notes</H1>
-<P class="CENTER"><STRONG>Rishit Dagli</STRONG>
-</P><BR><P class="CENTER"><B>Date:</B> October 2022</P>
-
-<HR>
-
-<P>
-<BR>
-
-<H2><A ID="SECTION00010000000000000000">
-Contents</A>
-</H2>
-<!--Table of Contents-->
-
-<UL CLASS="TofC">
-<LI><A ID="tex2html14"
-  HREF="main.html#SECTION00030000000000000000">Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
-<UL>
-<LI><A ID="tex2html15"
-  HREF="main.html#SECTION00031000000000000000">Abstract</A>
-<LI><A ID="tex2html16"
-  HREF="main.html#SECTION00032000000000000000">Locally Decodable Codes</A>
-<LI><A ID="tex2html17"
-  HREF="main.html#SECTION00033000000000000000">How to prove the Theorem</A>
-<LI><A ID="tex2html18"
-  HREF="main.html#SECTION00034000000000000000">Normally Decodable Codes</A>
-<LI><A ID="tex2html19"
-  HREF="main.html#SECTION00035000000000000000">Proof: Going from LDC to XOR</A>
-<LI><A ID="tex2html20"
-  HREF="main.html#SECTION00036000000000000000">Proof: Existing -LDC lower bound for even</A>
-</UL><BR>
-<LI><A ID="tex2html21"
-  HREF="main.html#SECTION00040000000000000000">Bibliography</A>
-</UL>
-<!--End of Table of Contents-->
-
-<P>
-
-<H1><A ID="SECTION00020000000000000000">
-Introduction</A>
-</H1>
-
-<P>
-These are my notes for the seminars that happen in the <a href="https://www.cs.toronto.edu/theory/">Theory Group</a> at The University of Toronto. Many thanks to <a href="http://www.cs.toronto.edu/~bor/">Professor Allan Borodin</a> for allowing me to attend the Theory Group seminars and helping out. An online version of these notes are available at <kbd><A ID="tex2html1"
-  HREF="https://rishit-dagli.github.io/cs-theory-notes">https://rishit-dagli.github.io/cs-theory-notes</A></kbd>.
-<BR>
-<P>
-The Theory Group focuses on theory of computation. The group is interested in using mathematical techniques to understand the nature of computation and to design and analyze algorithms for important and fundamental problems.
-<BR>
-<P>
-The members of the theory group are all interested, in one way or another, in the limitations of computation: What problems are not feasible to solve on a computer? How can the infeasibility of a problem be used to rigorously construct secure cryptographic protocols? What problems cannot be solved faster using more machines? What are the limits to how fast a particular problem can be solved or how much space is needed to solve it? How do randomness, parallelism, the operations that are allowed, and the need for fault tolerance or security affect this?
-
-<P>
-
-<P>
-
-<H1><A ID="SECTION00030000000000000000">
-Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</A>
-</H1>
-
-<P>
-7th October 2022
-<BR>
-<P>
-The related paper: Combinatorial lower bounds for 3-query LDCs by <A
- HREF="main.html#Alrabiah2022-ds">Alrabiah et&nbsp;al. (1)</A>. Seminar by <a href="https://www.cs.cmu.edu/~pmanohar/">Peter Manohar</a>. (<A
- HREF="main.html#https://doi.org/10.48550/arxiv.1911.10698">2</A>)
-
-<P>
-
-<H2><A ID="SECTION00031000000000000000">
-Abstract</A>
-</H2>
-
-<P>
-A code <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
- ALT="$C$"></SPAN> is a q-locally decodable code (q-LDC) if one can recover any chosen bit <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img3.svg"
- ALT="$b_i$"></SPAN> of the <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
- ALT="$k$"></SPAN>-bit message b with good confidence by randomly querying the <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img5.svg"
- ALT="$n$"></SPAN>-bit encoding x on at most <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN> coordinates. Existing constructions of <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img6.svg"
- ALT="$2$"></SPAN>-LDCs achieve blocklength <!-- MATH
- $n = exp(O(k))$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img7.svg"
- ALT="$n = exp(O(k))$"></SPAN>, and lower bounds show that this is in fact tight. However, when <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
- ALT="$q = 3$"></SPAN>, far less is known: the best constructions have <!-- MATH
- $n = subexp(k)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img9.svg"
- ALT="$n = subexp(k)$"></SPAN>, while the best known lower bounds, that have stood for nearly two decades, only show a quadratic lower bound of <!-- MATH
- $n \geq \Omega(k^2)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.69ex; vertical-align: -0.70ex; " SRC="img10.svg"
- ALT="$n \geq \Omega(k^2)$"></SPAN> on the blocklength.
-<BR>
-<P>
-In this talk, we will survey a new approach to prove lower bounds for LDCs using recent advances in refuting semirandom instances of constraint satisfaction problems. These new tools yield, in the <SPAN CLASS="MATH"><IMG STYLE="height: 1.72ex; vertical-align: -0.12ex; " SRC="img11.svg"
- ALT="$3$"></SPAN>-query case, a near-cubic lower bound of <!-- MATH
- $n \geq \tilde{\Omega}(k^3)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.94ex; vertical-align: -0.70ex; " SRC="img12.svg"
- ALT="$n \geq \tilde{\Omega}(k^3)$"></SPAN>, improving on prior work by a polynomial factor in <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
- ALT="$k$"></SPAN>.
-
-<P>
-
-<H2><A ID="SECTION00032000000000000000">
-Locally Decodable Codes</A>
-</H2>
-
-<P>
-Take codes <!-- MATH
- $b \in {0,1}^k \rightarrow x \in {0,1}^n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.73ex; vertical-align: -0.57ex; " SRC="img13.svg"
- ALT="$b \in {0,1}^k \rightarrow x \in {0,1}^n$"></SPAN>
-
-<P>
-Codes <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img14.svg"
- ALT="$x$"></SPAN> are read by the decoder, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img15.svg"
- ALT="$i \in [k]$"></SPAN>, <!-- MATH
- $\hat{b_i} \in {0,1}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.90ex; vertical-align: -0.57ex; " SRC="img16.svg"
- ALT="$\hat{b_i} \in {0,1}$"></SPAN>
-
-<P>
-<P><DIV><B>Definition  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
-<I><SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
- ALT="$C$"></SPAN> is a <!-- MATH
- $(q, \delta, \epsilon)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img17.svg"
- ALT="$(q, \delta, \epsilon)$"></SPAN>-locally decodable if for any <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img14.svg"
- ALT="$x$"></SPAN> with <!-- MATH
- $\bigtriangleup(x, Enc(b)) \leq \delta n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img18.svg"
- ALT="$\bigtriangleup(x, Enc(b)) \leq \delta n$"></SPAN>, <!-- MATH
- $Dec^x(i) = b_i$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img19.svg"
- ALT="$Dec^x(i) = b_i$"></SPAN> w.p. <!-- MATH
- $\geq \frac{1}{2} + \epsilon$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -0.92ex; " SRC="img20.svg"
- ALT="$\geq \frac{1}{2} + \epsilon$"></SPAN> for any <SPAN CLASS="MATH"><IMG STYLE="height: 1.76ex; vertical-align: -0.12ex; " SRC="img21.svg"
- ALT="$i$"></SPAN>.</I></DIV><P></P>
-
-<P>
-Ask the question, what is the best possible rate for a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-LDC given a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>?
-
-<P>
-<DIV class="CENTER">
-<TABLE class="PAD  BORDER" style="">
-<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN></TD>
-<TD CLASS="CENTER">Lower Bound</TD>
-<TD CLASS="CENTER">Upper Bound</TD>
-<TD CLASS="CENTER">&nbsp;</TD>
-<TD CLASS="LEFT">&nbsp;</TD>
-</TR>
-<TR><TD CLASS="LEFT">2</TD>
-<TD CLASS="CENTER"><!-- MATH
- $2^{\Omega(k)} \leq n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.60ex; vertical-align: -0.43ex; " SRC="img22.svg"
- ALT="$2^{\Omega(k)} \leq n$"></SPAN></TD>
-<TD CLASS="CENTER"><!-- MATH
- $n \leq 2^k$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.51ex; vertical-align: -0.43ex; " SRC="img23.svg"
- ALT="$n \leq 2^k$"></SPAN></TD>
-<TD CLASS="CENTER">&nbsp;</TD>
-<TD CLASS="LEFT">&nbsp;</TD>
-</TR>
-<TR><TD CLASS="LEFT">3</TD>
-<TD CLASS="CENTER"><!-- MATH
- $k^2 \leq n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.43ex; vertical-align: -0.43ex; " SRC="img24.svg"
- ALT="$k^2 \leq n$"></SPAN></TD>
-<TD CLASS="CENTER"><!-- MATH
- $n \leq exp(k^{o(1)})$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
- ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
-<TD CLASS="CENTER">&nbsp;</TD>
-<TD CLASS="LEFT">&nbsp;</TD>
-</TR>
-<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img26.svg"
- ALT="$O(1)$"></SPAN>, even</TD>
-<TD CLASS="CENTER"><!-- MATH
- $k^{\frac{q}{q+1}} \leq n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.82ex; vertical-align: -0.43ex; " SRC="img27.svg"
- ALT="$k^{\frac{q}{q+1}} \leq n$"></SPAN></TD>
-<TD CLASS="CENTER"><!-- MATH
- $n \leq exp(k^{o(1)})$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
- ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
-<TD CLASS="CENTER">&nbsp;</TD>
-<TD CLASS="LEFT">&nbsp;</TD>
-</TR>
-<TR><TD CLASS="LEFT"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img26.svg"
- ALT="$O(1)$"></SPAN>, odd</TD>
-<TD CLASS="CENTER"><!-- MATH
- $k^{\frac{q+1}{q-1}} \leq n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 3.10ex; vertical-align: -0.43ex; " SRC="img28.svg"
- ALT="$k^{\frac{q+1}{q-1}} \leq n$"></SPAN></TD>
-<TD CLASS="CENTER"><!-- MATH
- $n \leq exp(k^{o(1)})$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.87ex; vertical-align: -0.70ex; " SRC="img25.svg"
- ALT="$n \leq exp(k^{o(1)})$"></SPAN></TD>
-<TD CLASS="CENTER">&nbsp;</TD>
-<TD CLASS="LEFT">&nbsp;</TD>
-</TR>
-</TABLE>
-</DIV>
-
-<P>
-Focus on the case <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
- ALT="$q = 3$"></SPAN>, we have gotten better bounds:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-\begin{split}
-k \leq & n \leq 2^k \\
-k^2 \leq & n \leq exp(exp(\sqrt{\log k \log \log k}))
-\end{split}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
- SRC="img29.svg"
- ALT="\begin{displaymath}\begin{split}
-k \leq &amp; n \leq 2^k \\
-k^2 \leq &amp; n \leq exp(exp(\sqrt{\log k \log \log k}))
-\end{split}\end{displaymath}"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">1</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-In (<A
- HREF="main.html#Alrabiah2022-ds">1</A>), they show that a better minimum bound can be found than these existing ones for <SPAN CLASS="MATH"><IMG STYLE="height: 2.17ex; vertical-align: -0.57ex; " SRC="img8.svg"
- ALT="$q = 3$"></SPAN>:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-k^3 \leq n
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.43ex; " SRC="img30.svg"
- ALT="$\displaystyle k^3 \leq n$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">2</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-The main result is that:
-
-<P>
-<P><DIV><B>Theorem  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
-<I>Let <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img2.svg"
- ALT="$C$"></SPAN> be a <!-- MATH
- $(3, \delta, \epsilon)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img31.svg"
- ALT="$(3, \delta, \epsilon)$"></SPAN>-locally decodable codes. Then <!-- MATH
- $n \geq \tilde{\Omega}_{\delta, \epsilon}(k^3)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 3.02ex; vertical-align: -0.78ex; " SRC="img32.svg"
- ALT="$n \geq \tilde{\Omega}_{\delta, \epsilon}(k^3)$"></SPAN>.</I></DIV><P></P>
-
-<P>
-Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-LDC lower bound is same as refuting "LDC" <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-XOR.
-
-<P>
-
-<H2><A ID="SECTION00033000000000000000">
-How to prove the Theorem</A>
-</H2>
-
-<P>
-The idea:
-
-<P>
-
-<UL>
-<LI><SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-LDC lower bound is same as refuting "LDC" <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-XOR <A ID="proofp1"></A>        
-<UL>
-<LI>CSP Refutation
-        
-</LI>
-</UL>
-</LI>
-<LI>Proof of existing <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-LDC lower bound for <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN> even
-</LI>
-<LI>Proof sketch of <SPAN CLASS="MATH"><IMG STYLE="height: 2.12ex; vertical-align: -0.12ex; " SRC="img33.svg"
- ALT="$k^3$"></SPAN> lower bound
-</LI>
-</UL>
-
-<P>
-
-<H2><A ID="SECTION00034000000000000000">
-Normally Decodable Codes</A>
-</H2>
-
-<P>
-We can see that the decoder we have can arbitrary but WLOG we can assume there are <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-unif hypergraphs <!-- MATH
- ${H_1, H_2, \cdots H_k}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.26ex; vertical-align: -0.57ex; " SRC="img34.svg"
- ALT="${H_1, H_2, \cdots H_k}$"></SPAN> where every <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
- ALT="$H_i$"></SPAN> is such that:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation*}
-H_i \subseteq {[n] \choose q}
-\end{equation*}
- -->
-<TABLE CLASS="equation*" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.79ex; vertical-align: -2.32ex; " SRC="img36.svg"
- ALT="$\displaystyle H_i \subseteq {[n] \choose q}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-We can also see that:
-
-<P>
-Each <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
- ALT="$H_i$"></SPAN> is a matching such that <!-- MATH
- $|H_i| \geq \delta n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
- ALT="$\vert H_i\vert \geq \delta n$"></SPAN>
-
-<P>
-and, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
- ALT="$Dec(i)$"></SPAN> picks <!-- MATH
- $C \leftarrow H_i$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img39.svg"
- ALT="$C \leftarrow H_i$"></SPAN> and outputs <!-- MATH
- $\sum_{j \in C} x_j$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -1.13ex; " SRC="img40.svg"
- ALT="$\sum_{j \in C} x_j$"></SPAN>
-<BR>
-<P>
-One such example is the Hadmard code:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-\begin{split}
-b &\in {0,1}^k \mapsto f = (\langle b, v \rangle)_{v \in {0,1}}^k\\
-b_i &= f(e_i) = f(v) + f(v+e_i)
-\end{split}
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
- SRC="img41.svg"
- ALT="\begin{displaymath}\begin{split}
-b &amp;\in {0,1}^k \mapsto f = (\langle b, v \rangle)_{v \in {0,1}}^k\\
-b_i &amp;= f(e_i) = f(v) + f(v+e_i)
-\end{split}\end{displaymath}"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-Can think of this as <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img42.svg"
- ALT="$v$"></SPAN> and <SPAN CLASS="MATH"><IMG STYLE="height: 1.93ex; vertical-align: -0.46ex; " SRC="img43.svg"
- ALT="$v+e_i$"></SPAN> are connected.
-<BR>
-<P>
-Matching vector codes are <!-- MATH
- $\approx \mathbb{Z} _{m}^{h}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.77ex; vertical-align: -0.69ex; " SRC="img44.svg"
- ALT="$\approx \mathbb{Z} _{m}^{h}$"></SPAN>
-
-<P>
-
-<H2><A ID="SECTION00035000000000000000">
-Proof: Going from LDC to XOR</A>
-</H2>
-
-<P>
-We suppose that our code is linear and that there exists <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-unif hypergraphs <!-- MATH
- ${H_1, H_2, \cdots H_k}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.26ex; vertical-align: -0.57ex; " SRC="img34.svg"
- ALT="${H_1, H_2, \cdots H_k}$"></SPAN>.
-<BR>
-<P>
-We also know that:
-
-<P>
-Each <SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img35.svg"
- ALT="$H_i$"></SPAN> is a matching such that <!-- MATH
- $|H_i| \geq \delta n$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img37.svg"
- ALT="$\vert H_i\vert \geq \delta n$"></SPAN>
-
-<P>
-and, <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img38.svg"
- ALT="$Dec(i)$"></SPAN> picks <!-- MATH
- $C \leftarrow H_i$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.16ex; vertical-align: -0.46ex; " SRC="img39.svg"
- ALT="$C \leftarrow H_i$"></SPAN> and outputs <!-- MATH
- $\sum_{j \in C} x_j$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.98ex; vertical-align: -1.13ex; " SRC="img40.svg"
- ALT="$\sum_{j \in C} x_j$"></SPAN>
-<BR>
-<P>
-So, we start by considering a <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-XOR instance <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
- ALT="$\psi_b$"></SPAN>:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation*}
-\begin{split}
-    \textit{Vars: } & \{x_j\}_{j \in [n]}\\
-    \textit{Over Equations: } & \sum_{j \in C} x_j = b_i, \forall i \in [k], C \in H_i
-\end{split}
-\end{equation*}
- -->
-<TABLE CLASS="equation*" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE=""
- SRC="img46.svg"
- ALT="\begin{displaymath}\begin{split}
-\textit{Vars: } &amp; \{x_j\}_{j \in [n]}\\
-\texti...
-...m_{j \in C} x_j = b_i, \forall i \in [k], C \in H_i
-\end{split}\end{displaymath}"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-We can write down the maximum fraction of satisfiable constraints: <!-- MATH
- $val(\psi_b) = 1$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img47.svg"
- ALT="$val(\psi_b) = 1$"></SPAN> for any <!-- MATH
- $b \in {0,1}^k$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.73ex; vertical-align: -0.57ex; " SRC="img48.svg"
- ALT="$b \in {0,1}^k$"></SPAN>.
-<BR>
-<P>
-It is sufficient now if we can argue that <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
- ALT="$\psi_b$"></SPAN> is unsat w.h.p. for some random <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img49.svg"
- ALT="$b$"></SPAN> when <!-- MATH
- $n \ll k^{\frac{q}{q-2}}$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.60ex; vertical-align: -0.21ex; " SRC="img50.svg"
- ALT="$n \ll k^{\frac{q}{q-2}}$"></SPAN>.
-<BR>
-<P>
-Now we need to refute XOR, there are many ways to argue unsatisfiability of an XOR instance. One reason why we can not use probablistic approaches here is that <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
- ALT="$\psi_b$"></SPAN> only has <SPAN CLASS="MATH"><IMG STYLE="height: 1.84ex; vertical-align: -0.12ex; " SRC="img4.svg"
- ALT="$k$"></SPAN> bits of randomness.
-<BR>
-<P>
-One way we can have some success here is to use a refutation algorithm
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation*}
-\psi \rightarrow A \rightarrow algval(\psi)
-\end{equation*}
- -->
-<TABLE CLASS="equation*" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img51.svg"
- ALT="$\displaystyle \psi \rightarrow A \rightarrow algval(\psi)$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-With this the guarantee then would be <!-- MATH
- $val(\psi) \leq algval(\psi)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img52.svg"
- ALT="$val(\psi) \leq algval(\psi)$"></SPAN> which is similar to saying that if <!-- MATH
- $algval(\psi) < 1$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img53.svg"
- ALT="$algval(\psi) &lt; 1$"></SPAN> then <SPAN CLASS="MATH"><IMG STYLE="height: 1.81ex; vertical-align: -0.12ex; " SRC="img54.svg"
- ALT="$A$"></SPAN> refutes <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img55.svg"
- ALT="$\psi$"></SPAN>. The ideal goal would be to refute random <SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img55.svg"
- ALT="$\psi$"></SPAN> with <SPAN CLASS="MATH"><IMG STYLE="height: 1.23ex; vertical-align: -0.12ex; " SRC="img56.svg"
- ALT="$m$"></SPAN> constraints w.h.p.
-<BR>
-<P>
-However, we take a look at semi-random XOR. Our refutation algorithm and the guarantee will still be the same:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation*}
-\psi \rightarrow A \rightarrow algval(\psi)
-\end{equation*}
- -->
-<TABLE CLASS="equation*" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img51.svg"
- ALT="$\displaystyle \psi \rightarrow A \rightarrow algval(\psi)$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-with the guarantee that <!-- MATH
- $val(\psi) \leq algval(\psi)$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img52.svg"
- ALT="$val(\psi) \leq algval(\psi)$"></SPAN>.
-<BR>
-<P>
-So, now we generate semi-random <SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img57.svg"
- ALT="$\psi w/ m$"></SPAN> constraints:
-
-<P>
-
-<UL>
-<LI>The worst case would be random <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-unif hypergraph
-</LI>
-<LI>Random RHS <SPAN CLASS="MATH"><IMG STYLE="height: 2.19ex; vertical-align: -0.46ex; " SRC="img58.svg"
- ALT="$b_c$"></SPAN> for each <SPAN CLASS="MATH"><IMG STYLE="height: 1.90ex; vertical-align: -0.21ex; " SRC="img59.svg"
- ALT="$C \in H$"></SPAN>
-</LI>
-</UL>
-
-<P>
-The equation we have is:
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation}
-\sum_{j \in C} x_j = b_c
-\end{equation}
- -->
-<TABLE CLASS="equation" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.97ex; vertical-align: -3.44ex; " SRC="img60.svg"
- ALT="$\displaystyle \sum_{j \in C} x_j = b_c$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-(<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-And we also already know that 
-
-<P>
-<P></P>
-<DIV CLASS="mathdisplay"><!-- MATH
- \begin{equation*}
-\psi_b \textit{ is } \sum_{j \in C}
-\end{equation*}
- -->
-<TABLE CLASS="equation*" >
-<TR>
-<TD  style="text-align:center;"><SPAN CLASS="MATH"><IMG STYLE="height: 5.97ex; vertical-align: -3.44ex; " SRC="img61.svg"
- ALT="$\displaystyle \psi_b \textit{ is } \sum_{j \in C}$"></SPAN></TD>
-<TD  CLASS="eqno" style="text-align:right">
-&nbsp;&nbsp;&nbsp;</TD></TR>
-</TABLE></DIV>
-<P></P>
-
-<P>
-And, <!-- MATH
- $xj = b_i, i \in [k], C \in H_i$
- -->
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.55ex; vertical-align: -0.70ex; " SRC="img62.svg"
- ALT="$xj = b_i, i \in [k], C \in H_i$"></SPAN>.
-
-<P>
-<SPAN CLASS="MATH"><IMG STYLE="height: 2.29ex; vertical-align: -0.57ex; " SRC="img45.svg"
- ALT="$\psi_b$"></SPAN> is almost semi-random.
-<BR>
-<P>
-Thus, we have shown <A HREF="#proofp1">1.3</A> Part 1 of Proof.
-
-<P>
-
-<H2><A ID="SECTION00036000000000000000">
-Proof: Existing <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN>-LDC lower bound for <SPAN CLASS="MATH"><IMG STYLE="height: 1.68ex; vertical-align: -0.57ex; " SRC="img1.svg"
- ALT="$q$"></SPAN> even</A>
-</H2>
-
-<P>
-
-<P>
-<H2><A ID="SECTIONREF">Bibliography</A>
-</H2>
-
-<DL class="COMPACT">
-<DT><A ID="Alrabiah2022-ds">1</A>
-<DD>
-Omar Alrabiah, Venkatesan Guruswami, Pravesh Kothari, and Peter Manohar.
-<BR> A near-cubic lower bound for 3-query locally decodable codes from
-  semirandom CSP refutation.
-<BR> Technical Report TR22-101, Electronic Colloquium on Computational
-  Complexity (ECCC), July 2022.
-
-<BR>
-<P>
-<DT><A ID="https://doi.org/10.48550/arxiv.1911.10698">2</A>
-<DD>
-Arnab Bhattacharyya, L.&nbsp;Sunil Chandran, and Suprovat Ghoshal.
-<BR> Combinatorial lower bounds for 3-query ldcs, 2019.
-<BR> URL <kbd><A ID="tex2html2"
-  HREF="https://arxiv.org/abs/1911.10698">https://arxiv.org/abs/1911.10698</A></kbd>.
-
-<BR>
-<P>
-</DL>
-
-<P>
-
-<H1><A ID="SECTION00050000000000000000">
-About this document ...</A>
-</H1>
- <STRONG>Theory Group Seminar Notes</STRONG><P>
-This document was generated using the
-<A HREF="http://www.latex2html.org/">LaTeX2HTML</A> translator Version 2019.2 (Released June 5, 2019)
-<P>
-The command line arguments were: <BR>
- <kbd>latex2html -t 'Theory Group Seminar Notes' -split 0 main.tex</kbd>
-<P>
-The translation was initiated on 2022-10-12
-<DIV CLASS="navigation"><HR>
-<!--Navigation Panel-->
-<IMG WIDTH="81" HEIGHT="24" ALT="next_inactive" SRC="nx_grp_g.png"> 
-<IMG WIDTH="26" HEIGHT="24" ALT="up" SRC="up_g.png"> 
-<IMG WIDTH="63" HEIGHT="24" ALT="previous" SRC="prev_g.png">   
-<BR></DIV>
-<!--End of Navigation Panel-->
-
-</BODY>
-</HTML>
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>Theory Group Seminar Notes</title> 
+<meta charset='utf-8' /> 
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='main.css' rel='stylesheet' type='text/css' /> 
+<meta content='main.tex' name='src' /> 
+ <script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js' type='text/javascript'></script>  
+</head><body>
+   <div class='maketitle'>
+                                                                  
+
+                                                                  
+                                                                  
+
+                                                                  
+
+<h2 class='titleHead'>Theory Group Seminar Notes</h2>
+<div class='author'><span class='cmr-12'>Rishit Dagli</span></div><br />
+<div class='date'><span class='cmr-12'>October 2022</span></div>
+   </div>
+   <h3 class='likesectionHead' id='contents'><a id='x1-1000'></a>Contents</h3>
+   <div class='tableofcontents'>
+    <span class='sectionToc'><a href='#introduction'>Introduction</a></span>
+<br />    <span class='sectionToc'>1 <a href='#lower-bounds-for-locally-decodable-codes-from-semirandom-csp-refutation' id='QQ2-1-4'>Lower Bounds for Locally Decodable Codes from Semirandom CSP Refutation</a></span>
+<br />     <span class='subsectionToc'>1.1 <a href='#abstract' id='QQ2-1-5'>Abstract</a></span>
+<br />     <span class='subsectionToc'>1.2 <a href='#locally-decodable-codes' id='QQ2-1-6'>Locally Decodable Codes</a></span>
+<br />     <span class='subsectionToc'>1.3 <a href='#how-to-prove-the-theorem' id='QQ2-1-7'>How to prove the Theorem</a></span>
+<br />     <span class='subsectionToc'>1.4 <a href='#normally-decodable-codes' id='QQ2-1-8'>Normally Decodable Codes</a></span>
+<br />     <span class='subsectionToc'>1.5 <a href='#proof-going-from-ldc-to-xor' id='QQ2-1-9'>Proof: Going from LDC to XOR</a></span>
+<br />     <span class='subsectionToc'>1.6                                  <a href='#proof-existing-qldc-lower-bound-for-q-even' id='QQ2-1-10'>Proof:                                  Existing
+<!-- l. 11 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC lower
+bound for <!-- l. 11 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> even</a></span>
+   </div>
+                                                                  
+
+                                                                  
+<p id='introduction'><a id='Q1-1-2'></a>
+   </p><h3 class='likesectionHead' id='introduction1'><a id='x1-2000'></a>Introduction</h3>
+<!-- l. 33 --><p class='noindent'>These are my notes for the seminars that happen in the <a href='https://www.cs.toronto.edu/theory/'>Theory Group</a> at The
+University of Toronto. Many thanks to <a href='http://www.cs.toronto.edu/~bor/'>Professor Allan Borodin</a> for allowing me to
+attend the Theory Group seminars and helping out. An online version of these notes
+are available at <a class='url' href='https://rishit-dagli.github.io/cs-theory-notes'><span class='cmtt-10'>https://rishit-dagli.github.io/cs-theory-notes</span></a>.<br class='newline' />
+</p><!-- l. 35 --><p class='indent'>   The Theory Group focuses on theory of computation. The group is interested in
+using mathematical techniques to understand the nature of computation and to
+design and analyze algorithms for important and fundamental problems.<br class='newline' />
+</p><!-- l. 37 --><p class='indent'>   The members of the theory group are all interested, in one way or another, in the
+limitations of computation: What problems are not feasible to solve on a computer?
+How can the infeasibility of a problem be used to rigorously construct secure
+cryptographic protocols? What problems cannot be solved faster using more
+machines? What are the limits to how fast a particular problem can be solved or
+how much space is needed to solve it? How do randomness, parallelism, the
+operations that are allowed, and the need for fault tolerance or security affect
+this?
+</p><!-- l. 39 --><p class='indent'>
+                                                                  
+
+                                                                  
+</p>
+   <h3 class='sectionHead' id='lower-bounds-for-locally-decodable-codes-from-semirandom-csp-refutation'><span class='titlemark'>1   </span> <a id='x1-30001'></a>Lower Bounds for Locally Decodable Codes from Semirandom CSP
+Refutation</h3>
+<!-- l. 43 --><p class='noindent'>7th October 2022<br class='newline' />
+</p><!-- l. 45 --><p class='noindent'>The related paper: Combinatorial lower bounds for 3-query LDCs by Alrabiah
+et al. [<a href='#XAlrabiah2022-ds'>1</a>]. Seminar by <a href='https://www.cs.cmu.edu/~pmanohar/'>Peter Manohar</a>. [<a href='#Xhttps://doi.org/10.48550/arxiv.1911.10698'>2</a>]
+</p><!-- l. 47 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='abstract'><span class='titlemark'>1.1   </span> <a id='x1-40001.1'></a>Abstract</h4>
+<!-- l. 49 --><p class='noindent'>A code <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+is a q-locally decodable code (q-LDC) if one can recover any chosen bit
+<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></math> of the
+<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>-bit
+message b with good confidence by randomly querying the
+<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>n</mi></math>-bit encoding x on at most
+<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> coordinates. Existing
+constructions of <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>2</mn></math>-LDCs
+achieve blocklength <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+and lower bounds show that this is in fact tight. However, when
+<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>, far less is known: the
+best constructions have <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>subexp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+while the best known lower bounds, that have stood for nearly two decades, only show a quadratic
+lower bound of <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+on the blocklength.<br class='newline' />
+</p><!-- l. 51 --><p class='noindent'>In this talk, we will survey a new approach to prove lower bounds
+for LDCs using recent advances in refuting semirandom instances
+of constraint satisfaction problems. These new tools yield, in the
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>3</mn></math>-query case, a near-cubic
+lower bound of <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+improving on prior work by a polynomial factor in
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>.
+</p><!-- l. 53 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='locally-decodable-codes'><span class='titlemark'>1.2   </span> <a id='x1-50001.2'></a>Locally Decodable Codes</h4>
+<!-- l. 55 --><p class='noindent'>Take codes <!-- l. 55 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup> <mo class='MathClass-rel'>→</mo> <mi>x</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+</p><!-- l. 57 --><p class='noindent'>Codes <!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math> are read
+by the decoder, <!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow></math>,
+<!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mover accent='true'><mrow><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow><mo accent='true'>^</mo></mover> <mo class='MathClass-rel'>∈</mo> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow></math>
+                                                                  
+
+                                                                  
+</p>
+   <div class='newtheorem'>
+<!-- l. 59 --><p class='noindent'><span class='head'>
+<a id='x1-5001r1'></a>
+<span class='cmbx-10'>Definition 1.</span>  </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+<span class='cmti-10'>is a </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mi>q</mi><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
+</span><span class='cmti-10'>decodable if for any </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math>
+<span class='cmti-10'>with </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-bin'>△</mo> <mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-punc'>,</mo><mi mathvariant='italic'>Enc</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>b</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>δn</mi></mrow></math><span class='cmti-10'>,</span>
+<!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>De</mi><msup><mrow><mi>c</mi></mrow><mrow><mi>x</mi></mrow></msup><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+<span class='cmti-10'>w.p. </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≥</mo> <mfrac><mrow><mn>1</mn></mrow> 
+<mrow><mn>2</mn></mrow></mfrac> <mo class='MathClass-bin'>+</mo> <mi>𝜖</mi></mrow></math>
+<span class='cmti-10'>for any </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>i</mi></math><span class='cmti-10'>.</span>
+</p>
+   </div>
+<!-- l. 61 --><p class='indent'>
+</p><!-- l. 63 --><p class='noindent'>Ask the question, what is the best possible rate for a
+<!-- l. 63 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+given a <!-- l. 63 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>?
+</p>
+<div class='center'>
+<!-- l. 65 --><p class='noindent'>
+</p>
+<div class='tabular'> <table class='tabular' id='TBL-2' rules='groups'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /></colgroup><colgroup id='TBL-2-2g'><col id='TBL-2-2' /></colgroup><colgroup id='TBL-2-3g'><col id='TBL-2-3' /></colgroup><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-1-1' style='text-align:center; white-space:nowrap;'>  <!-- l. 68 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>   </td><td class='td11' id='TBL-2-1-2' style='text-align:center; white-space:nowrap;'>                           Lower Bound                                           </td><td class='td11' id='TBL-2-1-3' style='text-align:center; white-space:nowrap;'>                           Upper Bound                                           </td>
+</tr><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='text-align:center; white-space:nowrap;'>                                   2                                                       </td><td class='td11' id='TBL-2-2-2' style='text-align:center; white-space:nowrap;'><!-- l. 70 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-2-3' style='text-align:center; white-space:nowrap;'><!-- l. 70 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <msup><mrow><mn>2</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math></td>
+</tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-3-1' style='text-align:center; white-space:nowrap;'>                                   3                                                       </td><td class='td11' id='TBL-2-3-2' style='text-align:center; white-space:nowrap;'><!-- l. 71 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-3-3' style='text-align:center; white-space:nowrap;'><!-- l. 71 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+</tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-4-1' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, even</td><td class='td11' id='TBL-2-4-2' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-4-3' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+</tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-5-1' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, odd</td><td class='td11' id='TBL-2-5-2' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mfrac><mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow> 
+<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-5-3' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+</tr><tr class='hline'><td></td><td></td><td></td></tr></table>                                                                                                                                       </div></div>
+<!-- l. 78 --><p class='noindent'>Focus on the case <!-- l. 78 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>,
+we have gotten better bounds:
+</p>
+   <table class='equation'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 80 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+<mstyle class='label' id='x1-5002r1'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>   <mtable class='equation'><mtr><mtd>
+   <mtable class='split' columnalign='right left'>
+<mtr class='split-mtr'><mtd class='split-mtd'> k ≤</mtd><mtd class='split-mtd'>n ≤ <msup><mrow>2</mrow><mrow>k</mrow></msup></mtd>
+</mtr><mtr class='split-mtr'><mtd class='split-mtd'> <msup><mrow>k</mrow><mrow>2</mrow></msup> ≤</mtd><mtd class='split-mtd'>n ≤ exp(exp(<msqrt><mrow>log <!-- nolimits --> k log <!-- nolimits --> log <!-- nolimits --> k</mrow></msqrt>))</mtd>
+   </mtr></mtable>                                                               </mtd><mtd>
+   </mtd></mtr></mtable></mo>
+</mrow></math></td><td class='eq-no'>(1)</td></tr></table>
+<!-- l. 87 --><p class='noindent'>In [<a href='#XAlrabiah2022-ds'>1</a>], they show that a better minimum bound can be found than these existing ones
+for <!-- l. 87 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 89 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                              <mstyle class='label' id='x1-5003r2'></mstyle><!-- endlabel --><msup><mrow><mtext class='MathClass-open' stretchy='false'>k</mtext></mrow><mrow><mn>3</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi>
+</mrow></math></td><td class='eq-no'>(2)</td></tr></table>
+<!-- l. 93 --><p class='noindent'>The main result is that:
+</p>
+   <div class='newtheorem'>
+<!-- l. 95 --><p class='noindent'><span class='head'>
+<a id='x1-5004r1'></a>
+<span class='cmbx-10'>Theorem 1.</span>  </span><span class='cmti-10'>Let </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+<span class='cmti-10'>be a </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mn>3</mn><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
+</span><span class='cmti-10'>decodable codes. Then </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><msub><mrow><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover></mrow><mrow><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi></mrow></msub><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>.</span>
+</p>
+   </div>
+<!-- l. 97 --><p class='indent'>
+</p><!-- l. 99 --><p class='noindent'>Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that
+<!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC lower bound is same
+as refuting ”LDC” <!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR.
+                                                                  
+
+                                                                  
+</p><!-- l. 101 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='how-to-prove-the-theorem'><span class='titlemark'>1.3   </span> <a id='x1-60001.3'></a>How to prove the Theorem</h4>
+<!-- l. 103 --><p class='noindent'>The idea:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>
+     <!-- l. 106 --><p class='noindent'><!-- l. 106 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+     lower bound is same as refuting ”LDC”
+     <!-- l. 106 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR <a id='likesection.1'></a><a id='x1-6001x1.3'></a>
+     </p>
+         <ul class='itemize2'>
+         <li class='itemize'>CSP Refutation</li></ul>
+     </li>
+     <li class='itemize'>Proof of existing <!-- l. 110 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+     lower bound for <!-- l. 110 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+     even
+     </li>
+     <li class='itemize'>Proof sketch of <!-- l. 111 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup></math>
+     lower bound</li></ul>
+<!-- l. 114 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='normally-decodable-codes'><span class='titlemark'>1.4   </span> <a id='x1-70001.4'></a>Normally Decodable Codes</h4>
+<!-- l. 116 --><p class='noindent'>We can see that the decoder we have can arbitrary but WLOG we can assume there are
+<!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+hypergraphs <!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>
+where every <!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math>
+is such that:
+</p>
+   <table class='equation-star'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 118 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                             <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>⊆</mo><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mo class='MathClass-open' stretchy='false'>[</mo><mi>n</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow>
+  <mrow><mi>q</mi></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow>
+</mrow></math></td></tr></table>
+<!-- l. 122 --><p class='noindent'>We can also see that:
+</p><!-- l. 124 --><p class='noindent'>Each <!-- l. 124 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
+matching such that <!-- l. 124 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
+</p><!-- l. 126 --><p class='noindent'>and, <!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> picks
+<!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
+outputs <!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math><br class='newline' />
+</p><!-- l. 128 --><p class='noindent'>One such example is the Hadmard code:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 130 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+<mstyle class='label' id='x1-7001r3'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>   <mtable class='equation'><mtr><mtd>
+   <mtable class='split' columnalign='right left'>
+<mtr class='split-mtr'><mtd class='split-mtd'> b</mtd><mtd class='split-mtd'> ∈<msup><mrow> 0,1</mrow><mrow>k</mrow></msup>↦f = <msubsup><mrow>(⟨b,v⟩)</mrow><mrow>
+v∈0,1</mrow><mrow>k</mrow></msubsup></mtd>
+</mtr><mtr class='split-mtr'><mtd class='split-mtd'> <msub><mrow>b</mrow><mrow>i</mrow></msub></mtd><mtd class='split-mtd'> = f(<msub><mrow>e</mrow><mrow>i</mrow></msub>) = f(v) + f(v + <msub><mrow>e</mrow><mrow>i</mrow></msub>)</mtd>
+   </mtr></mtable>                                                               </mtd><mtd>
+   </mtd></mtr></mtable></mo>
+</mrow></math></td><td class='eq-no'>(3)</td></tr></table>
+<!-- l. 137 --><p class='noindent'>Can think of this as <!-- l. 137 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>v</mi></math>
+and <!-- l. 137 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>v</mi> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+are connected.<br class='newline' />
+</p><!-- l. 139 --><p class='noindent'>Matching vector codes are <!-- l. 139 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≈</mo> <msubsup><mrow><mi>ℤ</mi></mrow><mrow><mi>m</mi></mrow><mrow><mi>h</mi></mrow></msubsup></mrow></math>
+                                                                  
+
+                                                                  
+</p><!-- l. 141 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='proof-going-from-ldc-to-xor'><span class='titlemark'>1.5   </span> <a id='x1-80001.5'></a>Proof: Going from LDC to XOR</h4>
+<!-- l. 143 --><p class='noindent'>We suppose that our code is linear and that there exists
+<!-- l. 143 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+hypergraphs <!-- l. 143 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>.<br class='newline' />
+</p><!-- l. 145 --><p class='noindent'>We also know that:
+</p><!-- l. 147 --><p class='indent'>   Each <!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
+matching such that <!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
+</p><!-- l. 149 --><p class='indent'>   and, <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+picks <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
+outputs <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math><br class='newline' />
+</p><!-- l. 151 --><p class='noindent'>So, we start by considering a <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR
+instance <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>:
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 153 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+   <mtable class='gather-star'>
+<mtr> 
+<mtd>   <mtable class='split' columnalign='right left'>
+<mtr class='split-mtr'><mtd class='split-mtd'>          <mstyle class='text'><mtext class='textit' mathvariant='italic'>Vars: </mtext></mstyle></mtd><mtd class='split-mtd'><msub><mrow><mo class='MathClass-open' stretchy='false'>{</mo><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mo class='MathClass-open' stretchy='false'>[</mo><mi>n</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow></msub></mtd>
+</mtr><mtr class='split-mtr'><mtd class='split-mtd'> <mstyle class='text'><mtext class='textit' mathvariant='italic'>Over Equations: </mtext></mstyle></mtd><mtd class='split-mtd'><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-punc'>,</mo><mi class='MathClass-op'>∀</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo><mo class='MathClass-punc'>,</mo><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mtd>
+   </mtr></mtable>                                                               </mtd> 
+<mtd></mtd>
+   </mtr></mtable>
+</mrow></math></td></tr></table>
+<!-- l. 160 --><p class='noindent'>We can write down the maximum fraction of satisfiable constraints:
+<!-- l. 160 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <mn>1</mn></mrow></math> for
+any <!-- l. 160 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 162 --><p class='noindent'>It is sufficient now if we can argue that
+<!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is unsat w.h.p.
+for some random <!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>b</mi></math>
+when <!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn></mrow></mfrac> </mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 164 --><p class='noindent'>Now we need to refute XOR, there are many ways to argue unsatisfiability of an
+XOR instance. One reason why we can not use probablistic approaches here is that
+                                                                  
+
+                                                                  
+<!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> only
+has <!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>
+bits of randomness.<br class='newline' />
+</p><!-- l. 166 --><p class='noindent'>One way we can have some success here is to use a refutation algorithm
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 168 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                         <mi>ψ</mi> <mo class='MathClass-rel'>→</mo> <mi>A</mi> <mo class='MathClass-rel'>→</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 172 --><p class='noindent'>With this the guarantee then would be
+<!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> which is similar
+to saying that if <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>&lt;</mo> <mn>1</mn></mrow></math>
+then <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> refutes
+<!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>. The ideal goal would
+be to refute random <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>
+with <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>m</mi></math>
+constraints w.h.p.<br class='newline' />
+</p><!-- l. 174 --><p class='noindent'>However, we take a look at semi-random XOR. Our refutation algorithm and the
+guarantee will still be the same:
+</p>
+   <table class='equation-star'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 176 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                         <mi>ψ</mi> <mo class='MathClass-rel'>→</mo> <mi>A</mi> <mo class='MathClass-rel'>→</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 180 --><p class='noindent'>with the guarantee that <!-- l. 180 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>.<br class='newline' />
+</p><!-- l. 182 --><p class='noindent'>So, now we generate semi-random <!-- l. 182 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>ψw</mi><mo class='MathClass-bin'>∕</mo><mi>m</mi></mrow></math>
+constraints:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'>The worst case would be random <!-- l. 185 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+     hypergraph
+     </li>
+     <li class='itemize'>Random RHS <!-- l. 186 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>c</mi></mrow></msub></math>
+     for each <!-- l. 186 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <mi>H</mi></mrow></math></li></ul>
+<!-- l. 189 --><p class='noindent'>The equation we have is:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 191 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                           <mstyle class='label' id='x1-8001r4'></mstyle><!-- endlabel --><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>c</mi></mrow></msub>
+</mrow></math></td><td class='eq-no'>(4)</td></tr></table>
+<!-- l. 195 --><p class='noindent'>And we also already know that
+</p>
+   <table class='equation-star'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 197 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                           <msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mstyle class='text'><mtext class='textit' mathvariant='italic'> is </mtext></mstyle><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder>
+</mrow></math></td></tr></table>
+<!-- l. 201 --><p class='noindent'>And, <!-- l. 201 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>xj</mi> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-punc'>,</mo><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo><mo class='MathClass-punc'>,</mo><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>.
+</p><!-- l. 203 --><p class='noindent'><!-- l. 203 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is
+almost semi-random.<br class='newline' />
+</p><!-- l. 205 --><p class='noindent'>Thus, we have shown <a href='#x1-6001x1.3'>1<!-- tex4ht:ref: proofp1  --></a>  Part 1 of Proof.
+</p><!-- l. 207 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='proof-existing-qldc-lower-bound-for-q-even'><span class='titlemark'>1.6   </span> <a id='x1-90001.6'></a>Proof: Existing <!-- l. 207 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+lower bound for <!-- l. 207 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+even</h4>
+<!-- l. 209 --><p class='noindent'>
+                                                                  
+
+                                                                  
+</p>
+   <h3 class='likesectionHead' id='references'><a id='x1-10000'></a>References</h3>
+<!-- l. 1 --><p class='noindent'>
+   </p><div class='thebibliography'>
+   <p class='bibitem'><span class='biblabel'>
+<a id='XAlrabiah2022-ds'></a>[1] <span class='bibsp'>   </span></span>Omar  Alrabiah,  Venkatesan  Guruswami,  Pravesh  Kothari,  and  Peter
+   Manohar.  A near-cubic lower bound for 3-query locally decodable codes
+   from semirandom CSP refutation.  Technical Report TR22-101, Electronic
+   Colloquium on Computational Complexity (ECCC), July 2022.
+   </p>
+   <p class='bibitem'><span class='biblabel'>
+<a id='Xhttps://doi.org/10.48550/arxiv.1911.10698'></a>[2] <span class='bibsp'>   </span></span>Arnab              Bhattacharyya,              L. Sunil              Chandran,
+   and Suprovat Ghoshal. Combinatorial lower bounds for 3-query ldcs, 2019.
+   URL <a class='url' href='https://arxiv.org/abs/1911.10698'><span class='cmtt-10'>https://arxiv.org/abs/1911.10698</span></a>.
+</p>
+   </div>
+    
+</body> 
+</html>
