@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  12 OCT 2022 03:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  12 OCT 2022 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -824,20 +824,21 @@ LaTeX Warning: First page is already shipped out, ignoring
 --- file main.css ---
 [1] [2] (./main.4ct) [3] [4
 
-] [5] [6] [7]
+] [5] [6] [7] [8]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 119.
+(amsmath)                 on input line 122.
 
-[8] [9] [10] [11] [12] [13] (./main.bbl) [14] (./main.aux) ) 
+[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] (./main.bbl) [19] (./main.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 14686 strings out of 478024
- 216232 string characters out of 5841234
- 646451 words of memory out of 5000000
- 32701 multiletter control sequences out of 15000+600000
+ 14708 strings out of 478024
+ 216891 string characters out of 5841234
+ 646457 words of memory out of 5000000
+ 32723 multiletter control sequences out of 15000+600000
  480420 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,19n,97p,1416b,569s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 77i,18n,97p,1416b,569s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.dvi (271 pages, 142236 bytes).
+Output written on main.dvi (276 pages, 179652 bytes).

@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{3}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,5 +18,11 @@ Omar Alrabiah, Venkatesan Guruswami, Pravesh Kothari, and Peter Manohar.
 Arnab Bhattacharyya, L.~Sunil Chandran, and Suprovat Ghoshal.
 \newblock Combinatorial lower bounds for 3-query ldcs, 2019.
 \newblock URL \url{https://arxiv.org/abs/1911.10698}.
+
+\bibitem[Wein et~al.(2019)Wein, Alaoui, and
+  Moore]{https://doi.org/10.48550/arxiv.1904.03858}
+Alexander~S. Wein, Ahmed~El Alaoui, and Cristopher Moore.
+\newblock The kikuchi hierarchy and tensor pca, 2019.
+\newblock URL \url{https://arxiv.org/abs/1904.03858}.
 
 \end{thebibliography}

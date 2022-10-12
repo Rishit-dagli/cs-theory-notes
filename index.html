@@ -40,12 +40,13 @@ bound for <!-- l. 11 --><math display='inline' xmlns='http://www.w3.org/1998/Mat
    </p><h3 class='likesectionHead' id='introduction1'><a id='x1-2000'></a>Introduction</h3>
 <!-- l. 33 --><p class='noindent'>These are my notes for the seminars that happen in the <a href='https://www.cs.toronto.edu/theory/'>Theory Group</a> at The
 University of Toronto. Many thanks to <a href='http://www.cs.toronto.edu/~bor/'>Professor Allan Borodin</a> for allowing me to
-attend the Theory Group seminars and helping out. An online version of these notes
-are available at <a class='url' href='https://rishit-dagli.github.io/cs-theory-notes'><span class='cmtt-10'>https://rishit-dagli.github.io/cs-theory-notes</span></a>.<br class='newline' />
-</p><!-- l. 35 --><p class='indent'>   The Theory Group focuses on theory of computation. The group is interested in
+attend the Theory Group seminars and helping out.<br class='newline' />
+</p><!-- l. 35 --><p class='indent'>   A PDF of these notes is available at <a class='url' href='https://rishit-dagli.github.io/cs-theory-notes/main.pdf'><span class='cmtt-10'>https://rishit-dagli.github.io/cs-theory-notes/main.pdf</span></a>.
+An online version of these notes are available at <a class='url' href='https://rishit-dagli.github.io/cs-theory-notes'><span class='cmtt-10'>https://rishit-dagli.github.io/cs-theory-notes</span></a>.<br class='newline' />
+</p><!-- l. 37 --><p class='indent'>   The Theory Group focuses on theory of computation. The group is interested in
 using mathematical techniques to understand the nature of computation and to
 design and analyze algorithms for important and fundamental problems.<br class='newline' />
-</p><!-- l. 37 --><p class='indent'>   The members of the theory group are all interested, in one way or another, in the
+</p><!-- l. 39 --><p class='indent'>   The members of the theory group are all interested, in one way or another, in the
 limitations of computation: What problems are not feasible to solve on a computer?
 How can the infeasibility of a problem be used to rigorously construct secure
 cryptographic protocols? What problems cannot be solved faster using more
@@ -53,201 +54,202 @@ machines? What are the limits to how fast a particular problem can be solved or
 how much space is needed to solve it? How do randomness, parallelism, the
 operations that are allowed, and the need for fault tolerance or security affect
 this?
-</p><!-- l. 39 --><p class='indent'>
+</p><!-- l. 41 --><p class='indent'>
                                                                   
 
                                                                   
 </p>
    <h3 class='sectionHead' id='lower-bounds-for-locally-decodable-codes-from-semirandom-csp-refutation'><span class='titlemark'>1   </span> <a id='x1-30001'></a>Lower Bounds for Locally Decodable Codes from Semirandom CSP
 Refutation</h3>
-<!-- l. 43 --><p class='noindent'>7th October 2022<br class='newline' />
-</p><!-- l. 45 --><p class='noindent'>The related paper: Combinatorial lower bounds for 3-query LDCs by Alrabiah
+<!-- l. 45 --><p class='noindent'>7th October 2022<br class='newline' />
+</p><!-- l. 47 --><p class='noindent'>The related paper: Combinatorial lower bounds for 3-query LDCs by Alrabiah
 et al. [<a href='#XAlrabiah2022-ds'>1</a>]. Seminar by <a href='https://www.cs.cmu.edu/~pmanohar/'>Peter Manohar</a>. [<a href='#Xhttps://doi.org/10.48550/arxiv.1911.10698'>2</a>]
-</p><!-- l. 47 --><p class='noindent'>
+</p><!-- l. 49 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='abstract'><span class='titlemark'>1.1   </span> <a id='x1-40001.1'></a>Abstract</h4>
-<!-- l. 49 --><p class='noindent'>A code <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+<!-- l. 51 --><p class='noindent'>A code <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
 is a q-locally decodable code (q-LDC) if one can recover any chosen bit
-<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></math> of the
-<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>-bit
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></math> of the
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>-bit
 message b with good confidence by randomly querying the
-<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>n</mi></math>-bit encoding x on at most
-<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> coordinates. Existing
-constructions of <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>2</mn></math>-LDCs
-achieve blocklength <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>n</mi></math>-bit encoding x on at most
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> coordinates. Existing
+constructions of <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>2</mn></math>-LDCs
+achieve blocklength <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
 and lower bounds show that this is in fact tight. However, when
-<!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>, far less is known: the
-best constructions have <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>subexp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>, far less is known: the
+best constructions have <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>subexp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
 while the best known lower bounds, that have stood for nearly two decades, only show a quadratic
-lower bound of <!-- l. 49 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+lower bound of <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
 on the blocklength.<br class='newline' />
-</p><!-- l. 51 --><p class='noindent'>In this talk, we will survey a new approach to prove lower bounds
+</p><!-- l. 53 --><p class='noindent'>In this talk, we will survey a new approach to prove lower bounds
 for LDCs using recent advances in refuting semirandom instances
 of constraint satisfaction problems. These new tools yield, in the
-<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>3</mn></math>-query case, a near-cubic
-lower bound of <!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
+<!-- l. 53 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>3</mn></math>-query case, a near-cubic
+lower bound of <!-- l. 53 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>,
 improving on prior work by a polynomial factor in
-<!-- l. 51 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>.
-</p><!-- l. 53 --><p class='noindent'>
+<!-- l. 53 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>.
+</p><!-- l. 55 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='locally-decodable-codes'><span class='titlemark'>1.2   </span> <a id='x1-50001.2'></a>Locally Decodable Codes</h4>
-<!-- l. 55 --><p class='noindent'>Take codes <!-- l. 55 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup> <mo class='MathClass-rel'>→</mo> <mi>x</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
-</p><!-- l. 57 --><p class='noindent'>Codes <!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math> are read
-by the decoder, <!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow></math>,
-<!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mover accent='true'><mrow><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow><mo accent='true'>^</mo></mover> <mo class='MathClass-rel'>∈</mo> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow></math>
+<!-- l. 57 --><p class='noindent'>Take codes <!-- l. 57 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup> <mo class='MathClass-rel'>→</mo> <mi>x</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+</p><!-- l. 59 --><p class='noindent'>Codes <!-- l. 59 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math> are read
+by the decoder, <!-- l. 59 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow></math>,
+<!-- l. 59 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mover accent='true'><mrow><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow><mo accent='true'>^</mo></mover> <mo class='MathClass-rel'>∈</mo> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow></math>
                                                                   
 
                                                                   
 </p>
    <div class='newtheorem'>
-<!-- l. 59 --><p class='noindent'><span class='head'>
+<!-- l. 61 --><p class='noindent'><span class='head'>
 <a id='x1-5001r1'></a>
-<span class='cmbx-10'>Definition 1.</span>  </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
-<span class='cmti-10'>is a </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mi>q</mi><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
-</span><span class='cmti-10'>decodable if for any </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math>
-<span class='cmti-10'>with </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-bin'>△</mo> <mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-punc'>,</mo><mi mathvariant='italic'>Enc</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>b</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>δn</mi></mrow></math><span class='cmti-10'>,</span>
-<!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>De</mi><msup><mrow><mi>c</mi></mrow><mrow><mi>x</mi></mrow></msup><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
-<span class='cmti-10'>w.p. </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≥</mo> <mfrac><mrow><mn>1</mn></mrow> 
+<span class='cmbx-10'>Definition 1.</span>  </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+<span class='cmti-10'>is a </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mi>q</mi><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
+</span><span class='cmti-10'>decodable if for any </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>x</mi></math>
+<span class='cmti-10'>with </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-bin'>△</mo> <mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-punc'>,</mo><mi mathvariant='italic'>Enc</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>b</mi><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>δn</mi></mrow></math><span class='cmti-10'>,</span>
+<!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>De</mi><msup><mrow><mi>c</mi></mrow><mrow><mi>x</mi></mrow></msup><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+<span class='cmti-10'>w.p. </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≥</mo> <mfrac><mrow><mn>1</mn></mrow> 
 <mrow><mn>2</mn></mrow></mfrac> <mo class='MathClass-bin'>+</mo> <mi>𝜖</mi></mrow></math>
-<span class='cmti-10'>for any </span><!-- l. 60 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>i</mi></math><span class='cmti-10'>.</span>
+<span class='cmti-10'>for any </span><!-- l. 62 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>i</mi></math><span class='cmti-10'>.</span>
 </p>
    </div>
-<!-- l. 61 --><p class='indent'>
-</p><!-- l. 63 --><p class='noindent'>Ask the question, what is the best possible rate for a
-<!-- l. 63 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
-given a <!-- l. 63 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>?
+<!-- l. 63 --><p class='indent'>
+</p><!-- l. 65 --><p class='noindent'>Ask the question, what is the best possible rate for a
+<!-- l. 65 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+given a <!-- l. 65 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>?
 </p>
 <div class='center'>
-<!-- l. 65 --><p class='noindent'>
+<!-- l. 67 --><p class='noindent'>
 </p>
-<div class='tabular'> <table class='tabular' id='TBL-2' rules='groups'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /></colgroup><colgroup id='TBL-2-2g'><col id='TBL-2-2' /></colgroup><colgroup id='TBL-2-3g'><col id='TBL-2-3' /></colgroup><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-1-1' style='text-align:center; white-space:nowrap;'>  <!-- l. 68 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>   </td><td class='td11' id='TBL-2-1-2' style='text-align:center; white-space:nowrap;'>                           Lower Bound                                           </td><td class='td11' id='TBL-2-1-3' style='text-align:center; white-space:nowrap;'>                           Upper Bound                                           </td>
-</tr><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='text-align:center; white-space:nowrap;'>                                   2                                                       </td><td class='td11' id='TBL-2-2-2' style='text-align:center; white-space:nowrap;'><!-- l. 70 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-2-3' style='text-align:center; white-space:nowrap;'><!-- l. 70 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <msup><mrow><mn>2</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math></td>
-</tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-3-1' style='text-align:center; white-space:nowrap;'>                                   3                                                       </td><td class='td11' id='TBL-2-3-2' style='text-align:center; white-space:nowrap;'><!-- l. 71 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-3-3' style='text-align:center; white-space:nowrap;'><!-- l. 71 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
-</tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-4-1' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, even</td><td class='td11' id='TBL-2-4-2' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
-<mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-4-3' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
-</tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-5-1' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, odd</td><td class='td11' id='TBL-2-5-2' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mfrac><mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow> 
-<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-5-3' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+<div class='tabular'> <table class='tabular' id='TBL-2' rules='groups'><colgroup id='TBL-2-1g'><col id='TBL-2-1' /></colgroup><colgroup id='TBL-2-2g'><col id='TBL-2-2' /></colgroup><colgroup id='TBL-2-3g'><col id='TBL-2-3' /></colgroup><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-1-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-1-1' style='text-align:center; white-space:nowrap;'>  <!-- l. 70 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>   </td><td class='td11' id='TBL-2-1-2' style='text-align:center; white-space:nowrap;'>                           Lower Bound                                           </td><td class='td11' id='TBL-2-1-3' style='text-align:center; white-space:nowrap;'>                           Upper Bound                                           </td>
+</tr><tr class='hline'><td></td><td></td><td></td></tr><tr id='TBL-2-2-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-2-1' style='text-align:center; white-space:nowrap;'>                                   2                                                       </td><td class='td11' id='TBL-2-2-2' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mn>2</mn></mrow><mrow><mi mathvariant='normal'>Ω</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-2-3' style='text-align:center; white-space:nowrap;'><!-- l. 72 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <msup><mrow><mn>2</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math></td>
+</tr><tr id='TBL-2-3-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-3-1' style='text-align:center; white-space:nowrap;'>                                   3                                                       </td><td class='td11' id='TBL-2-3-2' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-3-3' style='text-align:center; white-space:nowrap;'><!-- l. 73 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+</tr><tr id='TBL-2-4-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-4-1' style='text-align:center; white-space:nowrap;'><!-- l. 74 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, even</td><td class='td11' id='TBL-2-4-2' style='text-align:center; white-space:nowrap;'><!-- l. 74 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-4-3' style='text-align:center; white-space:nowrap;'><!-- l. 74 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
+</tr><tr id='TBL-2-5-' style='vertical-align:baseline;'><td class='td11' id='TBL-2-5-1' style='text-align:center; white-space:nowrap;'><!-- l. 75 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>O</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>, odd</td><td class='td11' id='TBL-2-5-2' style='text-align:center; white-space:nowrap;'><!-- l. 75 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>k</mi></mrow><mrow><mfrac><mrow><mi>q</mi><mo class='MathClass-bin'>+</mo><mn>1</mn></mrow> 
+<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>1</mn></mrow></mfrac> </mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math></td><td class='td11' id='TBL-2-5-3' style='text-align:center; white-space:nowrap;'><!-- l. 75 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math></td>
 </tr><tr class='hline'><td></td><td></td><td></td></tr></table>                                                                                                                                       </div></div>
-<!-- l. 78 --><p class='noindent'>Focus on the case <!-- l. 78 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>,
+<!-- l. 80 --><p class='noindent'>Focus on the case <!-- l. 80 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>,
 we have gotten better bounds:
 </p>
    <table class='equation'><tr><td>
                                                                   
 
                                                                   
-<!-- l. 80 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
-<mstyle class='label' id='x1-5002r1'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>   <mtable class='equation'><mtr><mtd>
-   <mtable class='split' columnalign='right left'>
-<mtr class='split-mtr'><mtd class='split-mtd'> k ≤</mtd><mtd class='split-mtd'>n ≤ <msup><mrow>2</mrow><mrow>k</mrow></msup></mtd>
-</mtr><mtr class='split-mtr'><mtd class='split-mtd'> <msup><mrow>k</mrow><mrow>2</mrow></msup> ≤</mtd><mtd class='split-mtd'>n ≤ exp(exp(<msqrt><mrow>log <!-- nolimits --> k log <!-- nolimits --> log <!-- nolimits --> k</mrow></msqrt>))</mtd>
-   </mtr></mtable>                                                               </mtd><mtd>
-   </mtd></mtr></mtable></mo>
+<!-- l. 82 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                            <mstyle class='label' id='x1-5002r1'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>k</mo> <mo class='MathClass-rel'>≤</mo> <mi>n</mi> <mo class='MathClass-rel'>≤</mo> <msup><mrow><mn>2</mn></mrow><mrow><mi>k</mi></mrow></msup>
 </mrow></math></td><td class='eq-no'>(1)</td></tr></table>
-<!-- l. 87 --><p class='noindent'>In [<a href='#XAlrabiah2022-ds'>1</a>], they show that a better minimum bound can be found than these existing ones
-for <!-- l. 87 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>:
+   <table class='equation-star'><tr><td>
+<!-- l. 86 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                  <msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi mathvariant='italic'>exp</mi><mo class='MathClass-open' stretchy='false'>(</mo><msqrt><mrow><mi class='qopname'>log</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo> <!-- nolimits --> <mi>k</mi><mi class='qopname'> log</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo> <!-- nolimits --><mi class='qopname'> log</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo> <!-- nolimits --> <mi>k</mi></mrow></msqrt><mo class='MathClass-close' stretchy='false'>)</mo><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 90 --><p class='noindent'>In [<a href='#XAlrabiah2022-ds'>1</a>], they show that a better minimum bound can be found than these existing ones
+for <!-- l. 90 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math>:
 </p>
    <table class='equation'><tr><td>
-<!-- l. 89 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+<!-- l. 92 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
                               <mstyle class='label' id='x1-5003r2'></mstyle><!-- endlabel --><msup><mrow><mtext class='MathClass-open' stretchy='false'>k</mtext></mrow><mrow><mn>3</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi>
 </mrow></math></td><td class='eq-no'>(2)</td></tr></table>
-<!-- l. 93 --><p class='noindent'>The main result is that:
+<!-- l. 96 --><p class='noindent'>The main result is that:
 </p>
    <div class='newtheorem'>
-<!-- l. 95 --><p class='noindent'><span class='head'>
+<!-- l. 98 --><p class='noindent'><span class='head'>
 <a id='x1-5004r1'></a>
-<span class='cmbx-10'>Theorem 1.</span>  </span><span class='cmti-10'>Let </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
-<span class='cmti-10'>be a </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mn>3</mn><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
-</span><span class='cmti-10'>decodable codes. Then </span><!-- l. 96 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><msub><mrow><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover></mrow><mrow><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi></mrow></msub><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>.</span>
-</p>
-   </div>
-<!-- l. 97 --><p class='indent'>
-</p><!-- l. 99 --><p class='noindent'>Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that
-<!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC lower bound is same
-as refuting ”LDC” <!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR.
+<span class='cmbx-10'>Theorem 1.</span>  </span><span class='cmti-10'>Let </span><!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>C</mi></math>
+<span class='cmti-10'>be a </span><!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mn>3</mn><mo class='MathClass-punc'>,</mo><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>-locally
+</span><span class='cmti-10'>decodable codes. Then </span><!-- l. 99 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≥</mo><msub><mrow><mover accent='true'><mrow><mi mathvariant='normal'>Ω</mi></mrow><mo accent='true'>~</mo></mover></mrow><mrow><mi>δ</mi><mo class='MathClass-punc'>,</mo><mi>𝜖</mi></mrow></msub><mo class='MathClass-open' stretchy='false'>(</mo><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math><span class='cmti-10'>.</span>
                                                                   
 
                                                                   
-</p><!-- l. 101 --><p class='noindent'>
+</p>
+   </div>
+<!-- l. 100 --><p class='indent'>
+</p><!-- l. 102 --><p class='noindent'>Semi-random CSP refutation comes to our aid to prove this! The intuitive way to put this theorem is that
+<!-- l. 102 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC lower bound is same
+as refuting ”LDC” <!-- l. 102 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR.
+</p><!-- l. 104 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='how-to-prove-the-theorem'><span class='titlemark'>1.3   </span> <a id='x1-60001.3'></a>How to prove the Theorem</h4>
-<!-- l. 103 --><p class='noindent'>The idea:
+<!-- l. 106 --><p class='noindent'>The idea:
 </p>
      <ul class='itemize1'>
      <li class='itemize'>
-     <!-- l. 106 --><p class='noindent'><!-- l. 106 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+     <!-- l. 109 --><p class='noindent'><!-- l. 109 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
      lower bound is same as refuting ”LDC”
-     <!-- l. 106 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR <a id='likesection.1'></a><a id='x1-6001x1.3'></a>
+     <!-- l. 109 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR <a id='likesection.1'></a><a id='x1-6001x1.3'></a>
      </p>
          <ul class='itemize2'>
          <li class='itemize'>CSP Refutation</li></ul>
      </li>
-     <li class='itemize'>Proof of existing <!-- l. 110 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
-     lower bound for <!-- l. 110 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+     <li class='itemize'>Proof of existing <!-- l. 113 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+     lower bound for <!-- l. 113 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
      even
      </li>
-     <li class='itemize'>Proof sketch of <!-- l. 111 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup></math>
+     <li class='itemize'>Proof sketch of <!-- l. 114 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup></math>
      lower bound</li></ul>
-<!-- l. 114 --><p class='noindent'>
+<!-- l. 117 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='normally-decodable-codes'><span class='titlemark'>1.4   </span> <a id='x1-70001.4'></a>Normally Decodable Codes</h4>
-<!-- l. 116 --><p class='noindent'>We can see that the decoder we have can arbitrary but WLOG we can assume there are
-<!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
-hypergraphs <!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>
-where every <!-- l. 116 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math>
+<!-- l. 119 --><p class='noindent'>We can see that the decoder we have can arbitrary but WLOG we can assume there are
+<!-- l. 119 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+hypergraphs <!-- l. 119 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>
+where every <!-- l. 119 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math>
 is such that:
-</p>
-   <table class='equation-star'><tr><td>
                                                                   
 
                                                                   
-<!-- l. 118 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 121 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
                              <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>⊆</mo><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mo class='MathClass-open' stretchy='false'>[</mo><mi>n</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow>
   <mrow><mi>q</mi></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow>
 </mrow></math></td></tr></table>
-<!-- l. 122 --><p class='noindent'>We can also see that:
-</p><!-- l. 124 --><p class='noindent'>Each <!-- l. 124 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
-matching such that <!-- l. 124 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
-</p><!-- l. 126 --><p class='noindent'>and, <!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> picks
-<!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
-outputs <!-- l. 126 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+<!-- l. 125 --><p class='noindent'>We can also see that:
+</p><!-- l. 127 --><p class='noindent'>Each <!-- l. 127 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
+matching such that <!-- l. 127 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
+</p><!-- l. 129 --><p class='noindent'>and, <!-- l. 129 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> picks
+<!-- l. 129 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
+outputs <!-- l. 129 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
   <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math><br class='newline' />
-</p><!-- l. 128 --><p class='noindent'>One such example is the Hadmard code:
+</p><!-- l. 131 --><p class='noindent'>One such example is the Hadmard code:
 </p>
    <table class='equation'><tr><td>
-<!-- l. 130 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
-<mstyle class='label' id='x1-7001r3'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>   <mtable class='equation'><mtr><mtd>
-   <mtable class='split' columnalign='right left'>
-<mtr class='split-mtr'><mtd class='split-mtd'> b</mtd><mtd class='split-mtd'> ∈<msup><mrow> 0,1</mrow><mrow>k</mrow></msup>↦f = <msubsup><mrow>(⟨b,v⟩)</mrow><mrow>
-v∈0,1</mrow><mrow>k</mrow></msubsup></mtd>
-</mtr><mtr class='split-mtr'><mtd class='split-mtd'> <msub><mrow>b</mrow><mrow>i</mrow></msub></mtd><mtd class='split-mtd'> = f(<msub><mrow>e</mrow><mrow>i</mrow></msub>) = f(v) + f(v + <msub><mrow>e</mrow><mrow>i</mrow></msub>)</mtd>
-   </mtr></mtable>                                                               </mtd><mtd>
-   </mtd></mtr></mtable></mo>
+<!-- l. 133 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                      <mstyle class='label' id='x1-7001r3'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>b</mo> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup><mo class='MathClass-rel'>↦</mo><mi>f</mi> <mo class='MathClass-rel'>=</mo> <msubsup><mrow><mo class='MathClass-open' stretchy='false'>(</mo><mo class='MathClass-open' stretchy='false'>⟨</mo><mi>b</mi><mo class='MathClass-punc'>,</mo><mi>v</mi><mo class='MathClass-close' stretchy='false'>⟩</mo><mo class='MathClass-close' stretchy='false'>)</mo></mrow><mrow>
+<mi>v</mi><mo class='MathClass-rel'>∈</mo><mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msubsup>
 </mrow></math></td><td class='eq-no'>(3)</td></tr></table>
-<!-- l. 137 --><p class='noindent'>Can think of this as <!-- l. 137 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>v</mi></math>
-and <!-- l. 137 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>v</mi> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
-are connected.<br class='newline' />
-</p><!-- l. 139 --><p class='noindent'>Matching vector codes are <!-- l. 139 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≈</mo> <msubsup><mrow><mi>ℤ</mi></mrow><mrow><mi>m</mi></mrow><mrow><mi>h</mi></mrow></msubsup></mrow></math>
+   <table class='equation-star'><tr><td>
                                                                   
 
                                                                   
-</p><!-- l. 141 --><p class='noindent'>
+<!-- l. 137 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                     <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>v</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-bin'>+</mo> <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>v</mi> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 141 --><p class='noindent'>Can think of this as <!-- l. 141 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>v</mi></math>
+and <!-- l. 141 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>v</mi> <mo class='MathClass-bin'>+</mo> <msub><mrow><mi>e</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+are connected.<br class='newline' />
+</p><!-- l. 143 --><p class='noindent'>Matching vector codes are <!-- l. 143 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≈</mo> <msubsup><mrow><mi>ℤ</mi></mrow><mrow><mi>m</mi></mrow><mrow><mi>h</mi></mrow></msubsup></mrow></math>
+</p><!-- l. 145 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='proof-going-from-ldc-to-xor'><span class='titlemark'>1.5   </span> <a id='x1-80001.5'></a>Proof: Going from LDC to XOR</h4>
-<!-- l. 143 --><p class='noindent'>We suppose that our code is linear and that there exists
-<!-- l. 143 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
-hypergraphs <!-- l. 143 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>.<br class='newline' />
-</p><!-- l. 145 --><p class='noindent'>We also know that:
-</p><!-- l. 147 --><p class='indent'>   Each <!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
-matching such that <!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
-</p><!-- l. 149 --><p class='indent'>   and, <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
-picks <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
-outputs <!-- l. 149 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+<!-- l. 147 --><p class='noindent'>We suppose that our code is linear and that there exists
+<!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+hypergraphs <!-- l. 147 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-punc'>,</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>2</mn></mrow></msub><mo class='MathClass-punc'>,</mo><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub></mrow></math>.<br class='newline' />
+</p><!-- l. 149 --><p class='noindent'>We also know that:
+</p><!-- l. 151 --><p class='indent'>   Each <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> is a
+matching such that <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>δn</mi></mrow></math>
+</p><!-- l. 153 --><p class='indent'>   and, <!-- l. 153 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>Dec</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>i</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+picks <!-- l. 153 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>←</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> and
+outputs <!-- l. 153 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
   <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math><br class='newline' />
-</p><!-- l. 151 --><p class='noindent'>So, we start by considering a <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR
-instance <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>:
+</p><!-- l. 155 --><p class='noindent'>So, we start by considering a <!-- l. 155 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-XOR
+instance <!-- l. 155 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>:
 </p>
    <table class='equation-star'><tr><td>
-<!-- l. 153 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                                                                  
+
+                                                                  
+<!-- l. 157 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
    <mtable class='gather-star'>
 <mtr> 
 <mtd>   <mtable class='split' columnalign='right left'>
@@ -258,83 +260,231 @@ instance <!-- l. 151 --><math display='inline' xmlns='http://www.w3.org/1998/Mat
 <mtd></mtd>
    </mtr></mtable>
 </mrow></math></td></tr></table>
-<!-- l. 160 --><p class='noindent'>We can write down the maximum fraction of satisfiable constraints:
-<!-- l. 160 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <mn>1</mn></mrow></math> for
-any <!-- l. 160 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math>.<br class='newline' />
-</p><!-- l. 162 --><p class='noindent'>It is sufficient now if we can argue that
-<!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is unsat w.h.p.
-for some random <!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>b</mi></math>
-when <!-- l. 162 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<!-- l. 164 --><p class='noindent'>We can write down the maximum fraction of satisfiable constraints:
+<!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <mn>1</mn></mrow></math> for
+any <!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>b</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow> <mn>0</mn><mo class='MathClass-punc'>,</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 166 --><p class='noindent'>It is sufficient now if we can argue that
+<!-- l. 166 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is unsat with high
+probability for some random <!-- l. 166 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>b</mi></math>
+when <!-- l. 166 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
 <mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn></mrow></mfrac> </mrow></msup></mrow></math>.<br class='newline' />
-</p><!-- l. 164 --><p class='noindent'>Now we need to refute XOR, there are many ways to argue unsatisfiability of an
+</p><!-- l. 168 --><p class='noindent'>Now we need to refute XOR, there are many ways to argue unsatisfiability of an
 XOR instance. One reason why we can not use probablistic approaches here is that
+<!-- l. 168 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> only
+has <!-- l. 168 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>
+bits of randomness.<br class='newline' />
+</p><!-- l. 170 --><p class='noindent'>One way we can have some success here is to use a refutation algorithm
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 172 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                         <mi>ψ</mi> <mo class='MathClass-rel'>→</mo> <mi>A</mi> <mo class='MathClass-rel'>→</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 176 --><p class='noindent'>With this the guarantee then would be
+<!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> which is similar
+to saying that if <!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>&lt;</mo> <mn>1</mn></mrow></math>
                                                                   
 
                                                                   
-<!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> only
-has <!-- l. 164 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>k</mi></math>
-bits of randomness.<br class='newline' />
-</p><!-- l. 166 --><p class='noindent'>One way we can have some success here is to use a refutation algorithm
-</p>
-   <table class='equation-star'><tr><td>
-<!-- l. 168 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
-                         <mi>ψ</mi> <mo class='MathClass-rel'>→</mo> <mi>A</mi> <mo class='MathClass-rel'>→</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo>
-</mrow></math></td></tr></table>
-<!-- l. 172 --><p class='noindent'>With this the guarantee then would be
-<!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math> which is similar
-to saying that if <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>&lt;</mo> <mn>1</mn></mrow></math>
-then <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> refutes
-<!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>. The ideal goal would
-be to refute random <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>
-with <!-- l. 172 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>m</mi></math>
-constraints w.h.p.<br class='newline' />
-</p><!-- l. 174 --><p class='noindent'>However, we take a look at semi-random XOR. Our refutation algorithm and the
+then <!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> refutes
+<!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>. The ideal goal would
+be to refute random <!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>ψ</mi></math>
+with <!-- l. 176 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>m</mi></math>
+constraints with high probability<br class='newline' />
+</p><!-- l. 178 --><p class='noindent'>However, we take a look at semi-random XOR. Our refutation algorithm and the
 guarantee will still be the same:
 </p>
    <table class='equation-star'><tr><td>
-                                                                  
-
-                                                                  
-<!-- l. 176 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+<!-- l. 180 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
                          <mi>ψ</mi> <mo class='MathClass-rel'>→</mo> <mi>A</mi> <mo class='MathClass-rel'>→</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo>
 </mrow></math></td></tr></table>
-<!-- l. 180 --><p class='noindent'>with the guarantee that <!-- l. 180 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>.<br class='newline' />
-</p><!-- l. 182 --><p class='noindent'>So, now we generate semi-random <!-- l. 182 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>ψw</mi><mo class='MathClass-bin'>∕</mo><mi>m</mi></mrow></math>
+<!-- l. 184 --><p class='noindent'>with the guarantee that <!-- l. 184 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>val</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo> <mi mathvariant='italic'>algval</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>ψ</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>.<br class='newline' />
+</p><!-- l. 186 --><p class='noindent'>So, now we generate semi-random <!-- l. 186 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>ψw</mi><mo class='MathClass-bin'>∕</mo><mi>m</mi></mrow></math>
 constraints:
 </p>
      <ul class='itemize1'>
-     <li class='itemize'>The worst case would be random <!-- l. 185 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
+     <li class='itemize'>The worst case would be random <!-- l. 189 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-unif
      hypergraph
      </li>
-     <li class='itemize'>Random RHS <!-- l. 186 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>c</mi></mrow></msub></math>
-     for each <!-- l. 186 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <mi>H</mi></mrow></math></li></ul>
-<!-- l. 189 --><p class='noindent'>The equation we have is:
+     <li class='itemize'>Random RHS <!-- l. 190 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>c</mi></mrow></msub></math>
+     for each <!-- l. 190 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <mi>H</mi></mrow></math></li></ul>
+<!-- l. 193 --><p class='noindent'>The equation we have is:
 </p>
    <table class='equation'><tr><td>
-<!-- l. 191 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                                                                  
+
+                                                                  
+<!-- l. 195 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
                            <mstyle class='label' id='x1-8001r4'></mstyle><!-- endlabel --><munder class='msub'><mrow><mo>∑</mo>
    </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>c</mi></mrow></msub>
 </mrow></math></td><td class='eq-no'>(4)</td></tr></table>
-<!-- l. 195 --><p class='noindent'>And we also already know that
+<!-- l. 199 --><p class='noindent'>And we also already know that
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 201 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                           <msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mstyle class='text'><mtext class='textit' mathvariant='italic'> is </mtext></mstyle><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder>
+</mrow></math></td></tr></table>
+<!-- l. 205 --><p class='noindent'>And, <!-- l. 205 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>xj</mi> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-punc'>,</mo><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo><mo class='MathClass-punc'>,</mo><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>.
+</p><!-- l. 207 --><p class='noindent'><!-- l. 207 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is
+almost semi-random.<br class='newline' />
+</p><!-- l. 209 --><p class='noindent'>Thus, we have shown <a href='#x1-6001x1.3'>1<!-- tex4ht:ref: proofp1  --></a>  Part 1 of Proof.
+</p><!-- l. 211 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='proof-existing-qldc-lower-bound-for-q-even'><span class='titlemark'>1.6   </span> <a id='x1-90001.6'></a>Proof: Existing <!-- l. 211 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+lower bound for <!-- l. 211 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+even</h4>
+<!-- l. 213 --><p class='noindent'><!-- l. 213 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC XOR
+instance <!-- l. 213 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>
+is encoded by:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'><!-- l. 216 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-uniform
+     hypergraph matchings <!-- l. 216 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>{</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>}</mo></mrow></math>
+     </li>
+     <li class='itemize'>right-hand sides are random <!-- l. 217 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>∈</mo><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow></math>
+     </li>
+     <li class='itemize'>We have constraints <!-- l. 218 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∏</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+     for all <!-- l. 218 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>i</mi></math>
+     and <!-- l. 218 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math></li></ul>
+<!-- l. 221 --><p class='noindent'>We now have a goal to argue that <!-- l. 221 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>
+unsat with high probability for random when
+<!-- l. 221 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>b</mi></math> when
+<!-- l. 221 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow><mi>q</mi><mo class='MathClass-bin'>∕</mo><mo class='MathClass-open' stretchy='false'>(</mo><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup></mrow></math><br class='newline' />
+</p><!-- l. 223 --><p class='noindent'>frac. constraints satisfied by <!-- l. 223 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>x</mi> <mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>n</mi></mrow></msup></mrow></math>
+is <!-- l. 223 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mfrac><mrow><mn>1</mn></mrow>
+<mrow><mn>2</mn></mrow></mfrac> <mo class='MathClass-bin'>+</mo> <mfrac><mrow><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow> 
+  <mrow><mn>2</mn></mrow></mfrac>   </mrow></math>.<br class='newline' />
+</p><!-- l. 225 --><p class='noindent'>Here <!-- l. 225 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+is:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 227 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                  <mstyle class='label' id='x1-9001r5'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'>f</mo><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo>  <mfrac><mrow><mn>1</mn></mrow> 
+<mrow><mi>m</mi></mrow></mfrac><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>i</mi></mrow></munder><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>C</mi><mo class='MathClass-rel'>∈</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></munder><munder class='msub'><mrow><mo> ∏</mo>
+  </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub>
+</mrow></math></td><td class='eq-no'>(5)</td></tr></table>
+   <table class='equation-star'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 230 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                             <mi>m</mi> <mo class='MathClass-rel'>=</mo> <mi>k</mi> <mo class='MathClass-bin'>⋅</mo> <mi mathvariant='italic'>δn</mi>
+</mrow></math></td></tr></table>
+<!-- l. 234 --><p class='noindent'>This makes our goal to be to certify with high probability that:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 236 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                 <mstyle class='label' id='x1-9002r6'></mstyle><!-- endlabel --><munder class='msub'><mrow><mi class='qopname'>max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>x</mi><mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>n</mi></mrow></msup></mrow></munder><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>&lt;</mo> <mn>1</mn><mstyle class='text'><mtext class='textit' mathvariant='italic'> when </mtext></mstyle><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn></mrow></mfrac> </mrow></msup>
+</mrow></math></td><td class='eq-no'>(6)</td></tr></table>
+<!-- l. 240 --><p class='noindent'>We will now try to refute <!-- l. 240 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>.
+With Equation <a href='#x1-9001r5'>5<!-- tex4ht:ref: eq:5  --></a>   and Equation <a href='#x1-9002r6'>6<!-- tex4ht:ref: eq:6  --></a>   to refute
+<!-- l. 240 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is like
+showing:
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 242 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+   <mstyle class='label' id='x1-9003r7'></mstyle><!-- endlabel --><mo class='MathClass-open' stretchy='false'><mtext class='textit' mathvariant='italic'>w.h.p. </mtext></mo><munder class='msub'><mrow><mi class='qopname'>max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>x</mi><mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>n</mi></mrow></msup></mrow></munder><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>&lt;</mo> <mn>1</mn><mstyle class='text'><mtext class='textit' mathvariant='italic'> where </mtext></mstyle><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo>  <mfrac><mrow><mn>1</mn></mrow> 
+<mrow><mi>m</mi></mrow></mfrac><munder class='msub'><mrow><mo>∑</mo>
+   </mrow><mrow><mi>i</mi></mrow></munder><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>C</mi><mo class='MathClass-rel'>∈</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></munder><munder class='msub'><mrow><mo> ∏</mo>
+  </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub>
+</mrow></math></td><td class='eq-no'>(7)</td></tr></table>
+<!-- l. 246 --><p class='noindent'><!-- l. 246 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mstyle class='text'><mtext class='textit' mathvariant='italic'> when </mtext></mstyle><mi>n</mi> <mo class='MathClass-rel'>≪</mo> <msup><mrow><mi>k</mi></mrow><mrow> <mfrac><mrow><mi>q</mi></mrow>
+<mrow><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn></mrow></mfrac> </mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 248 --><p class='noindent'>The idea is to design a matrix <!-- l. 248 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>A</mi> <mo class='MathClass-rel'>∈</mo> <msup><mrow><mi>ℝ</mi></mrow><mrow><mi>N</mi><mo class='MathClass-bin'>×</mo><mi>N</mi></mrow></msup></mrow></math>
+so that:
 </p>
    <table class='equation-star'><tr><td>
                                                                   
 
                                                                   
-<!-- l. 197 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
-                           <msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub><mstyle class='text'><mtext class='textit' mathvariant='italic'> is </mtext></mstyle><munder class='msub'><mrow><mo>∑</mo>
-   </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder>
+<!-- l. 250 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>=</mo><munder class='msub'><mrow><mi class='qopname'> max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>z</mi><mo class='MathClass-punc'>,</mo><mi>w</mi><mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>N</mi></mrow></msup></mrow></munder><msup><mrow><mi>z</mi></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Aw</mi>
 </mrow></math></td></tr></table>
-<!-- l. 201 --><p class='noindent'>And, <!-- l. 201 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>xj</mi> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><mo class='MathClass-punc'>,</mo><mi>i</mi> <mo class='MathClass-rel'>∈</mo> <mo class='MathClass-open' stretchy='false'>[</mo><mi>k</mi><mo class='MathClass-close' stretchy='false'>]</mo><mo class='MathClass-punc'>,</mo><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>.
-</p><!-- l. 203 --><p class='noindent'><!-- l. 203 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math> is
-almost semi-random.<br class='newline' />
-</p><!-- l. 205 --><p class='noindent'>Thus, we have shown <a href='#x1-6001x1.3'>1<!-- tex4ht:ref: proofp1  --></a>  Part 1 of Proof.
-</p><!-- l. 207 --><p class='noindent'>
+<!-- l. 254 --><p class='noindent'>As shown by Wein et al. [<a href='#Xhttps://doi.org/10.48550/arxiv.1904.03858'>3</a>] the matrix
+<!-- l. 254 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> can
+be indexed by
 </p>
-   <h4 class='subsectionHead' id='proof-existing-qldc-lower-bound-for-q-even'><span class='titlemark'>1.6   </span> <a id='x1-90001.6'></a>Proof: Existing <!-- l. 207 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
-lower bound for <!-- l. 207 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
-even</h4>
-<!-- l. 209 --><p class='noindent'>
+   <table class='equation-star'><tr><td>
+<!-- l. 256 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                              <mi>S</mi> <mo class='MathClass-rel'>∈</mo><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mo class='MathClass-open' stretchy='false'>[</mo><mi>n</mi><mo class='MathClass-close' stretchy='false'>]</mo></mrow>
+  <mrow><mi>l</mi></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow>
+</mrow></math></td></tr></table>
+<!-- l. 260 --><p class='noindent'>Assign <!-- l. 260 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>x</mi><mo class='MathClass-rel'>↦</mo><mi>y</mi></mrow></math>
+such that <!-- l. 260 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>y</mi></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Ay</mi> <mo class='MathClass-rel'>∝</mo> <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+</p><!-- l. 262 --><p class='noindent'>and <!-- l. 262 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>y</mi></mrow><mrow><mi>s</mi></mrow></msub> <mo class='MathClass-punc'>:</mo><mo class='MathClass-rel'>=</mo><msub><mrow> <mi class='MathClass-op'>∏</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>S</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math>
+which is simply the tensor product.<br class='newline' /> 
+</p><!-- l. 264 --><p class='noindent'>We need to now be able to answer how to set
+<!-- l. 264 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>A</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+</p>
+   <table class='equation'><tr><td>
+                                                                  
+
+                                                                  
+<!-- l. 266 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+         <mstyle class='label' id='x1-9004r8'></mstyle><!-- endlabel --><msup><mrow><mtext class='MathClass-open' stretchy='false'>y</mtext></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Ay</mi> <mo class='MathClass-rel'>=</mo><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi></mrow></munder><msub><mrow><mi>y</mi></mrow><mrow><mi>S</mi></mrow></msub><msub><mrow><mi>y</mi></mrow><mrow><mi>T</mi></mrow></msub><mi>A</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi></mrow></munder><mi>A</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo><munder class='msub'><mrow><mo>∏</mo>
+  </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>S</mi><mo class='MathClass-bin'>⊕</mo><mi>T</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub>
+</mrow></math></td><td class='eq-no'>(8)</td></tr></table>
+<!-- l. 270 --><p class='noindent'>Which shows that we are actually using symmetric difference here.<br class='newline' />
+</p><!-- l. 272 --><p class='noindent'>We say that if <!-- l. 272 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>S</mi> <mo class='MathClass-bin'>⊕</mo> <mi>T</mi> <mo class='MathClass-rel'>=</mo> <mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>h</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+then <!-- l. 272 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∏</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>S</mi><mo class='MathClass-bin'>⊕</mo><mi>T</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+</p><!-- l. 274 --><p class='noindent'><!-- l. 274 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><mi>A</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math> if
+<!-- l. 274 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>S</mi> <mo class='MathClass-bin'>⊕</mo> <mi>T</mi> <mo class='MathClass-rel'>=</mo> <mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math><br class='newline' />
+</p>
+   <table class='equation'><tr><td>
+<!-- l. 276 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+         <mstyle class='label' id='x1-9005r9'></mstyle><!-- endlabel --><msup><mrow><mtext class='MathClass-open' stretchy='false'>y</mtext></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Ay</mi> <mo class='MathClass-rel'>=</mo><munderover accent='false' accentunder='false'><mrow><mo> ∑</mo>
+  </mrow><mrow><mi>i</mi><mo class='MathClass-rel'>=</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></munderover><msub><mrow><mi>b</mi></mrow><mrow>
+<mi>i</mi></mrow></msub><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>C</mi><mo class='MathClass-rel'>∈</mo><msub><mrow><mi>h</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></munder><munder class='msub'><mrow><mo> ∑</mo>
+   </mrow><mrow><mi>S</mi><mo class='MathClass-bin'>⊕</mo><mi>t</mi><mo class='MathClass-rel'>=</mo><mi>C</mi></mrow></munder><munder class='msub'><mrow><mo> ∏</mo>
+  </mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></munder><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>Dmf</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td><td class='eq-no'>(9)</td></tr></table>
+<!-- l. 280 --><p class='noindent'>Here <!-- l. 280 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>D</mi> <mo class='MathClass-rel'>=</mo></mrow></math>
+number of <!-- l. 280 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi></mrow></math>
+where <!-- l. 280 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>S</mi> <mo class='MathClass-bin'>⊕</mo> <mi>T</mi> <mo class='MathClass-rel'>=</mo> <mi>C</mi></mrow></math>.<br class='newline' />
+</p><!-- l. 282 --><p class='noindent'>Simplifying an earlier statement we can also say from here that:
+<!-- l. 282 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>C</mi></mrow></msub><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <mn>1</mn></mrow></math> if
+<!-- l. 282 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>S</mi> <mo class='MathClass-bin'>⊕</mo> <mi>T</mi> <mo class='MathClass-rel'>=</mo> <mi>C</mi></mrow></math>.<br class='newline' />
+</p><!-- l. 284 --><p class='noindent'>For which <!-- l. 284 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>=</mo><msub><mrow> <mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>C</mi><mo class='MathClass-rel'>∈</mo><msub><mrow><mi>h</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></msub><msub><mrow><mi>A</mi></mrow><mrow><mi>C</mi></mrow></msub></mrow></math>
+and <!-- l. 284 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>A</mi> <mo class='MathClass-rel'>=</mo><msubsup><mrow> <mi class='MathClass-op'>∑</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>i</mi><mo class='MathClass-rel'>=</mo><mn>1</mn></mrow><mrow><mi>k</mi></mrow></msubsup><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><msub><mrow><mi>A</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math><br class='newline' />
+</p><!-- l. 286 --><p class='noindent'>Set <!-- l. 286 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>y</mi></mrow><mrow><mi>S</mi></mrow></msub> <mo class='MathClass-punc'>:</mo><mo class='MathClass-rel'>=</mo><msub><mrow> <mi class='MathClass-op'>∏</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>S</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math><br class='newline' />
+</p><!-- l. 288 --><p class='noindent'><!-- l. 288 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msup><mrow><mi>y</mi></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Ay</mi> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>Dmf</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><mi mathvariant='italic'>Dmf</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub></mrow></math><br class='newline' />
+</p><!-- l. 290 --><p class='noindent'>Note that the way we defined <!-- l. 290 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>D</mi></math>
+here it only depends on <!-- l. 290 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mi>C</mi><mo class='MathClass-rel'>|</mo> <mo class='MathClass-rel'>=</mo> <mi>q</mi></mrow></math>,
+we can say:
+</p>
+                                                                  
+
+                                                                  
+   <table class='equation-star'><tr><td>
+<!-- l. 292 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                            <mi>D</mi> <mo class='MathClass-rel'>=</mo><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mi>q</mi></mrow>
+ <mrow><mfrac><mrow><mi>q</mi></mrow>
+<mrow><mn>2</mn></mrow></mfrac></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mi>n</mi> <mo class='MathClass-bin'>−</mo> <mi>q</mi></mrow>
+   <mrow><mi>l</mi> <mo class='MathClass-bin'>−</mo><mfrac><mrow><mi>q</mi></mrow> 
+<mrow><mn>2</mn></mrow></mfrac></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow>
+</mrow></math></td></tr></table>
+<!-- l. 296 --><p class='noindent'>Also we know <!-- l. 296 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>A</mi></mrow><mrow><mi>c</mi></mrow></msub> <mo class='MathClass-rel'>∈</mo> <msup><mrow><mi>ℝ</mi></mrow><mrow><mi>N</mi><mo class='MathClass-bin'>×</mo><mi>N</mi></mrow></msup></mrow></math>
+and <!-- l. 296 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>N</mi> <mo class='MathClass-rel'>=</mo><mrow><mo fence='true' form='prefix'>(</mo><mfrac linethickness='0'><mrow> <mi>n</mi></mrow>
+  <mrow><mi>l</mi></mrow></mfrac><mo fence='true' form='postfix'>)</mo></mrow> </mrow></math>.<br class='newline' />
+</p><!-- l. 298 --><p class='noindent'>We have already proven that <!-- l. 298 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>Dm</mi><munder class='msub'><mrow><mi class='qopname'>max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>x</mi></mrow></munder><mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>Dm</mi> <mo class='MathClass-rel'>≥</mo> <mi mathvariant='italic'>Dδnk</mi></mrow></math><br class='newline' />
+</p><!-- l. 300 --><p class='noindent'>It is also interesting to note that <!-- l. 300 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo> <mi>N</mi><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mn>2</mn></mrow></msub></mrow></math>
+and we still need to be able to show that with high probability that
+<!-- l. 300 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub></mrow></math> is not
+too large.
+</p><!-- l. 302 --><p class='indent'>
                                                                   
 
                                                                   
@@ -352,6 +502,11 @@ even</h4>
 <a id='Xhttps://doi.org/10.48550/arxiv.1911.10698'></a>[2] <span class='bibsp'>   </span></span>Arnab              Bhattacharyya,              L. Sunil              Chandran,
    and Suprovat Ghoshal. Combinatorial lower bounds for 3-query ldcs, 2019.
    URL <a class='url' href='https://arxiv.org/abs/1911.10698'><span class='cmtt-10'>https://arxiv.org/abs/1911.10698</span></a>.
+   </p>
+   <p class='bibitem'><span class='biblabel'>
+<a id='Xhttps://doi.org/10.48550/arxiv.1904.03858'></a>[3] <span class='bibsp'>   </span></span>Alexander S.                            Wein,                            Ahmed El
+   Alaoui, and Cristopher Moore. The kikuchi hierarchy and tensor pca, 2019.
+   URL <a class='url' href='https://arxiv.org/abs/1904.03858'><span class='cmtt-10'>https://arxiv.org/abs/1904.03858</span></a>.
 </p>
    </div>
     
