@@ -24,8 +24,7 @@ jobs:
           
       - name: Run make4ht 
         uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
-        env: 
-          command: "make4ht -u main.tex"
+        run: make4ht -u main.tex "mathml,mathjax"
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
