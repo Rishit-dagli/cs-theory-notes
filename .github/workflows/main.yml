@@ -21,10 +21,11 @@ jobs:
         with:
           name: PDF
           path: main.pdf
-      
-      - name: Run make4ht
-        run: |
-          make4ht main.tex "mathml,mathjax"
+          
+      - name: Run make4ht 
+        uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
+        env: 
+          command: "make4ht -u main.tex"
           
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
