@@ -32,6 +32,9 @@
 <br />     <span class='subsectionToc'>1.6                                  <a href='#proof-existing-qldc-lower-bound-for-q-even' id='QQ2-1-10'>Proof:                                  Existing
 <!-- l. 11 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC lower
 bound for <!-- l. 11 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> even</a></span>
+<br />     <span class='subsectionToc'>1.7 <a href='#proof-k-lower-bound' id='QQ2-1-11'>Proof: <!-- l. 12 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup></math>
+lower bound</a></span>
+<br />     <span class='subsectionToc'>1.8 <a href='#conclusion' id='QQ2-1-12'>Conclusion</a></span>
    </div>
                                                                   
 
@@ -63,7 +66,7 @@ this?
 Refutation</h3>
 <!-- l. 45 --><p class='noindent'>7th October 2022<br class='newline' />
 </p><!-- l. 47 --><p class='noindent'>The related paper: Combinatorial lower bounds for 3-query LDCs by Alrabiah
-et al. [<a href='#XAlrabiah2022-ds'>1</a>]. Seminar by <a href='https://www.cs.cmu.edu/~pmanohar/'>Peter Manohar</a>. [<a href='#Xhttps://doi.org/10.48550/arxiv.1911.10698'>2</a>]
+et al. [<a href='#XAlrabiah2022-ds'>1</a>]. Seminar by <a href='https://www.cs.cmu.edu/~pmanohar/'>Peter Manohar</a>. [<a href='#Xhttps://doi.org/10.48550/arxiv.1911.10698'>2</a>] [<a href='#Xhttps://doi.org/10.48550/arxiv.2109.04415'>3</a>]
 </p><!-- l. 49 --><p class='noindent'>
 </p>
    <h4 class='subsectionHead' id='abstract'><span class='titlemark'>1.1   </span> <a id='x1-40001.1'></a>Abstract</h4>
@@ -405,7 +408,7 @@ so that:
 <!-- l. 250 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
                 <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>=</mo><munder class='msub'><mrow><mi class='qopname'> max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>z</mi><mo class='MathClass-punc'>,</mo><mi>w</mi><mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>N</mi></mrow></msup></mrow></munder><msup><mrow><mi>z</mi></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Aw</mi>
 </mrow></math></td></tr></table>
-<!-- l. 254 --><p class='noindent'>As shown by Wein et al. [<a href='#Xhttps://doi.org/10.48550/arxiv.1904.03858'>3</a>] the matrix
+<!-- l. 254 --><p class='noindent'>As shown by Wein et al. [<a href='#Xhttps://doi.org/10.48550/arxiv.1904.03858'>4</a>] the matrix
 <!-- l. 254 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> can
 be indexed by
 </p>
@@ -483,13 +486,124 @@ and <!-- l. 296 --><math display='inline' xmlns='http://www.w3.org/1998/Math/Mat
 </p><!-- l. 300 --><p class='noindent'>It is also interesting to note that <!-- l. 300 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo> <mi>N</mi><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mn>2</mn></mrow></msub></mrow></math>
 and we still need to be able to show that with high probability that
 <!-- l. 300 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub></mrow></math> is not
-too large.
-</p><!-- l. 302 --><p class='indent'>
+too large.<br class='newline' />
+</p><!-- l. 302 --><p class='noindent'>Matrix Bernstein: with high probability over
+<!-- l. 302 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></math>,
+<!-- l. 302 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mn>2</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-bin'>△</mo><msqrt><mrow><mi mathvariant='italic'>kl</mi></mrow></msqrt></mrow></math> where
+<!-- l. 302 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mtext class='MathClass-bin'>△</mtext></math> is the maximum number
+of 1’s in a row in any <!-- l. 302 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>A</mi></mrow><mrow><mi>i</mi></mrow></msub></math>.<br class='newline' />
+</p><!-- l. 304 --><p class='noindent'>Expected number of 1’s per row is <!-- l. 304 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>δn</mi><mfrac><mrow><mi>D</mi></mrow>
+<mrow><mi>N</mi></mrow></mfrac> <mo class='MathClass-rel'>∼</mo> <mi>n</mi><msup><mrow><mo class='MathClass-open' stretchy='false'>(</mo> <mfrac><mrow><mi>l</mi></mrow>
+<mrow><mi>n</mi></mrow></mfrac><mo class='MathClass-close' stretchy='false'>)</mo></mrow><mrow><mi>q</mi><mo class='MathClass-bin'>∕</mo><mn>2</mn></mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 306 --><p class='noindent'>We can optimistically suppose that <!-- l. 306 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-bin'>△</mo><mo class='MathClass-rel'>∼</mo> <mi>n</mi><msup><mrow><mo class='MathClass-open' stretchy='false'>(</mo> <mfrac><mrow><mi>l</mi></mrow>
+<mrow><mi>n</mi></mrow></mfrac><mo class='MathClass-close' stretchy='false'>)</mo></mrow><mrow><mi>q</mi><mo class='MathClass-bin'>∕</mo><mn>2</mn></mrow></msup></mrow></math>
+however this also needs <!-- l. 306 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>l</mi> <mo class='MathClass-rel'>≥</mo> <msup><mrow><mi>n</mi></mrow><mrow><mn>1</mn><mo class='MathClass-bin'>−</mo><mn>2</mn><mo class='MathClass-bin'>∕</mo><mi>q</mi></mrow></msup></mrow></math>.<br class='newline' />
+</p><!-- l. 308 --><p class='noindent'>Then <!-- l. 308 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>D</mi> <mo class='MathClass-bin'>⋅</mo> <mi mathvariant='italic'>δnk</mi> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo> <mi>N</mi><mo class='MathClass-bin'>△</mo><msqrt><mrow><mi mathvariant='italic'>kl</mi></mrow></msqrt></mrow></math><br class='newline' />
+</p><!-- l. 310 --><p class='noindent'><!-- l. 310 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><mi>k</mi> <mo class='MathClass-rel'>≤</mo> <mi>l</mi></mrow></math> since
+<!-- l. 310 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-bin'>△</mo><mo class='MathClass-rel'>∼</mo> <mi mathvariant='italic'>δn</mi><mfrac><mrow><mi>D</mi></mrow>
+<mrow><mi>N</mi></mrow></mfrac></mrow></math><br class='newline' />
+</p><!-- l. 312 --><p class='noindent'>Now take <!-- l. 312 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>l</mi> <mo class='MathClass-rel'>=</mo> <msup><mrow><mi>n</mi></mrow><mrow><mn>1</mn><mo class='MathClass-bin'>−</mo><mn>2</mn><mo class='MathClass-bin'>∕</mo><mi>q</mi></mrow></msup><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><msup><mrow><mi>k</mi></mrow><mrow><mi>q</mi><mo class='MathClass-bin'>∕</mo><mo class='MathClass-open' stretchy='false'>(</mo><mi>q</mi><mo class='MathClass-bin'>−</mo><mn>2</mn><mo class='MathClass-close' stretchy='false'>)</mo></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math><br class='newline' />
+</p><!-- l. 314 --><p class='noindent'>So, <!-- l. 314 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-bin'>△</mo> <mo class='MathClass-rel'>=</mo> <mfrac><mrow><mn>2</mn><mi>l</mi></mrow> 
+<mrow><mi>q</mi></mrow></mfrac> </mrow></math><br class='newline' />
+                                                                  
+
+                                                                  
+</p><!-- l. 316 --><p class='noindent'>Because <!-- l. 316 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></math> are matchings, a
+random row will have only <!-- l. 316 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≈</mo> <mfrac><mrow><mi mathvariant='italic'>δnD</mi></mrow> 
+ <mrow><mi>N</mi></mrow></mfrac>  </mrow></math>
+1’s.<br class='newline' />
+</p><!-- l. 318 --><p class='noindent'>The idea now is to prune off all the bad rows or columns in A to get B such
+that:
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 320 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                     <mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>B</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-bin'>+</mo> <mi>o</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>N</mi><mo class='MathClass-close' stretchy='false'>)</mo>
+</mrow></math></td></tr></table>
+<!-- l. 324 --><p class='noindent'>And, <!-- l. 324 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mtext class='MathClass-bin'>△</mtext></mrow><mrow><mi>B</mi></mrow></msub> <mo class='MathClass-rel'>∼</mo> <mi mathvariant='italic'>δn</mi><msup><mrow><mo class='MathClass-open' stretchy='false'>(</mo> <mfrac><mrow><mi>l</mi></mrow>
+<mrow><mi>n</mi></mrow></mfrac><mo class='MathClass-close' stretchy='false'>)</mo></mrow><mrow><mi>q</mi><mo class='MathClass-bin'>∕</mo><mn>2</mn></mrow></msup></mrow></math><br class='newline' />
+</p><!-- l. 326 --><p class='noindent'>And now we can just use <!-- l. 326 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>B</mi></math>
+instead which will prove <!-- l. 326 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+lower bound for <!-- l. 326 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+even.
+</p><!-- l. 328 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='proof-k-lower-bound'><span class='titlemark'>1.7   </span> <a id='x1-100001.7'></a>Proof: <!-- l. 328 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup></math>
+lower bound</h4>
+<!-- l. 330 --><p class='noindent'>Recall, <!-- l. 330 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-LDC
+XOR instance <!-- l. 330 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>
+is encoded by:
+</p>
+     <ul class='itemize1'>
+     <li class='itemize'><!-- l. 333 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>-uniform
+     hypergraph matchings <!-- l. 333 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>{</mo><msub><mrow><mi>H</mi></mrow><mrow><mn>1</mn></mrow></msub><mo class='MathClass-rel'>⋯</mo><msub><mrow><mi>H</mi></mrow><mrow><mi>k</mi></mrow></msub><mo class='MathClass-close' stretchy='false'>}</mo></mrow></math>
+     </li>
+     <li class='itemize'>right-hand sides are random <!-- l. 334 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-rel'>∈</mo><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow></math>
+     </li>
+     <li class='itemize'>We have constraints <!-- l. 335 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi class='MathClass-op'>∏</mi><mo> ⁡<!-- FUNCTION APPLICATION --></mo>
+  <!-- nolimits --></mrow><mrow><mi>j</mi><mo class='MathClass-rel'>∈</mo><mi>C</mi></mrow></msub><msub><mrow><mi>x</mi></mrow><mrow><mi>j</mi></mrow></msub> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math>
+     for all <!-- l. 335 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>i</mi></math>
+     and <!-- l. 335 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>C</mi> <mo class='MathClass-rel'>∈</mo> <msub><mrow><mi>H</mi></mrow><mrow><mi>i</mi></mrow></msub></mrow></math></li></ul>
+<!-- l. 338 --><p class='noindent'>The goal is argue that <!-- l. 338 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>ψ</mi></mrow><mrow><mi>b</mi></mrow></msub></math>
+is unsatisfiable with high probability for random
+<!-- l. 338 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>b</mi></math>. And the idea is
+to design a matrix <!-- l. 338 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>A</mi> <mo class='MathClass-rel'>∈</mo> <msup><mrow><mi>ℝ</mi></mrow><mrow><mi>N</mi><mo class='MathClass-bin'>×</mo><mi>N</mi></mrow></msup></mrow></math>
+so that:
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 340 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                 <mi>f</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>x</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow><mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>=</mo><munder class='msub'><mrow><mi class='qopname'> max</mi><mo> ⁡<!-- FUNCTION APPLICATION --> </mo></mrow><mrow><mi>z</mi><mo class='MathClass-punc'>,</mo><mi>w</mi><mo class='MathClass-rel'>∈</mo><msup><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mo class='MathClass-bin'>±</mo><mn>1</mn><mo class='MathClass-close' stretchy='false'>}</mo></mrow><mrow><mi>N</mi></mrow></msup><msup><mrow><mi>z</mi></mrow><mrow><mi>T</mi></mrow></msup><mi mathvariant='italic'>Aw</mi></mrow></munder>
+</mrow></math></td></tr></table>
+<!-- l. 344 --><p class='noindent'>The previous approach fails because the
+<!-- l. 344 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> from before
+requires <!-- l. 344 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math>
+to be even.<br class='newline' />
+</p><!-- l. 346 --><p class='noindent'>One attempt is to represent rows as <!-- l. 346 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mi>S</mi><mo class='MathClass-rel'>|</mo> <mo class='MathClass-rel'>=</mo> <mi>l</mi></mrow></math>
+and columns as <!-- l. 346 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-rel'>|</mo><mi>T</mi><mo class='MathClass-rel'>|</mo> <mo class='MathClass-rel'>=</mo> <mi>l</mi> <mo class='MathClass-bin'>+</mo> <mn>1</mn></mrow></math>. However
+this will only get us to <!-- l. 346 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>k</mi> <mo class='MathClass-rel'>≤</mo><msqrt><mrow><mi>n</mi></mrow></msqrt></mrow></math>.<br class='newline' />
+</p><!-- l. 348 --><p class='noindent'>We need to derive more constraints, using
+<!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><msub><mrow><mi>C</mi></mrow><mrow><mi>i</mi></mrow></msub> <mo class='MathClass-bin'>⊕</mo> <msub><mrow><mi>C</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math> get us to
+<!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>nk</mi></mrow></math> constraints
+so each <!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><msub><mrow><mi>n</mi></mrow><mrow><mi>j</mi></mrow></msub></math>
+is in <!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow> <mo class='MathClass-rel'>≈</mo> <mi>k</mi></mrow></math>
+constraints <!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace></mrow></math>
+new <!-- l. 348 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>n</mi><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup></mrow></math>
+constraints. <br class='newline' />
+                                                                  
+
+                                                                  
+</p><!-- l. 350 --><p class='noindent'>The matrix <!-- l. 350 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>A</mi></math> is
+indexed by <!-- l. 350 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>S</mi></math>,
+<!-- l. 350 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>A</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>S</mi><mo class='MathClass-punc'>,</mo><mi>T</mi><mo class='MathClass-close' stretchy='false'>)</mo> <mo class='MathClass-rel'>=</mo> <msub><mrow><mi>b</mi></mrow><mrow><mi>i</mi></mrow></msub><msub><mrow><mi>b</mi></mrow><mrow><mi>j</mi></mrow></msub></mrow></math>. The
+calculation is now:
+</p>
+   <table class='equation-star'><tr><td>
+<!-- l. 352 --><math class='equation' display='block' xmlns='http://www.w3.org/1998/Math/MathML'><mrow>
+                     <mi>n</mi><msup><mrow><mi>k</mi></mrow><mrow><mn>2</mn></mrow></msup><mi>D</mi> <mo class='MathClass-rel'>≤</mo><mo class='MathClass-rel'>|</mo><mo class='MathClass-rel'>|</mo><mi>A</mi><mo class='MathClass-rel'>|</mo><msub><mrow><mtext class='MathClass-rel'>|</mtext></mrow><mrow>
+<mi>∞</mi><mo class='MathClass-rel'>→</mo><mn>1</mn></mrow></msub> <mo class='MathClass-rel'>≤</mo> <mi>N</mi><mo class='MathClass-bin'>△</mo><msqrt><mrow><mi mathvariant='italic'>kl</mi></mrow></msqrt>
+</mrow></math></td></tr></table>
+<!-- l. 356 --><p class='noindent'>An optimist approach is <!-- l. 356 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-bin'>△</mo><mo class='MathClass-rel'>∼</mo> <mi mathvariant='italic'>Nk</mi><mfrac><mrow><mi>D</mi></mrow>
+<mrow><mi>N</mi></mrow></mfrac> <mo class='MathClass-rel'>=</mo> <mi mathvariant='italic'>nk</mi><msup><mrow><mo class='MathClass-open' stretchy='false'>(</mo> <mfrac><mrow><mi>l</mi></mrow>
+<mrow><mi>n</mi></mrow></mfrac><mo class='MathClass-close' stretchy='false'>)</mo></mrow><mrow><mn>2</mn></mrow></msup></mrow></math><br class='newline' />
+</p><!-- l. 358 --><p class='noindent'><!-- l. 358 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><mi>l</mi> <mo class='MathClass-rel'>≥</mo><msqrt><mrow><mfrac><mrow><mi>n</mi></mrow>
+<mrow><mi>k</mi></mrow></mfrac></mrow></msqrt></mrow></math><br class='newline' />
+</p><!-- l. 360 --><p class='noindent'><!-- l. 360 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><mi>k</mi> <mo class='MathClass-rel'>≤</mo> <mi>n</mi><mspace class='thickpace' width='0.28em'></mspace><mo class='MathClass-rel'>⇒</mo><mspace class='thickpace' width='0.28em'></mspace><msup><mrow><mi>k</mi></mrow><mrow><mn>3</mn></mrow></msup> <mo class='MathClass-rel'>≤</mo> <mi>n</mi></mrow></math><br class='newline' />
+</p><!-- l. 362 --><p class='noindent'>The row pruning tricks would still work provided that any
+<!-- l. 362 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mo class='MathClass-open' stretchy='false'>{</mo><mi>u</mi><mo class='MathClass-punc'>,</mo><mi>v</mi><mo class='MathClass-close' stretchy='false'>}</mo></mrow></math> is in at
+most <!-- l. 362 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi mathvariant='italic'>polylog</mi><mo class='MathClass-open' stretchy='false'>(</mo><mi>n</mi><mo class='MathClass-close' stretchy='false'>)</mo></mrow></math>
+constraints.
+</p><!-- l. 364 --><p class='noindent'>
+</p>
+   <h4 class='subsectionHead' id='conclusion'><span class='titlemark'>1.8   </span> <a id='x1-110001.8'></a>Conclusion</h4>
+<!-- l. 366 --><p class='noindent'>This proof for <!-- l. 366 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mrow><mi>q</mi> <mo class='MathClass-rel'>=</mo> <mn>3</mn></mrow></math> is not
+generalizable for all odd <!-- l. 366 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mi>q</mi></math> and
+neither is a reduction to <!-- l. 366 --><math display='inline' xmlns='http://www.w3.org/1998/Math/MathML'><mn>2</mn></math>-LDC.
+This is particularly true because of the row pruning step.
+</p><!-- l. 368 --><p class='indent'>
                                                                   
 
                                                                   
 </p>
-   <h3 class='likesectionHead' id='references'><a id='x1-10000'></a>References</h3>
+   <h3 class='likesectionHead' id='references'><a id='x1-12000'></a>References</h3>
 <!-- l. 1 --><p class='noindent'>
    </p><div class='thebibliography'>
    <p class='bibitem'><span class='biblabel'>
@@ -504,7 +618,12 @@ too large.
    URL <a class='url' href='https://arxiv.org/abs/1911.10698'><span class='cmtt-10'>https://arxiv.org/abs/1911.10698</span></a>.
    </p>
    <p class='bibitem'><span class='biblabel'>
-<a id='Xhttps://doi.org/10.48550/arxiv.1904.03858'></a>[3] <span class='bibsp'>   </span></span>Alexander S.                            Wein,                            Ahmed El
+<a id='Xhttps://doi.org/10.48550/arxiv.2109.04415'></a>[3] <span class='bibsp'>   </span></span>Venkatesan  Guruswami,  Pravesh K.  Kothari,  and  Peter  Manohar.
+   Algorithms  and  certificates  for  boolean  csp  refutation:  ”smoothed  is  no
+   harder than random”, 2021. URL <a class='url' href='https://arxiv.org/abs/2109.04415'><span class='cmtt-10'>https://arxiv.org/abs/2109.04415</span></a>.
+   </p>
+   <p class='bibitem'><span class='biblabel'>
+<a id='Xhttps://doi.org/10.48550/arxiv.1904.03858'></a>[4] <span class='bibsp'>   </span></span>Alexander S.                            Wein,                            Ahmed El
    Alaoui, and Cristopher Moore. The kikuchi hierarchy and tensor pca, 2019.
    URL <a class='url' href='https://arxiv.org/abs/1904.03858'><span class='cmtt-10'>https://arxiv.org/abs/1904.03858</span></a>.
 </p>

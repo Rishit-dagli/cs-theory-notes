@@ -44,7 +44,7 @@ The members of the theory group are all interested, in one way or another, in th
 
 7th October 2022\\
 
-\noindent The related paper: Combinatorial lower bounds for 3-query LDCs by \citet{Alrabiah2022-ds}. Seminar by \href{https://www.cs.cmu.edu/~pmanohar/}{Peter Manohar}. \cite{https://doi.org/10.48550/arxiv.1911.10698}
+\noindent The related paper: Combinatorial lower bounds for 3-query LDCs by \citet{Alrabiah2022-ds}. Seminar by \href{https://www.cs.cmu.edu/~pmanohar/}{Peter Manohar}. \cite{https://doi.org/10.48550/arxiv.1911.10698} \cite{https://doi.org/10.48550/arxiv.2109.04415}
 
 \subsection{Abstract}
 
@@ -297,7 +297,73 @@ D = {q \choose \frac{q}{2}} {n-q \choose l - \frac{q}{2}}
 
 \noindent We have already proven that $||A||_{\infty \to 1} \geq Dm \max_{x}f(x) \geq Dm \geq D \delta nk$\\
 
-\noindent It is also interesting to note that $||A||_{\infty \to 1} \leq N ||A||_2$ and we still need to be able to show that with high probability that $||A||_{\infty \to 1}$ is not too large.
+\noindent It is also interesting to note that $||A||_{\infty \to 1} \leq N ||A||_2$ and we still need to be able to show that with high probability that $||A||_{\infty \to 1}$ is not too large.\\
+
+\noindent Matrix Bernstein: with high probability over $b_i$, $||A||_2 \leq \triangle \sqrt{kl}$ where $\triangle$ is the maximum number of 1's in a row in any $A_i$.\\
+
+\noindent Expected number of 1's per row is $\delta n \frac{D}{N} \sim n (\frac{l}{n})^{q/2}$.\\
+
+\noindent We can optimistically suppose that $\triangle \sim n (\frac{l}{n})^{q/2}$ however this also needs $l \geq n^{1-2/q}$.\\
+
+\noindent Then $D \cdot \delta n k \leq ||A||_{\infty \to  1} \leq N \triangle \sqrt{kl}$\\
+
+\noindent $\implies k \leq l$ since $\triangle \sim \delta n \frac{D}{N}$\\
+
+\noindent Now take $l=n^{1-2/q} \implies k^{q/(q-2)} \leq n$\\
+
+\noindent So, $\triangle =\frac{2l}{q}$\\
+
+\noindent Because $H_i$ are matchings, a random row will have only $\approx \frac{\delta n D}{N}$ 1's.\\
+
+\noindent The idea now is to prune off all the bad rows or columns in A to get B such that:
+
+\begin{equation*}
+||A||_{\infty \to 1} \leq ||B||_{\infty \to 1} +o(N)
+\end{equation*}
+
+\noindent And, $\triangle_B \sim \delta n (\frac{l}{n})^{q/2}$\\
+
+\noindent And now we can just use $B$ instead which will prove $q$-LDC lower bound for $q$ even.
+
+\subsection{Proof: $k^3$ lower bound}
+
+Recall, $q$-LDC XOR instance $\psi_b$ is encoded by:
+
+\begin{itemize}
+    \item $q$-uniform hypergraph matchings $\{ H_1 \cdots H_k \}$
+    \item right-hand sides are random $b_i \in \{ \pm 1 \}$
+    \item We have constraints $\displaystyle\prod_{j \in C} x_j=b_i$ for all $i$ and $C \in H_i$
+\end{itemize}
+
+\noindent The goal is argue that $\psi_b$ is unsatisfiable with high probability for random $b$. And the idea is to design a matrix $A \in \mathbb{R}^{N \times N}$ so that:
+
+\begin{equation*}
+f(x) \leq ||A||_{\infty \to 1} = \max_{z, w \in \{ \pm 1 \}^N z^TAw}
+\end{equation*}
+
+\noindent The previous approach fails because the $A$ from before requires $q$ to be even.\\
+
+\noindent One attempt is to represent rows as $|S|=l$ and columns as $|T|=l+1$. However this will only get us to $k \leq \sqrt{n}$.\\
+
+\noindent We need to derive more constraints, using $C_i \oplus C_j$ get us to $nk$ constraints so each $n_j$ is in $\approx k$ constraints $\implies$ new $nk^2$ constraints. \\
+
+\noindent The matrix $A$ is indexed by $S$, $A(S,T)=b_ib_j$. The calculation is now:
+
+\begin{equation*}
+nk^2D \leq ||A||_{\infty \to 1} \leq N \triangle \sqrt{kl}
+\end{equation*}
+
+\noindent An optimist approach is $\triangle \sim Nk\frac{D}{N} = nk(\frac{l}{n})^2$\\
+
+\noindent $\implies l \geq \sqrt{\frac{n}{k}}$\\
+
+\noindent $\implies k \leq n \implies k^3 \leq n$\\
+
+\noindent The row pruning tricks would still work provided that any $\{u, v\}$ is in at most $polylog(n)$ constraints.
+
+\subsection{Conclusion}
+
+This proof for $q=3$ is not generalizable for all odd $q$ and neither is a reduction to $2$-LDC. This is particularly true because of the row pruning step.
 
 \newpage
 \bibliography{references}

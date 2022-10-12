@@ -6,3 +6,5 @@
 \contentsline {subsection}{\numberline {1.4}Normally Decodable Codes}{4}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}Proof: Going from LDC to XOR}{5}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}Proof: Existing $q$-LDC lower bound for $q$ even}{6}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Proof: $k^3$ lower bound}{8}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Conclusion}{9}{subsection.1.8}%
