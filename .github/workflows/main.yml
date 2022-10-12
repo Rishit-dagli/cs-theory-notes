@@ -26,9 +26,11 @@ jobs:
         uses: docker://ghcr.io/michal-h21/make4ht-action:latest 
         env: 
           command: make4ht -u main.tex "mathml,mathjax"
-      - name: ls
-        run: ls
+          
+      - name: Rename file 
+        run: mv main.html index.html
+        
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: main # The folder the action should deploy.
+          folder: . # The folder the action should deploy.
