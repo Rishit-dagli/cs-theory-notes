@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1667311140 "main.aux" "main.bbl" "main" 1667311141
+["bibtex main"] 1667311427 "main.aux" "main.bbl" "main" 1667311428
   "/opt/texlive/texdir/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1667311141 3604 9a1372060bb541eee6c749f71cd8e540 "pdflatex"
-  "references.bib" 1667311138 3202 5130431934795110739985e34aa1d920 ""
+  "main.aux" 1667311427 3604 9a1372060bb541eee6c749f71cd8e540 "pdflatex"
+  "references.bib" 1667311424 3202 5130431934795110739985e34aa1d920 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1667311141 "main.tex" "main.pdf" "main" 1667311141
+["pdflatex"] 1667311427 "main.tex" "main.pdf" "main" 1667311428
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -117,12 +117,12 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1667266568 4609054 6dbf1df48b9a44882cfb75b26bca3b91 ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1667266629 3058921 f65a837cc32f28d06020bf9901c28c0c ""
   "/opt/texlive/texdir/texmf.cnf" 1667266561 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "main.aux" 1667311141 3604 9a1372060bb541eee6c749f71cd8e540 "pdflatex"
-  "main.bbl" 1667311140 1909 5e0b9d26e71bd5a4d6cd06c4bfc9b504 "bibtex main"
-  "main.out" 1667311141 2624 6ec7adb5365a7734fcf155af926f7e2a "pdflatex"
-  "main.tex" 1667311138 15922 3353ee6caef222ad430a4d701412ae92 ""
-  "main.toc" 1667311141 1182 1fd8b93b167f5b62f5816b9e9fd8c275 "pdflatex"
-  "media/sample-graph.PNG" 1667311138 60658 8346aed8bb1b24f446c25714265c726d ""
+  "main.aux" 1667311427 3604 9a1372060bb541eee6c749f71cd8e540 "pdflatex"
+  "main.bbl" 1667311427 1909 5e0b9d26e71bd5a4d6cd06c4bfc9b504 "bibtex main"
+  "main.out" 1667311427 2624 6ec7adb5365a7734fcf155af926f7e2a "pdflatex"
+  "main.tex" 1667311424 15922 3353ee6caef222ad430a4d701412ae92 ""
+  "main.toc" 1667311427 1182 1fd8b93b167f5b62f5816b9e9fd8c275 "pdflatex"
+  "media/sample-graph.png" 1667311424 60658 8346aed8bb1b24f446c25714265c726d ""
   (generated)
   "main.aux"
   "main.log"
