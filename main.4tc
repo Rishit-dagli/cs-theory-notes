@@ -11,4 +11,8 @@
 \doTocEntry\tocsubsection{1.6}{\csname a:TocLink\endcsname{1}{x1-90001.6}{QQ2-1-10}{Proof: Existing $q$-LDC lower bound for $q$ even}}{13}\relax 
 \doTocEntry\tocsubsection{1.7}{\csname a:TocLink\endcsname{1}{x1-100001.7}{QQ2-1-11}{Proof: $k^3$ lower bound}}{19}\relax 
 \doTocEntry\tocsubsection{1.8}{\csname a:TocLink\endcsname{1}{x1-110001.8}{QQ2-1-12}{Conclusion}}{21}\relax 
-\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-12000}{QQ2-1-13}{References}}{22}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-120002}{QQ2-1-13}{Algorithms for the ferromagnetic Potts model on expanders}}{22}\relax 
+\doTocEntry\tocsubsection{2.1}{\csname a:TocLink\endcsname{1}{x1-130002.1}{QQ2-1-14}{Abstract}}{22}\relax 
+\doTocEntry\tocsubsection{2.2}{\csname a:TocLink\endcsname{1}{x1-140002.2}{QQ2-1-15}{The Ferromagnetic Potts Model}}{22}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-140011}{}{\ignorespaces A sample graph}}{figure}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-15000}{QQ2-1-17}{References}}{26}\relax 

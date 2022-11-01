@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,5 +31,12 @@ Venkatesan Guruswami, Pravesh~K. Kothari, and Peter Manohar.
 Alexander~S. Wein, Ahmed~El Alaoui, and Cristopher Moore.
 \newblock The kikuchi hierarchy and tensor pca, 2019.
 \newblock URL \url{https://arxiv.org/abs/1904.03858}.
+
+\bibitem[Carlson et~al.(2022)Carlson, Davies, Fraiman, Kolla, Potukuchi, and
+  Yap]{https://doi.org/10.48550/arxiv.2204.01923}
+Charlie Carlson, Ewan Davies, Nicolas Fraiman, Alexandra Kolla, Aditya
+  Potukuchi, and Corrine Yap.
+\newblock Algorithms for the ferromagnetic potts model on expanders, 2022.
+\newblock URL \url{https://arxiv.org/abs/2204.01923}.
 
 \end{thebibliography}

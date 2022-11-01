@@ -8,3 +8,6 @@
 \contentsline {subsection}{\numberline {1.6}Proof: Existing $q$-LDC lower bound for $q$ even}{6}{subsection.1.6}%
 \contentsline {subsection}{\numberline {1.7}Proof: $k^3$ lower bound}{8}{subsection.1.7}%
 \contentsline {subsection}{\numberline {1.8}Conclusion}{9}{subsection.1.8}%
+\contentsline {section}{\numberline {2}Algorithms for the ferromagnetic Potts model on expanders}{10}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Abstract}{10}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The Ferromagnetic Potts Model}{10}{subsection.2.2}%

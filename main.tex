@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{./media/}}
 \newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
 \hypersetup{
@@ -364,6 +366,26 @@ nk^2D \leq ||A||_{\infty \to 1} \leq N \triangle \sqrt{kl}
 \subsection{Conclusion}
 
 This proof for $q=3$ is not generalizable for all odd $q$ and neither is a reduction to $2$-LDC. This is particularly true because of the row pruning step.
+
+\newpage
+\section{Algorithms for the ferromagnetic Potts model on expanders}
+
+14th October 2022\\
+
+\noindent The related paper: Algorithms for the ferromagnetic Potts model on expanders by \citet{https://doi.org/10.48550/arxiv.2204.01923}. Seminar by \href{https://www.adityapotukuchi.com/}{Aditya Potukuchi}.
+
+\subsection{Abstract}
+
+\noindent The ferromagnetic Potts model is a canonical example of a Markov random field from statistical physics that is of great probabilistic and algorithmic interest. This is a distribution over all $1$-colorings of the vertices of a graph where monochromatic edges are favored. The algorithmic problem of efficiently sampling approximately from this model is known to be \#BIS-hard, and has seen a lot of recent interest. I will outline some recently developed algorithms for approximately sampling from the ferromagnetic Potts model on d-regular weakly expanding graphs. This is achieved by a significantly sharper analysis of standard "polymer methods" using extremal graph theory and applications of Karger's algorithm to count cuts that may be of independent interest. I will give an introduction to all the topics that are relevant to the results.
+
+\subsection{The Ferromagnetic Potts Model}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{sample-graph}
+\caption{A sample graph}
+\label{fig:sample-graph}
+\end{figure}
 
 \newpage
 \bibliography{references}
