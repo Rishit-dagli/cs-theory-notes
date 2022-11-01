@@ -644,6 +644,7 @@ INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /opt/texlive/texdir/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT ./media/sample-graph.PNG
 INPUT ./media/sample-graph.PNG
+INPUT media/sample-graph.PNG
 INPUT ./media/sample-graph.PNG
 INPUT ./media/sample-graph.PNG
 INPUT ./main.bbl

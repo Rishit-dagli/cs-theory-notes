@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  1 NOV 2022 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  1 NOV 2022 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -292,7 +292,7 @@ File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 )
 \c@definition=\count297
 \c@theorem=\count298
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks31
@@ -846,28 +846,28 @@ File: l3backend-dvips.def 2022-07-01 L3 backend support: dvips
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-Package hyperref Info: Link coloring ON on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+Package hyperref Info: Link coloring ON on input line 24.
 
 LaTeX Warning: First page is already shipped out, ignoring
-               \AtBeginDvi on input line 25.
+               \AtBeginDvi on input line 24.
 
 --- file main.css ---
 [1] [2] (./main.4ct) [3] [4
@@ -876,27 +876,27 @@ LaTeX Warning: First page is already shipped out, ignoring
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 124.
+(amsmath)                 on input line 123.
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23
 
 ]
-l.385 --- TeX4ht warning --- File `"./media//sample-graph.xbb"' not found ---
-l.385 --- TeX4ht warning --- Cannot determine size of graphic in "./media//samp
-le-graph.xbb" (no BoundingBox) ---
-l. 385 --- needs --- ./media//sample-graph.png ---
+l.384 --- TeX4ht warning --- File `"media/sample-graph.xbb"' not found ---
+l.384 --- TeX4ht warning --- Cannot determine size of graphic in "media/sample-
+graph.xbb" (no BoundingBox) ---
+l. 384 --- needs --- media/sample-graph.png ---
 [24
 
 ] [25
 
 ] (./main.bbl) [26] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15120 strings out of 478024
- 224573 string characters out of 5841234
- 652758 words of memory out of 5000000
- 33094 multiletter control sequences out of 15000+600000
+ 15118 strings out of 478024
+ 224512 string characters out of 5841234
+ 652746 words of memory out of 5000000
+ 33091 multiletter control sequences out of 15000+600000
  480420 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,18n,97p,1451b,569s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.dvi (283 pages, 216088 bytes).
+Output written on main.dvi (283 pages, 216080 bytes).
