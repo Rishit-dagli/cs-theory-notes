@@ -11,3 +11,9 @@
 \contentsline {section}{\numberline {2}Algorithms for the ferromagnetic Potts model on expanders}{10}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Abstract}{10}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}The Ferromagnetic Potts Model}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}The Problem}{11}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Antiferromagnetic Potts model}{12}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Main Results}{13}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Potts Distribution}{13}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Results}{14}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Polymer Methods}{15}{subsection.2.8}%

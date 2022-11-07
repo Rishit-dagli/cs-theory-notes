@@ -15,4 +15,12 @@
 \doTocEntry\tocsubsection{2.1}{\csname a:TocLink\endcsname{1}{x1-130002.1}{QQ2-1-14}{Abstract}}{22}\relax 
 \doTocEntry\tocsubsection{2.2}{\csname a:TocLink\endcsname{1}{x1-140002.2}{QQ2-1-15}{The Ferromagnetic Potts Model}}{22}\relax 
 \doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-140011}{}{\ignorespaces A sample graph}}{figure}\relax 
-\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-15000}{QQ2-1-17}{References}}{26}\relax 
+\doTocEntry\tocsubsection{2.3}{\csname a:TocLink\endcsname{1}{x1-150002.3}{QQ2-1-17}{The Problem}}{26}\relax 
+\doTocEntry\tocsubsection{2.4}{\csname a:TocLink\endcsname{1}{x1-160002.4}{QQ2-1-18}{Antiferromagnetic Potts model}}{28}\relax 
+\doTocEntry\tocsubsection{2.5}{\csname a:TocLink\endcsname{1}{x1-170002.5}{QQ2-1-19}{Main Results}}{30}\relax 
+\doTocEntry\tocsubsection{2.6}{\csname a:TocLink\endcsname{1}{x1-180002.6}{QQ2-1-20}{Potts Distribution}}{32}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-180022}{}{\ignorespaces Rough picture of the Potts model}}{figure}\relax 
+\doTocEntry\tocsubsection{2.7}{\csname a:TocLink\endcsname{1}{x1-190002.7}{QQ2-1-22}{Results}}{36}\relax 
+\doTocEntry\tocsubsection{2.8}{\csname a:TocLink\endcsname{1}{x1-200002.8}{QQ2-1-23}{Polymer Methods}}{37}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-200013}{}{\ignorespaces Proof Schematic}}{figure}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-21000}{QQ2-1-25}{References}}{43}\relax 

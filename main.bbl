@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -38,5 +38,34 @@ Charlie Carlson, Ewan Davies, Nicolas Fraiman, Alexandra Kolla, Aditya
   Potukuchi, and Corrine Yap.
 \newblock Algorithms for the ferromagnetic potts model on expanders, 2022.
 \newblock URL \url{https://arxiv.org/abs/2204.01923}.
+
+\bibitem[Coulson et~al.(2020)Coulson, Davies, Kolla, Patel, and
+  Regts]{coulson_et_al:LIPIcs:2020:12565}
+Matthew Coulson, Ewan Davies, Alexandra Kolla, Viresh Patel, and Guus Regts.
+\newblock {Statistical Physics Approaches to Unique Games}.
+\newblock In Shubhangi Saraf, editor, \emph{35th Computational Complexity
+  Conference (CCC 2020)}, volume 169 of \emph{Leibniz International Proceedings
+  in Informatics (LIPIcs)}, pages 13:1--13:27, Dagstuhl, Germany, 2020. Schloss
+  Dagstuhl--Leibniz-Zentrum f{\"u}r Informatik.
+\newblock ISBN 978-3-95977-156-6.
+\newblock \doi{10.4230/LIPIcs.CCC.2020.13}.
+\newblock URL \url{https://drops.dagstuhl.de/opus/volltexte/2020/12565}.
+
+\bibitem[Frankl and F{\"u}redi(1981)]{frankl1981short}
+Peter Frankl and Zolt{\'a}n F{\"u}redi.
+\newblock A short proof for a theorem of harper about hamming-spheres.
+\newblock \emph{Discrete Mathematics}, 34\penalty0 (3):\penalty0 311--313,
+  1981.
+
+\bibitem[Helmuth et~al.(2019)Helmuth, Perkins, and
+  Regts]{10.1145/3313276.3316305}
+Tyler Helmuth, Will Perkins, and Guus Regts.
+\newblock Algorithmic pirogov-sinai theory.
+\newblock In \emph{Proceedings of the 51st Annual ACM SIGACT Symposium on
+  Theory of Computing}, STOC 2019, page 1009–1020, New York, NY, USA, 2019.
+  Association for Computing Machinery.
+\newblock ISBN 9781450367059.
+\newblock \doi{10.1145/3313276.3316305}.
+\newblock URL \url{https://doi.org/10.1145/3313276.3316305}.
 
 \end{thebibliography}
