@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1670092640 "main.aux" "main.bbl" "main" 1670092641 0
-  "./references.bib" 1670092636 6750 8383ef510f8cac6a44dc895d09c099ae ""
+["bibtex main"] 1670092689 "main.aux" "main.bbl" "main" 1670092690 0
+  "./references.bib" 1670092685 6750 8383ef510f8cac6a44dc895d09c099ae ""
   "/opt/texlive/texdir/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1670092641 7102 c5f7f5188562f87d853313b8e0e7837a "pdflatex"
+  "main.aux" 1670092690 7102 c5f7f5188562f87d853313b8e0e7837a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1670092640 "main.tex" "main.pdf" "main" 1670092641 0
+["pdflatex"] 1670092689 "main.tex" "main.pdf" "main" 1670092690 0
   "/opt/texlive/texdir/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/opt/texlive/texdir/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/opt/texlive/texdir/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -119,16 +119,16 @@
   "/opt/texlive/texdir/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1669858659 4623321 6abbe6b7353361ea94d693a930a55e17 ""
   "/opt/texlive/texdir/texmf-var/web2c/pdftex/pdflatex.fmt" 1669858696 3063532 5642bfda6184128df2b66d9e5ee1b5ee ""
   "/opt/texlive/texdir/texmf.cnf" 1669858651 555 bd60ff59e4d560b42d96b004436f91d3 ""
-  "main.aux" 1670092641 7102 c5f7f5188562f87d853313b8e0e7837a "pdflatex"
-  "main.bbl" 1670092640 4004 16a42e96032d0bb4cd9501e297516776 "bibtex main"
-  "main.out" 1670092641 4988 57d4d3351e27de4f512caf53eea1b048 "pdflatex"
-  "main.tex" 1670092636 39385 496ffcc0d95f1e4c9cbd1f18360b009e ""
-  "main.toc" 1670092641 2466 8866ba19152428fee9f3c761e2f1b6c9 "pdflatex"
-  "media/example-problem.png" 1670092636 373659 8432c5fadf067feeefb7e8f5524ff14a ""
-  "media/potts-model.jpg" 1670092636 82847 94d37b812de352506eec5b3aa5de0f28 ""
-  "media/proof-schematic.jpg" 1670092636 77075 199289cac9b11ce37c393818b835ff55 ""
-  "media/sample-graph.png" 1670092636 60658 8346aed8bb1b24f446c25714265c726d ""
-  "media/trade-off.png" 1670092636 125804 1b77af6ba2e68787b9c55c59fada4880 ""
+  "main.aux" 1670092690 7102 c5f7f5188562f87d853313b8e0e7837a "pdflatex"
+  "main.bbl" 1670092689 4004 16a42e96032d0bb4cd9501e297516776 "bibtex main"
+  "main.out" 1670092690 4988 57d4d3351e27de4f512caf53eea1b048 "pdflatex"
+  "main.tex" 1670092685 39385 496ffcc0d95f1e4c9cbd1f18360b009e ""
+  "main.toc" 1670092690 2466 8866ba19152428fee9f3c761e2f1b6c9 "pdflatex"
+  "media/example-problem.png" 1670092685 373659 8432c5fadf067feeefb7e8f5524ff14a ""
+  "media/potts-model.jpg" 1670092685 76856 34e6965198b4386ed4a6e81d7fb3a6ab ""
+  "media/proof-schematic.jpg" 1670092685 73040 b5decfc2493d0caab10d87914b778426 ""
+  "media/sample-graph.png" 1670092685 52810 d8202d8ba7fe461d1b00ff22249143bc ""
+  "media/trade-off.png" 1670092685 125804 1b77af6ba2e68787b9c55c59fada4880 ""
   (generated)
   "main.aux"
   "main.log"
