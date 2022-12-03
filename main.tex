@@ -8,7 +8,9 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\graphicspath{./media/}
 \newtheorem{definition}{Definition}
+\newtheorem{conjecture}{Conjecture}
 \newtheorem{theorem}{Theorem}
 \hypersetup{
     colorlinks=true,
@@ -622,6 +624,320 @@ We now move towards cluster expansion: multivariate in the $w_{\gamma}$ Taylor e
 \end{theorem}
 
 \noindent Now we also know the maximum value of $Z_G(q,\beta)$ over all graphs $G$ with $n$ vertices, $m$ edges, and max degree $d$. This will always be attained when $G$ is a disjoint union of $K_{d+1}$ and $K_1$
+
+\newpage
+\section{Statistical Learning using Compression}
+
+18th October 2022\\
+
+\noindent The related paper: Adversarially Robust Learning with Tolerance by \citet{https://doi.org/10.48550/arxiv.2203.00849}. Seminar by \href{https://www.cas.mcmaster.ca/ashtiani/}{Hassan Ashtiani}.
+
+\subsection{Abstract}
+
+\noindent Characterizing the sample complexity of different machine learning tasks is one of the central questions in statistical learning theory. For example, the classic Vapnik-Chervonenkis theory characterizes the sample complexity of binary classification. Despite this early progress, the sample complexity of many important learning tasks — including density estimation and learning under adversarial perturbations — are not yet resolved. In this talk, we review the less conventional approach of using compression schemes for proving sample complexity upper bounds, with specific applications in learning under adversarial perturbations and learning Gaussian mixture models.
+
+\subsection{Some background}
+
+\noindent We start by defining some notation:
+
+\begin{itemize}
+    \item $Z$: domain set
+    \item $D_Z$: distribution over $Z$
+    \item $S$: i.i.d sample from $D_Z$
+    \item $H$: class of models/hypotheses
+    \item $L(D_Z,H) \to \mathbb{R}$: loss/ error function
+    \item $OPT=inf_{h \in H} L(D_z,h)$: best achievable
+    \item $A_{Z,H}: Z^* \to H$: learner
+\end{itemize}
+
+\subsection{Density Estimation}
+
+\noindent Our goal is that for every $D_Z$, $A_{Z,H}(S)$ we want it to be comparable to $OPT$ with high probability.\\
+
+\noindent We take the example of density estimation in this case $L(D_Z, h) = d_{TV} (D_z, h)$. Now, $A_{Z,H}$ probably approximately correct learns $H$ with $m(\epsilon, \delta)$ samples if for all $D_Z$ and for all $\epsilon$ with a $\delta \in ( 0,1 )$. Now if $S \sim D_Z^{m(\epsilon, \delta)}$ then:
+
+\begin{equation}
+    \underset{S}{\mathrm{Pr}} [L(D_Z, A_{Z,H}(S)) > \epsilon + C \cdot OPT] < \delta
+\end{equation}
+
+\noindent Now if we take the example of $C=2$, let $H$ be the set of all Gaussians in $\mathbb{R}^d$ then:
+
+\begin{equation*}
+    m(\epsilon, \delta) = O \left( \frac{d^2 + \log 1/\delta}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent We will now modify the above equation. Now, $A_{Z,H}$ probably approximately correct learns $H$ with $m(\epsilon)$ samples if for all $D_Z$ and for all $\epsilon \in ( 0,1 )$. Now if $S \sim D_Z^{m(\epsilon)}$ then:
+
+\begin{equation}
+    \underset{S}{\mathrm{Pr}} [L(D_Z, A_{Z,H}(S)) > \epsilon + C \cdot OPT] < 0.01
+\end{equation}
+
+\noindent For the example of $C=2$, let $H$ be the set of all Gaussians in $\mathbb{R}^d$ then:
+
+\begin{equation*}
+    m(\epsilon, \delta) = O \left( \frac{d^2}{\epsilon^2} \right)
+\end{equation*}
+
+\subsection{Binary Classification (with adv. pertubations)}
+
+\noindent For the example of binary classification, we have $Z = X \times \{ 0, 1 \}$ and $h$ is some model which maps from $h: X \to \{ 0, 1 \}$.\\
+
+\noindent We also have $l(h,x,y) = 1 {h(x) \neq y}$ and then we will have the $L$ be $L(D_Z,h) = E_{(x,y) \sim D_Z} l(h,x,y)$.\\
+
+\noindent Now, $A_{Z,H}$ probably approximately correct learns $H$ with $m(\epsilon)$ samples if for all $D_Z$ and for all $\epsilon \in ( 0,1 )$. Now if $S \sim D_Z^{m(\epsilon)}$ then:
+
+\begin{equation}
+    \underset{S}{\mathrm{Pr}} [L(D_Z, A_{Z,H}(S)) > \epsilon + C \cdot OPT] < 0.01
+\end{equation}
+
+\noindent Now $H$ is the set of all half spaces in $\mathbb{R}^d$ then:
+
+\begin{equation*}
+    m(\epsilon) = O \left( \frac{d}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent For the example of binary classification, we have $Z = X \times \{ 0, 1 \}$ and $h$ is some model which maps from $h: X \to \{ 0, 1 \}$.\\
+
+\noindent We also have $l^U(h,x,y) =$ adversarial pertubations and then we will have the $L^U$ be $L^U(D_Z,h) = E_{(x,y) \sim D_Z} l^U(h,x,y)$.\\
+
+\noindent Now, $A_{Z,H}$ probably approximately correct learns $H$ with $m(\epsilon)$ samples if for all $D_Z$ and for all $\epsilon \in ( 0,1 )$. Now if $S \sim D_Z^{m(\epsilon)}$ then:
+
+\begin{equation}
+    \underset{S}{\mathrm{Pr}} [L^U(D_Z, A_{Z,H}(S)) \epsilon + OPT] < 0.01
+\end{equation}
+
+\noindent Now, consider the following $H_1$ and $H_2$:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{media/trade-off.png}
+\caption{Trade Offs}
+\label{fig:trade-off}
+\end{figure}
+
+\noindent Here $H_2$ is richer which can make it contain better models as well as harder to learn. We can characterize the sample complexity of learning $H$ using Binary classification, with Binary classification with
+adversarial perturbations or with Density estimation.\\
+
+\noindent In the case of binary classification the VC-dimension quantifies complexity:
+
+\begin{equation*}
+    m ( \epsilon ) = \Theta \left( \frac{VC(H)}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent The upper bound here is achieved using simple ERM
+
+\begin{equation*}
+    L(S,h) = \frac{1}{|S|} \sum_{(x,y)\in S} l(h,x,y)
+\end{equation*}
+
+\begin{equation*}
+    h = argmin_{h \in H} L(S,h)
+\end{equation*}
+
+\noindent And then for uniform convergence:
+
+\begin{equation}
+    sup_{h \in H} |L(S,h) - L(D_z,h)| = O \left( \sqrt{\frac{VC(H)}{|S|}} \right) w.p. > 0.99
+\end{equation}
+
+We now introduce sample compression as an alternative.
+
+\subsection{Sample Compression}
+
+\noindent The idea is to try and answer how should we go about compressing a given training set? In classic information theory, we would compress it into a few bits. In the case of sample compression, we want to try to compress it into a few samples.\\
+
+\noindent If we just take the simple example of linear classification Number of required bits is unbounded (depends on the sample).\\
+
+\noindent It has already been shown by \citet{littlestone1986relating} that Compressibility $\implies$ Learnability
+
+\begin{equation*}
+    m(\epsilon)=\Tilde{O} \left( \frac{k}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent It has also been shown by \citet{moran2016sample} Compressibility $\impliedby$ Learnability
+
+\begin{equation*}
+    k = 2^{O(VC)}
+\end{equation*}
+
+\begin{conjecture}[Compression Conjecture]
+    $k = \Theta(VC)$
+\end{conjecture}
+
+\noindent Sample Compression can be very helpful by:
+
+\begin{itemize}
+    \item being simpler and more intuitive
+    \item being more generic. It can work even if uniform convergence fails! Can show optimal SVM bound and we can also perform compression for learning under Adversarial Perturbations.
+\end{itemize}
+
+\noindent Typical classifiers are often:
+
+\begin{itemize}
+    \item Sensitive to “adversarial” perturbations, even when the noise is “imperceptible”
+    \item Vulnerable to malicious attacks
+    \item Ignore the “invariance” or domain-knowledge
+\end{itemize}
+
+\noindent In the case of classification with adversarial perturbations we had $l^{0/1}(h,x,y) = 1 \{h(x) \neq y\}$ and $l^U(h,x,y) = sup_{\Bar{x} \in U(x)} l^{0/1}(h,\Bar{x},y)$\\
+
+\noindent and then we will have the $L^U$ be $L^U(D_Z,h) = E_{(x,y) \sim D_Z} l^U(h,x,y)$.\\
+
+\noindent Now, $A_{Z,H}$ probably approximately correct learns $H$ with $m(\epsilon)$ samples if for all $D_Z$ and for all $\epsilon \in ( 0,1 )$. Now if $S \sim D_Z^{m(\epsilon)}$ then:
+
+\begin{equation}
+    \underset{S}{\mathrm{Pr}} [L^U(D_Z, A_{Z,H}(S)) \epsilon + OPT] < 0.01
+\end{equation}
+
+\noindent However one of the problems with this is if the robust ERM works for all $H$
+
+\begin{equation*}
+    L(S,h) = \frac{1}{|S|} \sum_{(x,y)\in S} l(h,x,y)
+\end{equation*}
+
+\begin{equation*}
+    h = argmin_{h \in H} L(S,h)
+\end{equation*}
+
+\noindent The robust ERM would not work for all $H$, uniform convergence can fail,
+
+\begin{equation*}
+    sup_{h \in H} |L^U(S,h) - L^U(D_z, h)|
+\end{equation*}
+
+\noindent can be unbounded.\\
+
+\noindent We can say that any “proper learner” (outputs from $H$) can fail.\\
+
+\noindent In a compression-based method the decoder should recover the labels
+of the training set and their neighbors and then compress the inflates set:
+
+\begin{equation*}
+    k = 2^{O(VC)}
+\end{equation*}
+
+\noindent So,
+
+\begin{equation}
+    m^U(\epsilon) = O \left( \frac{2^{VC(H)}}{\epsilon^2} \right)
+\end{equation}
+
+\noindent There is an exponential dependence on $VC(H)$.\\
+
+\noindent \citet{https://doi.org/10.48550/arxiv.2203.00849} introduced tolerant adversarial learning $A_{Z,H}$ PAC learns $H$ with $m(\epsilon)$ samples\\
+
+\noindent if $\forall D_Z$, $\forall \epsilon \in (0,1)$, if $S \simeq D_Z^{m(\epsilon)}$ then
+
+\begin{equation}
+    Pr_S[L^U(D_Z,A_{Z,H}(S)) > \epsilon + inf_{h \in H} L^V(D_Z,A_{Z,H}(S))] < 0.01
+\end{equation}
+
+\noindent And,
+
+\begin{equation}
+    m^{U,V}(\epsilon) = \Tilde{O} \left( \frac{VC(H)d\log(1+\frac{1}{\gamma})}{\epsilon ^2} \right)
+\end{equation}
+
+\noindent The trick is to avoid compressing an infinite set and now our new goal is that the decoder should only recover labels of things in $U(x)$.\\
+
+\noindent To do so we can define a noisy empirical distribution (using $V(x)$) and then use boosting to achieve a super small error with respect to this distribution. And then, we encode the classifier using the samples used to train weak learners and the decoder smooths out the hypotheses.\\
+
+\noindent It is interesting to think of Why do we need tolerance? There do exist some other ways to relax the problem and avoid $2^{O(VC)}$
+
+\begin{itemize}
+    \item bounded adversary
+    \item Limited black-box query access to the hypothesis
+    \item Related to the certification problem
+\end{itemize}
+
+\noindent This is also observable in the density estimation example.
+
+\subsection{Gaussian Mixture Models}
+
+Gaussian mixture Models are very popular in practice and are one of the most basic universal density approximators. These are also the building blocks for more sophisticated density classes and can think of them as multi-modal versions of Gaussians.
+
+\begin{equation*}
+    f(x) = w_1N(x|\mu_1,\sum 1)+w_2N(x|\mu_2,\sum 2)+w_3N(x|\mu_3,\sum 3)
+\end{equation*}
+
+\noindent We say $F$ is Gaussian Mixture Model with $k$ components in $\mathbb{R}^d$. And we want to ask how many samples is needed to recover $f \in F$ within $L_1$ error $\epsilon$.\\
+
+\noindent The number of samples $\simeq m(d,k,\epsilon)$.\\
+
+\noindent To learn single Gaussian in $\mathbb{R}^d$ then
+
+\begin{equation*}
+    O \left( \frac{d^2}{\epsilon^2} \right) = O \left( \frac{\# params}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent samples are sufficient (and necessary).\\
+
+\noindent Now if we have $k$ Gaussian in $\mathbb{R}^d$ then we want to know if 
+
+\begin{equation*}
+    O \left( \frac{kd^2}{\epsilon^2} \right) = O \left( \frac{\# params}{\epsilon^2} \right)
+\end{equation*}
+
+\noindent samples are sufficient?\\
+
+\noindent There have been some results on learning Gaussian Mixture Models.\\
+
+\noindent Let us take the example of this graph. For a moment look at this as a binary classification problem. The decision boundary has a simple quadratic form!
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{media/example-problem.png}
+\caption{A sample problem}
+\label{fig:ex-problem}
+\end{figure}
+
+\begin{equation*}
+    VC-dim=O(D^2)
+\end{equation*}
+
+\noindent Here “Sample compression" does npt make sense as there are no “labels”.
+
+\subsection{Compression Framework}
+
+\noindent We have $F$ which is a class of distributions (e.g. Gaussians) and we have. If A sends $t$ points from $m$ points and B approximates $D$
+then we say $F$ admits $(t,m)$-compression.
+
+\begin{theorem}
+    If $F$ has a compression scheme of size $(t,m)$ then sample complexity of learning $F$ is
+    \begin{equation*}
+        \Tilde{O} \left( \frac{t}{\epsilon^2} + m \right)
+    \end{equation*}
+    $\Tilde{O}(\cdot)$ hides polylog factors.
+\end{theorem}
+
+\noindent Small compression schemes imply sample-efficient algorithms.
+
+\begin{theorem}
+    If $F$ has a compression scheme of size $(t, m)$ then $k$ mixtures of $F$ admits $(kt,km)$ compression.
+\end{theorem}
+
+\noindent Distribution compression schemes extend to mixture classes automatically! So for the case of GMMs in $\mathbb{R}^d$ it is enough to come up with a good compression scheme for a single Gaussian!\\
+
+\noindent For learning mixtures of Gaussians, the encoding center and axes of ellipsoid is sufficient to recover $N(\mu,\Sigma)$. This admits $\Tilde{O}(d^2,\frac{1}{\epsilon})$ compression! The technical challenge is encoding the $d$ eigenvectors “accurately” using only $d^2$ points.\\
+
+\noindent $\frac{\sigma_{max}}{\sigma_{min}}$ can be large which is a technical challenge.
+
+\subsection{Conclusion}
+
+\begin{itemize}
+    \item Compression is simple, intuitive, generic
+    \item Compression relies heavily on a few points
+    \begin{itemize}
+        \item But still can give “robust” methods
+        \item Agnostic sample compression
+        \item Robust target compression
+    \end{itemize}
+    \item Target compression is quite general
+    \begin{itemize}
+        \item Reduces the problem to learning from finite classes
+        \item Does it characterize learning?
+    \end{itemize}
+\end{itemize}
 
 \newpage
 \bibliography{references}
