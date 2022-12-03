@@ -141,6 +141,8 @@ Css: .rotatebox{display: inline-block;}
 File: media/sample-graph.png
 File: media/potts-model.jpg
 File: media/proof-schematic.jpg
+File: media/trade-off.png
+File: media/example-problem.png
 --- characters ---
 Font("cmex","10","10","100")
 Font("cmr","5","5","100")

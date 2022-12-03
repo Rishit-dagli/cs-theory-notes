@@ -17,3 +17,12 @@
 \contentsline {subsection}{\numberline {2.6}Potts Distribution}{13}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}Results}{14}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Polymer Methods}{15}{subsection.2.8}%
+\contentsline {section}{\numberline {3}Statistical Learning using Compression}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Abstract}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Some background}{17}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Density Estimation}{17}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Binary Classification (with adv. pertubations)}{18}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Sample Compression}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Gaussian Mixture Models}{22}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Compression Framework}{22}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Conclusion}{23}{subsection.3.8}%

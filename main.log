@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  7 NOV 2022 05:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=latex 2022.9.11)  3 DEC 2022 18:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,8 +291,9 @@ File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 \Gin@req@width=\dimen158
 )
 \c@definition=\count297
-\c@theorem=\count298
-Package hyperref Info: Option `colorlinks' set `true' on input line 17.
+\c@conjecture=\count298
+\c@theorem=\count299
+Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks31
@@ -318,7 +319,7 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 l.862 --- TeX4ht warning --- nonprimitive \everypar ---
 --- needs --- tex4ht main ---
-\tmp:cnt=\count299
+\tmp:cnt=\count300
 \openout15 = `main.tmp'.
 
 (./main.tmp)
@@ -837,88 +838,110 @@ version 2022-01-23-07:51
 )) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2022-07-01 L3 backend support: dvips
 \l__pdf_internal_box=\box55
-\g__pdf_backend_object_int=\count300
+\g__pdf_backend_object_int=\count301
 \l__pdf_backend_content_box=\box56
 \l__pdf_backend_model_box=\box57
-\g__pdf_backend_annotation_int=\count301
-\g__pdf_backend_link_int=\count302
-\g__pdf_backend_link_sf_int=\count303
+\g__pdf_backend_annotation_int=\count302
+\g__pdf_backend_link_int=\count303
+\g__pdf_backend_link_sf_int=\count304
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-Package hyperref Info: Link coloring ON on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
+LaTeX Font Info:    ... okay on input line 27.
+Package hyperref Info: Link coloring ON on input line 27.
 
 LaTeX Warning: First page is already shipped out, ignoring
-               \AtBeginDvi on input line 25.
+               \AtBeginDvi on input line 27.
 
 --- file main.css ---
-[1] [2] (./main.4ct) [3] [4
+[1] [2] (./main.4ct [3]) [4] [5
 
-] [5] [6] [7] [8]
+] [6] [7] [8] [9]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 124.
+(amsmath)                 on input line 126.
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24
 
 ]
-l.385 --- TeX4ht warning --- File `"media/sample-graph.xbb"' not found ---
-l.385 --- TeX4ht warning --- Cannot determine size of graphic in "media/sample-
+l.387 --- TeX4ht warning --- File `"media/sample-graph.xbb"' not found ---
+l.387 --- TeX4ht warning --- Cannot determine size of graphic in "media/sample-
 graph.xbb" (no BoundingBox) ---
-l. 385 --- needs --- media/sample-graph.png ---
-[24
+l. 387 --- needs --- media/sample-graph.png ---
+[25
 
-] [25
+] [26
 
-] [26] [27] [28] [29] [30] [31] [32] [33] [34
+] [27] [28] [29] [30] [31] [32] [33] [34] [35
 
 ]
-l.543 --- TeX4ht warning --- File `"media/potts-model.xbb"' not found ---
-l.543 --- TeX4ht warning --- Cannot determine size of graphic in "media/potts-m
+l.545 --- TeX4ht warning --- File `"media/potts-model.xbb"' not found ---
+l.545 --- TeX4ht warning --- Cannot determine size of graphic in "media/potts-m
 odel.xbb" (no BoundingBox) ---
-l. 543 --- needs --- media/potts-model.jpg ---
-[35
+l. 545 --- needs --- media/potts-model.jpg ---
+[36
 
-] [36
+] [37
 
-] [37] [38
+] [38] [39
 
 ]
-l.583 --- TeX4ht warning --- File `"media/proof-schematic.xbb"' not found ---
-l.583 --- TeX4ht warning --- Cannot determine size of graphic in "media/proof-s
+l.585 --- TeX4ht warning --- File `"media/proof-schematic.xbb"' not found ---
+l.585 --- TeX4ht warning --- Cannot determine size of graphic in "media/proof-s
 chematic.xbb" (no BoundingBox) ---
-l. 583 --- needs --- media/proof-schematic.jpg ---
-[39
+l. 585 --- needs --- media/proof-schematic.jpg ---
+[40
 
-] [40
+] [41
 
-] [41] [42] (./main.bbl [43]) [44] (./main.aux) ) 
+] [42] [43] [44] [45] [46] [47] [48] [49] [50
+
+]
+l.713 --- TeX4ht warning --- File `"media/trade-off.xbb"' not found ---
+l.713 --- TeX4ht warning --- Cannot determine size of graphic in "media/trade-o
+ff.xbb" (no BoundingBox) ---
+l. 713 --- needs --- media/trade-off.png ---
+[51
+
+] [52
+
+] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62
+
+]
+l.889 --- TeX4ht warning --- File `"media/example-problem.xbb"' not found ---
+l.889 --- TeX4ht warning --- Cannot determine size of graphic in "media/example
+-problem.xbb" (no BoundingBox) ---
+l. 889 --- needs --- media/example-problem.png ---
+[63
+
+] [64
+
+] [65] [66] (./main.bbl [67]) [68] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 15184 strings out of 478024
- 225649 string characters out of 5841234
- 652861 words of memory out of 5000000
- 33154 multiletter control sequences out of 15000+600000
+ 15270 strings out of 478024
+ 227199 string characters out of 5841234
+ 653048 words of memory out of 5000000
+ 33238 multiletter control sequences out of 15000+600000
  480420 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  77i,18n,97p,1451b,691s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.dvi (301 pages, 300444 bytes).
+Output written on main.dvi (325 pages, 398744 bytes).

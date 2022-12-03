@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -67,5 +67,22 @@ Tyler Helmuth, Will Perkins, and Guus Regts.
 \newblock ISBN 9781450367059.
 \newblock \doi{10.1145/3313276.3316305}.
 \newblock URL \url{https://doi.org/10.1145/3313276.3316305}.
+
+\bibitem[Ashtiani et~al.(2022)Ashtiani, Pathak, and
+  Urner]{https://doi.org/10.48550/arxiv.2203.00849}
+Hassan Ashtiani, Vinayak Pathak, and Ruth Urner.
+\newblock Adversarially robust learning with tolerance, 2022.
+\newblock URL \url{https://arxiv.org/abs/2203.00849}.
+
+\bibitem[Littlestone and Warmuth(1986)]{littlestone1986relating}
+Nick Littlestone and Manfred Warmuth.
+\newblock Relating data compression and learnability.
+\newblock 1986.
+
+\bibitem[Moran and Yehudayoff(2016)]{moran2016sample}
+Shay Moran and Amir Yehudayoff.
+\newblock Sample compression schemes for vc classes.
+\newblock \emph{Journal of the ACM (JACM)}, 63\penalty0 (3):\penalty0 1--10,
+  2016.
 
 \end{thebibliography}
